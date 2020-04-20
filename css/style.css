@@ -1634,6 +1634,10 @@ div.ac > ul > li:before,
   text-align: center;
   color: #bcc1c4;
 }
+.post .copyright img {
+  width: 20px;
+  height: 20px;
+}
 .post .copyright a {
   color: #4078c0;
   word-break: break-all;
