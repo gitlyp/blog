@@ -1,0 +1,3153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spring源码分析（26）动态AOP | 莫问的博客</title>
+  <meta name="keywords" content=" 编程 , java , 框架 , spring ">
+  <meta name="description" content="Spring源码分析（26）动态AOP | 莫问的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="网址ip查询修改ip 免费HTTPS证书证书 webpack入口 Entry  出口 Output 加载器 Loaders 插件 Plugins 基础配置# 初始化 npm init # 本地局部安装webpack cnpm install webpack --save-dev # 安装webpack-dev-server (启动服务、热更新、接口代理) cnpm install webpack-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iview">
+<meta property="og:url" content="http://blog.jiyijy.com/2020/study/web/web/index.html">
+<meta property="og:site_name" content="莫问的博客">
+<meta property="og:description" content="网址ip查询修改ip 免费HTTPS证书证书 webpack入口 Entry  出口 Output 加载器 Loaders 插件 Plugins 基础配置# 初始化 npm init # 本地局部安装webpack cnpm install webpack --save-dev # 安装webpack-dev-server (启动服务、热更新、接口代理) cnpm install webpack-">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-04-21T07:16:48.993Z">
+<meta property="article:modified_time" content="2020-04-21T04:14:56.202Z">
+<meta property="article:author" content="莫问-廖远佩">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/blog/img/avatar.jpg">
+
+<link href="/blog/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/blog/css/hl_theme/zenbum.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/blog/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/blog/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/blog">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/blog/" class="avatar_target">
+    <img class="avatar" src="/blog/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>莫问-廖远佩</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(97)</small></div></li>
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(4)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="win10">win10<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="理财">理财<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法"><i class="fold iconfont icon-right"></i>算法<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="排序算法">排序算法<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂项">杂项<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="框架"><i class="fold iconfont icon-right"></i>框架<small>(36)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="mybatis">mybatis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="spring">spring<small>(33)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringCloud">SpringCloud<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="devops"><i class="fold iconfont icon-right"></i>devops<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="jenkins">jenkins<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="python">python<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="docker">docker<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="中间件"><i class="fold iconfont icon-right"></i>中间件<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="redis">redis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="基础">基础<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="面试">面试<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶">进阶<small>(17)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="规范">规范<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶a">进阶a<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="思维导图">思维导图<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="新特性">新特性<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="GC">GC<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具">工具<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="阅读">阅读<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/blog/">关于</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="97">
+<input type="hidden" id="yelog_site_word_count" value="174.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">理财</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">技巧</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">win10</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">devops</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">中间件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">正则</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">登天梯</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mybatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">思维导图</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ide</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">GC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">杂项</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">设计模式</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="工具 "
+           href="/blog/2020/study/tool/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"
+           data-tag="生活,工具,程序"
+           data-author="" >
+            <span class="post-title" title="工具推荐">工具推荐</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/2020/life/finance/money/"
+           data-tag="理财,生活"
+           data-author="" >
+            <span class="post-title" title="理财入门">理财入门</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/2020/life/finance/%E7%90%86%E8%B4%A2%E6%84%8F%E8%AF%86/"
+           data-tag="理财,生活,方法论"
+           data-author="" >
+            <span class="post-title" title="理财意识觉醒">理财意识觉醒</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="算法 排序算法 "
+           href="/blog/2020/study/algorithm/%E5%9B%BE%E7%A4%BA%E7%AE%97%E6%B3%95/"
+           data-tag="编程,算法"
+           data-author="" >
+            <span class="post-title" title="图示经典算法">图示经典算法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/2020/life/windows/bat/"
+           data-tag="生活,技巧"
+           data-author="" >
+            <span class="post-title" title="BAT">BAT</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/life/windows/security/"
+           data-tag="技巧,工具"
+           data-author="" >
+            <span class="post-title" title="security">security</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/Spring/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="0.Spring介绍">0.Spring介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/2020/life/windows/use/"
+           data-tag="技巧,win10"
+           data-author="" >
+            <span class="post-title" title="win10使用">win10使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops jenkins "
+           href="/blog/2020/study/docker/devops/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="jenkins">jenkins</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/2020/study/middleware/RocketMq/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="RocketMQ">RocketMQ</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/java/reg/"
+           data-tag="编程,工具,正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops docker "
+           href="/blog/2020/study/docker/docker/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="docker">docker</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/2020/study/middleware/nginx/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/"
+           data-tag="linux,登天梯"
+           data-author="" >
+            <span class="post-title" title="梯子">梯子</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/linux_mint/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="linux mint">linux mint</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/linux/"
+           data-tag="编程,linux"
+           data-author="" >
+            <span class="post-title" title="linux">linux</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/2020/study/mysql/SQL%E8%AF%AD%E8%A8%80%E5%88%86%E7%B1%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="SQL分类">SQL分类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 mybatis "
+           href="/blog/2020/study/mybatis/mybatis%E9%9D%A2%E8%AF%95/"
+           data-tag="mybatis,面试"
+           data-author="" >
+            <span class="post-title" title="mybatis面试">mybatis面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 面试 "
+           href="/blog/2020/study/mysql/sql%E4%BC%98%E5%8C%96/"
+           data-tag="编程,java,框架,mysql,面试"
+           data-author="" >
+            <span class="post-title" title="面试sql优化">面试sql优化</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 redis "
+           href="/blog/2020/study/mysql/redis/"
+           data-tag="编程,中间件,redis"
+           data-author="" >
+            <span class="post-title" title="redis">redis</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96demo/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="实验数据">实验数据</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/2020/study/mysql/mysql%E5%9F%BA%E7%A1%80/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="mysql基础">mysql基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="数据库系统原理">数据库系统原理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 读书 "
+           href="/blog/2020/study/mysql/%E9%AB%98%E6%80%A7%E8%83%BD/"
+           data-tag="编程,数据库,mysql,读书"
+           data-author="" >
+            <span class="post-title" title="mysql高性能(第三版)">mysql高性能(第三版)</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 规范 "
+           href="/blog/2020/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%9358%E5%86%9B%E8%A7%84/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="58同城数据库军规">58同城数据库军规</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops python "
+           href="/blog/2020/study/other/python/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="思维导图 "
+           href="/blog/2020/study/other/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag="编程,思维导图,目录"
+           data-author="" >
+            <span class="post-title" title="思维导图目录">思维导图目录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/ffmpeg/"
+           data-tag="生活,编程,工具"
+           data-author="" >
+            <span class="post-title" title="ffmpeg使用">ffmpeg使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/git/"
+           data-tag="编程,工具,git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/mysqlcli/"
+           data-tag="编程,工具,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql client">mysql client</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/ide/"
+           data-tag="编程,工具,ide"
+           data-author="" >
+            <span class="post-title" title="ide">ide</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/js/"
+           data-tag="编程,前端,js"
+           data-author="" >
+            <span class="post-title" title="JS">JS</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/web/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="iview">iview</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/vue/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 新特性 "
+           href="/blog/2020/study/java/base/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="jdk8新特性">jdk8新特性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/01/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（01）基本介绍">Spring源码分析（01）基本介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java GC "
+           href="/blog/2020/study/java/base/%E5%9F%BA%E6%9C%AC%E5%8A%9F-GC/"
+           data-tag="编程,jvm,GC"
+           data-author="" >
+            <span class="post-title" title="GC基础">GC基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/02/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（02）容器基本用法">Spring源码分析（02）容器基本用法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/05/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（05）获取Document">Spring源码分析（05）获取Document</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/03/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（03）容器核心类">Spring源码分析（03）容器核心类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/08/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（08）AbstractBeanDefinition属性">Spring源码分析（08）AbstractBeanDefinition属性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/06/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（06）解析和注册BeanDefinitions">Spring源码分析（06）解析和注册BeanDefinitions</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/04/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（04）容器的基础XmlBeanFactory">Spring源码分析（04）容器的基础XmlBeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/10/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（10）注册解析的BeanDefinition">Spring源码分析（10）注册解析的BeanDefinition</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/09/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（09）解析默认标签中的自定义标签元素">Spring源码分析（09）解析默认标签中的自定义标签元素</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/11/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（11）bean的加载">Spring源码分析（11）bean的加载</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/13/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（13）缓存中获取单例bean">Spring源码分析（13）缓存中获取单例bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/12/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（12）FactoryBean的使用">Spring源码分析（12）FactoryBean的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/14/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（14）从bean的实例中获取对象">Spring源码分析（14）从bean的实例中获取对象</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/16/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（16）准备创建bean">Spring源码分析（16）准备创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/15/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（15）获取单例">Spring源码分析（15）获取单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/17/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（17）循环依赖">Spring源码分析（17）循环依赖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/19/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（19）容器的功能扩展概览">Spring源码分析（19）容器的功能扩展概览</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/20/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（20）准备环境">Spring源码分析（20）准备环境</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/21/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（21）加载BeanFactory">Spring源码分析（21）加载BeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/24/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（24）初始化非延迟加载单例">Spring源码分析（24）初始化非延迟加载单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/22/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（22）功能扩展">Spring源码分析（22）功能扩展</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/23/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（23）BeanFactory的后处理">Spring源码分析（23）BeanFactory的后处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/25/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（25）finishRefresh">Spring源码分析（25）finishRefresh</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/27/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（27）静态AOP">Spring源码分析（27）静态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/28/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（28）mvc快速体验">Spring源码分析（28）mvc快速体验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/29/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（29）ContextLoaderListener">Spring源码分析（29）ContextLoaderListener</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/26/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（26）动态AOP">Spring源码分析（26）动态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/31/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（31）DispatcherServlet的逻辑处理">Spring源码分析（31）DispatcherServlet的逻辑处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/arthas/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="Arthas">Arthas</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/spring%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,框架,spring,面试"
+           data-author="" >
+            <span class="post-title" title="spring面试问题与答案集锦">spring面试问题与答案集锦</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/30/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（30）DispatcherServlet">Spring源码分析（30）DispatcherServlet</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/tool/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="javap">javap</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/jstat/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="jstat命令手册">jstat命令手册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/study/java/netease/2020%E4%BD%9C%E4%B8%9A/"
+           data-tag="编程,java,杂项"
+           data-author="" >
+            <span class="post-title" title="作业记录">作业记录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/study/java/netease/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JAVA%E8%99%9A%E6%8B%9F%E6%9C%BA/"
+           data-tag="编程,java,读书,jvm"
+           data-author="" >
+            <span class="post-title" title="深入理解虚拟机-作业">深入理解虚拟机-作业</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/2020/study/java/springcloud/springBoot/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="SpringBoot">SpringBoot</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/2020/study/java/springcloud/springCloud/"
+           data-tag="编程,java,框架"
+           data-author="" >
+            <span class="post-title" title="SpringCloud">SpringCloud</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/2020/study/java/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,面试,线程"
+           data-author="" >
+            <span class="post-title" title="一次简单的线程池面试">一次简单的线程池面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 阅读 "
+           href="/blog/2020/study/java/%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="JAVA性能优化权威">JAVA性能优化权威</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/2020/study/java/%E4%BC%98%E5%8C%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="编程,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/java/%E5%B7%A5%E5%85%B7/maven/"
+           data-tag="编程,工具"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶a "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/01.awk/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="1.AWK">1.AWK</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/02.%E5%91%A8%E6%9C%9F%E6%80%A7%E9%97%AE%E9%A2%98%E5%AE%9E%E9%AA%8C/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="2.MySQL周期性波动试验">2.MySQL周期性波动试验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/03.%E5%AF%B9%E4%BA%8E%E4%B8%8D%E8%A7%84%E5%88%99%E7%9A%84%E5%BB%B6%E8%BF%9F%E7%8E%B0%E8%B1%A1%E7%9A%84%E8%A7%82%E5%AF%9F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="3.对于不规则的延迟现象的观察">3.对于不规则的延迟现象的观察</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/04.%E5%88%97%E7%9A%84%E9%80%89%E6%8B%A9/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="4.选择原则">4.选择原则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/05.%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="5.索引的优化--生效规则">5.索引的优化--生效规则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/06.%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="6.聚簇索引与非聚簇索引">6.聚簇索引与非聚簇索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/10.%E7%B4%A2%E5%BC%95%E4%B8%8E%E6%8E%92%E5%BA%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="10.索引与排序">10.索引与排序</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/09.%E5%BB%B6%E8%BF%9F%E5%85%B3%E8%81%94/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="9.延迟关联">9.延迟关联</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/07.%E7%B4%A2%E5%BC%95%E8%A6%86%E7%9B%96/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="7.索引覆盖">7.索引覆盖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/08.%E7%B4%A2%E5%BC%95%E9%95%BF%E5%BA%A6/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="8.索引长度与区分度">8.索引长度与区分度</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/11.%E9%87%8D%E5%A4%8D%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%86%97%E4%BD%99%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="11.重复索引与冗余索引">11.重复索引与冗余索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/12.%E7%B4%A2%E5%BC%95%E7%A2%8E%E7%89%87%E4%BF%AE%E5%A4%8D/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="12.索引碎片与维护">12.索引碎片与维护</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/13.explain/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="13.explain分析sql效果">13.explain分析sql效果</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/14.%E5%AD%90%E6%9F%A5%E8%AF%A2/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="14.子查询">14.子查询</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/16.%E5%8F%98%E9%87%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="16.变量的使用">16.变量的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/15.%E6%8A%80%E5%B7%A7/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="15.奇技淫巧">15.奇技淫巧</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/17.%E4%BA%8B%E5%8A%A1/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="17.事务">17.事务</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/18.%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="18.读写分离">18.读写分离</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/18/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（18）创建bean">Spring源码分析（18）创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/07/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（07）bean标签的解析及注册">Spring源码分析（07）bean标签的解析及注册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-study/java/cnblogSpring/26" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Spring源码分析（26）动态AOP</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="框架">框架</a>/
+            
+                <a  data-rel="spring">spring</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">编程</a>
+            
+            <a class="color5">java</a>
+            
+            <a class="color3">框架</a>
+            
+            <a class="color2">spring</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        <!--暂时影藏时间-->
+        <!---->
+        <!--创建时间:<time class="date" title='更新时间: 2020-04-21 12:32:38'>2020-04-21 15:16</time>-->
+        <!---->
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:9.8k</span>
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态AOP使用示例"><span class="toc-text">动态AOP使用示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动态AOP自定义标签解析"><span class="toc-text">动态AOP自定义标签解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建aop代理"><span class="toc-text">创建aop代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取增强器"><span class="toc-text">获取增强器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#寻找匹配的增强器"><span class="toc-text">寻找匹配的增强器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建代理"><span class="toc-text">创建代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建代理"><span class="toc-text">1.创建代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-获取代理"><span class="toc-text">2.获取代理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JDK代理使用示例"><span class="toc-text">1.JDK代理使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-CGLIB使用示例"><span class="toc-text">2.CGLIB使用示例</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>摘要: 本文结合《Spring源码深度解析》来分析Spring 5.0.6版本的源代码。若有描述错误之处，欢迎指正。</p>
+</blockquote>
+<p>我们知道，使用面向对象编程（OOP）有一些弊端，当需要为多个不具有继承关系的对象引人同一个公共行为时，例如日志、安全检测等，我们只有在每个对象里引用公共行为，这样程序中就产生了大量的重复代码，程序就不便于维护了，所以就有了一个对面向对象编程的补充，即面向方面编程（AOP),AOP所关注的方向是横向的，不同于OOP的纵向。</p>
+<p>Spring中提供了AOP的实现，但是在低版本Spring中定义一个切面是比较麻烦的，需要实现特定的接口，并进行一些较为复杂的配置。低版本SpringAOP的配置是被批评最多的地方。Spring听取了这方面的批评声音，井下决心彻底改变这一现状。在Spring2.0，SpringAOP已经焕然一新，你可以使用@AspectJ注解非常容易地定义个切面，不需要实现任何的接口。</p>
+<p>Spring2.0采用@AspectJ注解，对POJO进行标注，从而定义一个包含切点信息和增强横切逻辑的切面。Spring2.0可以将这个切面织入到匹配的目标Bean中。@AspectJ注解使用AspectJ切点表达式语法进行切点定义，可以通过切点函数、运算符、通配柯：等高级功能进行切点定义，拥有大的连接点描述能力。我们先来直观地浏览一下Spring中的AOP实现。</p>
+<h1 id="动态AOP使用示例"><a href="#动态AOP使用示例" class="headerlink" title="动态AOP使用示例"></a>动态AOP使用示例</h1><h1 id="动态AOP自定义标签解析"><a href="#动态AOP自定义标签解析" class="headerlink" title="动态AOP自定义标签解析"></a>动态AOP自定义标签解析</h1><p>之前讲过Spring中的自定义注解，如果声明了自定义的注解，那么就一定会在程序中的某个地方注册了对应的解析器。我们搜索整个代码，尝试找到注册的地方，全局搜索后我们发现了在AopNamespaceHandler中对应着这样一段函数：</p>
+<pre><code class="java">    public void init() {
+        // In 2.0 XSD as well as in 2.1 XSD.
+        registerBeanDefinitionParser(&quot;config&quot;, new ConfigBeanDefinitionParser());
+        //自定义标签解析器
+        registerBeanDefinitionParser(&quot;aspectj-autoproxy&quot;, new AspectJAutoProxyBeanDefinitionParser());
+        registerBeanDefinitionDecorator(&quot;scoped-proxy&quot;, new ScopedProxyBeanDefinitionDecorator());
+
+        // Only in 2.0 XSD: moved to context namespace as of 2.1
+        registerBeanDefinitionParser(&quot;spring-configured&quot;, new SpringConfiguredBeanDefinitionParser());
+    }</code></pre>
+<p>此处不再对 Spring中的自定义注解方式进行讨论。有兴趣的读者可以回顾之前的内容。我们可以得知，在解析配置文件的时候，一旦遇到 aspect–autoproxy注解时就会使用解析器AspectJAutoProxyBeanDefinitionParser进行解析，那么我们来看一看 AspectJAutoProxyBeanDefinitionParser的内部实现。</p>
+<pre><code class="java">public BeanDefinition parse(Element element, ParserContext parserContext) {
+        //注册AspectJAutoProxyBeanDefinitionParser
+        AopNamespaceUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(parserContext, element);
+        //对于注解的子类进行处理
+        extendBeanDefinition(element, parserContext);
+        return null;
+}</code></pre>
+<p>aop代理方式</p>
+<p>JDK动态代理：其代理对象必须是某个接口的实现，它是通过在运行期间创建一个接口的实现类未完成对目标对象的代理。</p>
+<p>CGLIB代理(子类代理)：实现原理类似于JDK动态代理，只是它在运行期间生成的代理对象是针对目标类扩展的子类。CGLIB是高效的代码生成包，底层是依靠ASM（开源的Java字节码编辑类库）操作字节码实现的，性能比JDK强。</p>
+<p>expose-proxy：有时候目标对象内部的自我调用将无法实施切面中的增强，如下示例：</p>
+<img src="image-20200109080309473.png" alt="image-20200109080309473" style="zoom:50%;">
+
+<p>此处的this指向目标对象，因此调用this.b（）将不会执行b事务切面，即不会执行事务增强，因业七b方法的事定义“＠Transactional(propagation=Propagation.REQUIRES_NEW”将不会实施，为了解决这个问题，我们可以这样做：</p>
+<p>&lt;aop:aspectj-autoproxyexpose-proxy=”true”/&gt;</p>
+<p>然后将以上代码中的“this.b（）；”修改为“（(AService)AopContext.currentProxy()).b（）；”即可。通过以上的修改便可以完成对a和b方法的同时增强。最后注册组件并通知，便于监听器做进一步处理，这里就不再一一赘述了。</p>
+<h1 id="创建aop代理"><a href="#创建aop代理" class="headerlink" title="创建aop代理"></a>创建aop代理</h1><p>上文中讲解，了通过自定义配置完成了对AnnotationAwareAspectJAutoProxyCreator类型的自动注册，那么这个类到底做了什么工作来完成AOP的操作呢？首先我们看看AnnotationAwareAspectJAutoProxyCreator类的层次结构，如图所示。</p>
+<img src="image-20200111100909310.png" alt="image-20200111100909310" style="zoom:50%;">
+
+<p>类的层级中，我们看到AnnotationAwareAspectJAutoProxyCreator实现了BeanPostProc巳ssor接口，而实现BeanPostProcessor后，当Spring加载这个Bean时会在实例化前调用其postProcessAfterInitialization方法，而我们对于AOP逻辑的分析也由此开始。</p>
+<pre><code class="java">    /**
+     * Create a proxy with the configured interceptors if the bean is
+     * identified as one to proxy by the subclass.
+     * @see #getAdvicesAndAdvisorsForBean
+     */
+    @Override
+    public Object postProcessAfterInitialization(@Nullable Object bean, String beanName) throws BeansException {
+        if (bean != null) {
+            // 根据给的bean的class和name构建一个key,格式:beanClassName_beanName
+            Object cacheKey = getCacheKey(bean.getClass(), beanName);
+            // 如果它合适被代理，则需要封装指定bean
+            if (this.earlyProxyReferences.remove(cacheKey) != bean) {
+                return wrapIfNecessary(bean, beanName, cacheKey);
+            }
+        }
+        return bean;
+    }
+    // 1.继续跟踪方法
+    /**
+     * Wrap the given bean if necessary, i.e. if it is eligible for being proxied.
+     * @param bean the raw bean instance
+     * @param beanName the name of the bean
+     * @param cacheKey the cache key for metadata access
+     * @return a proxy wrapping the bean, or the raw bean instance as-is
+     */
+    protected Object wrapIfNecessary(Object bean, String beanName, Object cacheKey) {
+        // 如果已经处理过
+        if (StringUtils.hasLength(beanName) &amp;&amp; this.targetSourcedBeans.contains(beanName)) {
+            return bean;
+        }
+        // 无需增强
+        if (Boolean.FALSE.equals(this.advisedBeans.get(cacheKey))) {
+            return bean;
+        }
+        // 给定的bean类是否代表一个基础设施类，基础设施类不应代理，或者配置了指定的bean不需要自动代理
+        if (isInfrastructureClass(bean.getClass()) || shouldSkip(bean.getClass(), beanName)) {
+            this.advisedBeans.put(cacheKey, Boolean.FALSE);
+            return bean;
+        }
+
+        // 如果存在增强方法则创建代理
+        // Create proxy if we have advice.
+        Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(bean.getClass(), beanName, null);
+        // 如果获取到了增强需要针对增强创建代理
+        if (specificInterceptors != DO_NOT_PROXY) {
+            this.advisedBeans.put(cacheKey, Boolean.TRUE);
+            // 创建代理
+            Object proxy = createProxy(
+                    bean.getClass(), beanName, specificInterceptors, new SingletonTargetSource(bean));
+            this.proxyTypes.put(cacheKey, proxy.getClass());
+            return proxy;
+        }
+
+        this.advisedBeans.put(cacheKey, Boolean.FALSE);
+        return bean;
+    }</code></pre>
+<p>函数中我们已经看到了代理创建的雏形。当然，真正开始之前还需要经过一些判断，比如是否已经处理过或者是否是需要跳过的bean，而真正创建代理的代码是从getAdvicesAnd­AdvisorsForBean开始的。创建代理主要包含了两个步骤。</p>
+<p>1.获取增强方法或者增强器。</p>
+<p>2.根据获取的增强进行代理。</p>
+<p>虽然看似简单，但是每个步骤中都经历了大量复杂的逻辑。首先来看看获取增强方法的实现逻辑。</p>
+<pre><code class="java">    @Override
+    @Nullable
+    protected Object[] getAdvicesAndAdvisorsForBean(
+            Class&lt;?&gt; beanClass, String beanName, @Nullable TargetSource targetSource) {
+
+        // 获取合法的增强器
+        List&lt;Advisor&gt; advisors = findEligibleAdvisors(beanClass, beanName);
+        if (advisors.isEmpty()) {
+            return DO_NOT_PROXY;
+        }
+        return advisors.toArray();
+    }
+
+    // 获取合法增强器
+    protected List&lt;Advisor&gt; findEligibleAdvisors(Class&lt;?&gt; beanClass, String beanName) {
+        List&lt;Advisor&gt; candidateAdvisors = findCandidateAdvisors();
+        List&lt;Advisor&gt; eligibleAdvisors = findAdvisorsThatCanApply(candidateAdvisors, beanClass, beanName);
+        extendAdvisors(eligibleAdvisors);
+        if (!eligibleAdvisors.isEmpty()) {
+            eligibleAdvisors = sortAdvisors(eligibleAdvisors);
+        }
+        return eligibleAdvisors;
+    }</code></pre>
+<p>对于指定bean增强方法的获取一定是包含两个步骤的，获取所有的增强以及寻找所有增强中适用于bean的增强并应用，那么findCandidateAdvisors与findAdvisorsThatCanApply便是做了这两件事情。当然，如果无法找到对应的增强器便返回DO_NOT_PROXY，其中DO_NOT_PROXY=null。</p>
+<h2 id="获取增强器"><a href="#获取增强器" class="headerlink" title="获取增强器"></a>获取增强器</h2><p>由于我们分析的是使用注解进行的AOP，所以对于自findCandidateAdvisors的实现其实是由AnnotationAwa.reAspectJAutoProxyCreator类完成的，我们继续跟踪AnnotationAwareAspectJAuto­ProxyCreator的findCandidateAdvisors方法</p>
+<pre><code class="java">    @Override
+    protected List&lt;Advisor&gt; findCandidateAdvisors() {
+        // 当使用注解方式配置AOP的时候并不是丢弃了对XML配置的支持
+        // 在这里调用父类的方法加载配置文件中的AOP申明
+        // Add all the Spring advisors found according to superclass rules.
+        List&lt;Advisor&gt; advisors = super.findCandidateAdvisors();
+        // Build Advisors for all AspectJ aspects in the bean factory.
+        if (this.aspectJAdvisorsBuilder != null) {
+            advisors.addAll(this.aspectJAdvisorsBuilder.buildAspectJAdvisors());
+        }
+        return advisors;
+    }</code></pre>
+<p>AnnotationAwareAspectJAutoProxyCreator接继承了AbstractAdvisorAutoProxyCreator,在实现获取增强的方法中除了保留父类的获取配置文件中定义的增强外，同时添加了获取Bean的注解增强的功能，那么其实现正是由this.aspectJAdvisorsBuilder.buildAspectJAdvisors()来实现的。</p>
+<p>真正研究代码之前读者可以尝试着自己去想象一下解析思路，看看自己的实现与Spring是否有差别呢？或者我们一改以往的方式，先来了解函数提供的大概功能框架，读者可以在头脑中尝试实现这些功能点，看看是否有思路。</p>
+<p>1.获取所有beanName，这一步骤中所有在beanFacotry中注的bean都会被提取出来。</p>
+<p>2.遍历所有beanName，并找出声AspectJ注解的类，进行进一步的处理。</p>
+<p>3.对标记为AspectJ注解的类进行增强器的提取。</p>
+<p>4.将提取结果加入缓存。</p>
+<p>在我们来看看函数实现，对Spring中所有的类进行分析提取Advisor。</p>
+<pre><code class="java">    public List&lt;Advisor&gt; buildAspectJAdvisors() {
+        List&lt;String&gt; aspectNames = this.aspectBeanNames;
+
+        if (aspectNames == null) {
+            synchronized (this) {
+                aspectNames = this.aspectBeanNames;
+                if (aspectNames == null) {
+                    List&lt;Advisor&gt; advisors = new ArrayList&lt;&gt;();
+                    aspectNames = new ArrayList&lt;&gt;();
+                    // 获取所有beanName
+                    String[] beanNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
+                            this.beanFactory, Object.class, true, false);
+                    // 循环所有的beanName找出对应的增强方法
+                    for (String beanName : beanNames) {
+                        // 不合法的bean则略过，由子类定义规则，默认返回true
+                        if (!isEligibleBean(beanName)) {
+                            continue;
+                        }
+                        // We must be careful not to instantiate beans eagerly as in this case they
+                        // would be cached by the Spring container but would not have been weaved.
+                        // 获取对应的bean的类型
+                        Class&lt;?&gt; beanType = this.beanFactory.getType(beanName);
+                        if (beanType == null) {
+                            continue;
+                        }
+                        // 如果存在Aspect注解
+                        if (this.advisorFactory.isAspect(beanType)) {
+                            aspectNames.add(beanName);
+                            AspectMetadata amd = new AspectMetadata(beanType, beanName);
+                            if (amd.getAjType().getPerClause().getKind() == PerClauseKind.SINGLETON) {
+                                MetadataAwareAspectInstanceFactory factory =
+                                        new BeanFactoryAspectInstanceFactory(this.beanFactory, beanName);
+                                // 解析标记所有AspectJ注解中的增强方法
+                                List&lt;Advisor&gt; classAdvisors = this.advisorFactory.getAdvisors(factory);
+                                if (this.beanFactory.isSingleton(beanName)) {
+                                    this.advisorsCache.put(beanName, classAdvisors);
+                                }
+                                else {
+                                    this.aspectFactoryCache.put(beanName, factory);
+                                }
+                                advisors.addAll(classAdvisors);
+                            }
+                            else {
+                                // Per target or per this.
+                                if (this.beanFactory.isSingleton(beanName)) {
+                                    throw new IllegalArgumentException(&quot;Bean with name &#39;&quot; + beanName +
+                                            &quot;&#39; is a singleton, but aspect instantiation model is not singleton&quot;);
+                                }
+                                MetadataAwareAspectInstanceFactory factory =
+                                        new PrototypeAspectInstanceFactory(this.beanFactory, beanName);
+                                this.aspectFactoryCache.put(beanName, factory);
+                                advisors.addAll(this.advisorFactory.getAdvisors(factory));
+                            }
+                        }
+                    }
+                    this.aspectBeanNames = aspectNames;
+                    return advisors;
+                }
+            }
+        }
+
+        if (aspectNames.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List&lt;Advisor&gt; advisors = new ArrayList&lt;&gt;();
+        // 记录在缓存中
+        for (String aspectName : aspectNames) {
+            List&lt;Advisor&gt; cachedAdvisors = this.advisorsCache.get(aspectName);
+            if (cachedAdvisors != null) {
+                advisors.addAll(cachedAdvisors);
+            }
+            else {
+                MetadataAwareAspectInstanceFactory factory = this.aspectFactoryCache.get(aspectName);
+                advisors.addAll(this.advisorFactory.getAdvisors(factory));
+            }
+        }
+        return advisors;
+    }</code></pre>
+<p>至此，我们已经完成了Advisor的提取，在面的步骤中最为重要也最为繁杂的就是增强器的获取。而这一功能委托给了getAdvisors方法去实现（this.advisorFactory.getAdvisors(factory)）。</p>
+<pre><code class="java">    @Override
+    public List&lt;Advisor&gt; getAdvisors(MetadataAwareAspectInstanceFactory aspectInstanceFactory) {
+        // 获取标记为AspectJ的类
+        Class&lt;?&gt; aspectClass = aspectInstanceFactory.getAspectMetadata().getAspectClass();
+        // 获取标记为AspectJ的name
+        String aspectName = aspectInstanceFactory.getAspectMetadata().getAspectName();
+        // 验证
+        validate(aspectClass);
+
+        // We need to wrap the MetadataAwareAspectInstanceFactory with a decorator
+        // so that it will only instantiate once.
+        MetadataAwareAspectInstanceFactory lazySingletonAspectInstanceFactory =
+                new LazySingletonAspectInstanceFactoryDecorator(aspectInstanceFactory);
+
+        List&lt;Advisor&gt; advisors = new ArrayList&lt;&gt;();
+        // 获取所有待增强的方法
+        for (Method method : getAdvisorMethods(aspectClass)) {
+            Advisor advisor = getAdvisor(method, lazySingletonAspectInstanceFactory, advisors.size(), aspectName);
+            if (advisor != null) {
+                advisors.add(advisor);
+            }
+        }
+
+        // If it&#39;s a per target aspect, emit the dummy instantiating aspect.
+        if (!advisors.isEmpty() &amp;&amp; lazySingletonAspectInstanceFactory.getAspectMetadata().isLazilyInstantiated()) {
+            // 如果寻找的增强器不为空而且又配置了增强延迟初始化，那么需要在首位加入同步实例化增强器
+            Advisor instantiationAdvisor = new SyntheticInstantiationAdvisor(lazySingletonAspectInstanceFactory);
+            advisors.add(0, instantiationAdvisor);
+        }
+
+        // Find introduction fields.
+        //获取DeclareParents注解
+        for (Field field : aspectClass.getDeclaredFields()) {
+            Advisor advisor = getDeclareParentsAdvisor(field);
+            if (advisor != null) {
+                advisors.add(advisor);
+            }
+        }
+
+        return advisors;
+    }
+
+
+    // getAdvisorMethods()方法的实现
+    private List&lt;Method&gt; getAdvisorMethods(Class&lt;?&gt; aspectClass) {
+        final List&lt;Method&gt; methods = new ArrayList&lt;&gt;();
+        ReflectionUtils.doWithMethods(aspectClass, method -&gt; {
+            // Exclude pointcuts
+            // 申明为Pointcut的方法不处理
+            if (AnnotationUtils.getAnnotation(method, Pointcut.class) == null) {
+                methods.add(method);
+            }
+        });
+        methods.sort(METHOD_COMPARATOR);
+        return methods;
+    }
+
+
+     //获取DeclareParents注解
+    private Advisor getDeclareParentsAdvisor(Field introductionField) {
+        DeclareParents declareParents = introductionField.getAnnotation(DeclareParents.class);
+        if (declareParents == null) {
+            // Not an introduction field
+            return null;
+        }
+
+        if (DeclareParents.class == declareParents.defaultImpl()) {
+            throw new IllegalStateException(&quot;&#39;defaultImpl&#39; attribute must be set on DeclareParents&quot;);
+        }
+
+        return new DeclareParentsAdvisor(
+                introductionField.getType(), declareParents.value(), declareParents.defaultImpl());
+    }</code></pre>
+<p>数中首先完成了对增强器的获取，包括获取注解以及根据注解生成增强的步骤，然后考虑到在配置中可能会将增强配置成延迟初始化，那么需要在首位加入同步实例化增强器以保证增强使用之前的实例化，最后是对DeclareParents注解的获取，下面将详细介绍一下每个步骤</p>
+<p><strong>1.普通增强器的获取</strong></p>
+<p>普通增强器的获取逻辑通过getAdvisor方法实现，实现步骤包括对切点的注解的获取以及根据注解信息生成增强</p>
+<pre><code class="java">    public Advisor getAdvisor(Method candidateAdviceMethod, MetadataAwareAspectInstanceFactory aspectInstanceFactory,
+            int declarationOrderInAspect, String aspectName) {
+
+        validate(aspectInstanceFactory.getAspectMetadata().getAspectClass());
+        // 切点信息的获取
+        AspectJExpressionPointcut expressionPointcut = getPointcut(
+                candidateAdviceMethod, aspectInstanceFactory.getAspectMetadata().getAspectClass());
+        if (expressionPointcut == null) {
+            return null;
+        }
+        // 根据切点信息生成增强器
+        return new InstantiationModelAwarePointcutAdvisorImpl(expressionPointcut, candidateAdviceMethod,
+                this, aspectInstanceFactory, declarationOrderInAspect, aspectName);
+    }</code></pre>
+<p>1).切点信息的获取。所谓获取切点信息就是指定注解的表达式信息的获取，如@Before(“test()”)</p>
+<pre><code class="java">    @Nullable
+    private AspectJExpressionPointcut getPointcut(Method candidateAdviceMethod, Class&lt;?&gt; candidateAspectClass) {
+        AspectJAnnotation&lt;?&gt; aspectJAnnotation =
+                AbstractAspectJAdvisorFactory.findAspectJAnnotationOnMethod(candidateAdviceMethod);
+        if (aspectJAnnotation == null) {
+            return null;
+        }
+
+        AspectJExpressionPointcut ajexp =
+                new AspectJExpressionPointcut(candidateAspectClass, new String[0], new Class&lt;?&gt;[0]);
+        ajexp.setExpression(aspectJAnnotation.getPointcutExpression());
+        if (this.beanFactory != null) {
+            ajexp.setBeanFactory(this.beanFactory);
+        }
+        return ajexp;
+    }
+
+    protected static AspectJAnnotation&lt;?&gt; findAspectJAnnotationOnMethod(Method method) {
+        // 设置敏感的注解类
+        // private static final Class&lt;?&gt;[] ASPECTJ_ANNOTATION_CLASSES 
+        // = new Class&lt;?&gt;[] { Pointcut.class, Around.class, Before.class, After.class, AfterReturning.class, AfterThrowing.class};
+        for (Class&lt;?&gt; clazz : ASPECTJ_ANNOTATION_CLASSES) {
+            AspectJAnnotation&lt;?&gt; foundAnnotation = findAnnotation(method, (Class&lt;Annotation&gt;) clazz);
+            if (foundAnnotation != null) {
+                return foundAnnotation;
+            }
+        }
+        return null;
+    }
+
+    // 获取指定方法上的注解并使用AspectJAnnotion封装
+    private static &lt;A extends Annotation&gt; AspectJAnnotation&lt;A&gt; findAnnotation(Method method, Class&lt;A&gt; toLookFor) {
+        A result = AnnotationUtils.findAnnotation(method, toLookFor);
+        if (result != null) {
+            return new AspectJAnnotation&lt;&gt;(result);
+        }
+        else {
+            return null;
+        }
+    }</code></pre>
+<p>2).根据切点信生成增强。所有的增强都由Advsor的实现类InstantiationMode!Aware­PointcutAdvisorImpl统一封装的</p>
+<pre><code class="java">        public InstantiationModelAwarePointcutAdvisorImpl(AspectJExpressionPointcut declaredPointcut,
+            Method aspectJAdviceMethod, AspectJAdvisorFactory aspectJAdvisorFactory,
+            MetadataAwareAspectInstanceFactory aspectInstanceFactory, int declarationOrder, String aspectName) {
+
+        // test()
+        this.declaredPointcut = declaredPointcut;
+        this.declaringClass = aspectJAdviceMethod.getDeclaringClass();
+
+        // public void test.AspectTest.beforeTes()
+        this.methodName = aspectJAdviceMethod.getName();
+        this.parameterTypes = aspectJAdviceMethod.getParameterTypes();
+        this.aspectJAdviceMethod = aspectJAdviceMethod;
+        this.aspectJAdvisorFactory = aspectJAdvisorFactory;
+        this.aspectInstanceFactory = aspectInstanceFactory;
+
+        // 0
+        this.declarationOrder = declarationOrder;
+        // test.AspectJTest
+        this.aspectName = aspectName;
+
+        if (aspectInstanceFactory.getAspectMetadata().isLazilyInstantiated()) {
+            // Static part of the pointcut is a lazy type.
+            Pointcut preInstantiationPointcut = Pointcuts.union(
+                    aspectInstanceFactory.getAspectMetadata().getPerClausePointcut(), this.declaredPointcut);
+
+            // Make it dynamic: must mutate from pre-instantiation to post-instantiation state.
+            // If it&#39;s not a dynamic pointcut, it may be optimized out
+            // by the Spring AOP infrastructure after the first evaluation.
+            this.pointcut = new PerTargetInstantiationModelPointcut(
+                    this.declaredPointcut, preInstantiationPointcut, aspectInstanceFactory);
+            this.lazy = true;
+        }
+        else {
+            // A singleton aspect.
+            this.pointcut = this.declaredPointcut;
+            this.lazy = false;
+            // 根据解析学习初始化对应增强器
+            this.instantiatedAdvice = instantiateAdvice(this.declaredPointcut);
+        }
+    }
+</code></pre>
+<p>在封装过程中只是简单地将信息封装在类的实例中，所有的信息单纯地赋值，在实例初始化的过程中还完成了对于增强器的初始化。因为不同的增强所体现的逻辑是不同的，比如@Before(“test()”))与＠After(“test()”))标签的不同就是增强器增强的位置不同，所以需要不同的增强器来完成不同的逻辑，而根据注解中的信息初始化对应的增强器就是在instantiateAdvice函数中实现的</p>
+<pre><code class="java">    private Advice instantiateAdvice(AspectJExpressionPointcut pointcut) {
+        Advice advice = this.aspectJAdvisorFactory.getAdvice(this.aspectJAdviceMethod, pointcut,
+                this.aspectInstanceFactory, this.declarationOrder, this.aspectName);
+        return (advice != null ? advice : EMPTY_ADVICE);
+    }
+
+    public Advice getAdvice(Method candidateAdviceMethod, AspectJExpressionPointcut expressionPointcut,
+            MetadataAwareAspectInstanceFactory aspectInstanceFactory, int declarationOrder, String aspectName) {
+
+        Class&lt;?&gt; candidateAspectClass = aspectInstanceFactory.getAspectMetadata().getAspectClass();
+        validate(candidateAspectClass);
+
+        AspectJAnnotation&lt;?&gt; aspectJAnnotation =
+                AbstractAspectJAdvisorFactory.findAspectJAnnotationOnMethod(candidateAdviceMethod);
+        if (aspectJAnnotation == null) {
+            return null;
+        }
+
+        // If we get here, we know we have an AspectJ method.
+        // Check that it&#39;s an AspectJ-annotated class
+        if (!isAspect(candidateAspectClass)) {
+            throw new AopConfigException(&quot;Advice must be declared inside an aspect type: &quot; +
+                    &quot;Offending method &#39;&quot; + candidateAdviceMethod + &quot;&#39; in class [&quot; +
+                    candidateAspectClass.getName() + &quot;]&quot;);
+        }
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Found AspectJ method: &quot; + candidateAdviceMethod);
+        }
+
+        AbstractAspectJAdvice springAdvice;
+        // 根据不同的注解类型封装不同的增强器
+        switch (aspectJAnnotation.getAnnotationType()) {
+            case AtPointcut:
+                if (logger.isDebugEnabled()) {
+                    logger.debug(&quot;Processing pointcut &#39;&quot; + candidateAdviceMethod.getName() + &quot;&#39;&quot;);
+                }
+                return null;
+            case AtAround:
+                springAdvice = new AspectJAroundAdvice(
+                        candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+                break;
+            case AtBefore:
+                springAdvice = new AspectJMethodBeforeAdvice(
+                        candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+                break;
+            case AtAfter:
+                springAdvice = new AspectJAfterAdvice(
+                        candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+                break;
+            case AtAfterReturning:
+                springAdvice = new AspectJAfterReturningAdvice(
+                        candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+                AfterReturning afterReturningAnnotation = (AfterReturning) aspectJAnnotation.getAnnotation();
+                if (StringUtils.hasText(afterReturningAnnotation.returning())) {
+                    springAdvice.setReturningName(afterReturningAnnotation.returning());
+                }
+                break;
+            case AtAfterThrowing:
+                springAdvice = new AspectJAfterThrowingAdvice(
+                        candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+                AfterThrowing afterThrowingAnnotation = (AfterThrowing) aspectJAnnotation.getAnnotation();
+                if (StringUtils.hasText(afterThrowingAnnotation.throwing())) {
+                    springAdvice.setThrowingName(afterThrowingAnnotation.throwing());
+                }
+                break;
+            default:
+                throw new UnsupportedOperationException(
+                        &quot;Unsupported advice type on method: &quot; + candidateAdviceMethod);
+        }
+
+        // Now to configure the advice...
+        springAdvice.setAspectName(aspectName);
+        springAdvice.setDeclarationOrder(declarationOrder);
+        String[] argNames = this.parameterNameDiscoverer.getParameterNames(candidateAdviceMethod);
+        if (argNames != null) {
+            springAdvice.setArgumentNamesFromStringArray(argNames);
+        }
+        springAdvice.calculateArgumentBindings();
+
+        return springAdvice;
+    }</code></pre>
+<p>从函数中可以看到，Spring会根据不同的注解生成不同的增强器，例如AtBefore会对应AspectJMethodBeforeAdvice，而在AspectJMethodBeforeAdvice中完成了增强方法的逻辑。我尝试分析几个常用的增强器实现。</p>
+<ul>
+<li><p>MethodBeforeAdvicelnterceptor</p>
+<p>我们先查看MethodBeforeAdvicelnterceptor类的内部实现</p>
+</li>
+</ul>
+<pre><code class="java">public class MethodBeforeAdviceInterceptor implements MethodInterceptor, BeforeAdvice, Serializable {
+
+    private final MethodBeforeAdvice advice;
+
+    /**
+     * Create a new MethodBeforeAdviceInterceptor for the given advice.
+     * @param advice the MethodBeforeAdvice to wrap
+     */
+    public MethodBeforeAdviceInterceptor(MethodBeforeAdvice advice) {
+        Assert.notNull(advice, &quot;Advice must not be null&quot;);
+        this.advice = advice;
+    }
+
+    @Override
+    public Object invoke(MethodInvocation mi) throws Throwable {
+        this.advice.before(mi.getMethod(), mi.getArguments(), mi.getThis());
+        return mi.proceed();
+    }
+
+}</code></pre>
+<p>其中的属性MethodBeforeAdvice代表着前置增强的AspectJMethodBeforeAdvice，跟踪before方法:</p>
+<pre><code class="java">    //1.跟踪进入
+    public void before(Method method, Object[] args, @Nullable Object target) throws Throwable {
+        invokeAdviceMethod(getJoinPointMatch(), null, null);
+    }
+
+    //2.跟踪进入
+    protected Object invokeAdviceMethod(
+            @Nullable JoinPointMatch jpMatch, @Nullable Object returnValue, @Nullable Throwable ex)
+            throws Throwable {
+
+        return invokeAdviceMethodWithGivenArgs(argBinding(getJoinPoint(), jpMatch, returnValue, ex));
+    }
+
+    //3.跟踪进入
+    protected Object invokeAdviceMethodWithGivenArgs(Object[] args) throws Throwable {
+        Object[] actualArgs = args;
+        if (this.aspectJAdviceMethod.getParameterCount() == 0) {
+            actualArgs = null;
+        }
+        try {
+            ReflectionUtils.makeAccessible(this.aspectJAdviceMethod);
+            // TODO AopUtils.invokeJoinpointUsingReflection
+            // 激活增强方法
+            return this.aspectJAdviceMethod.invoke(this.aspectInstanceFactory.getAspectInstance(), actualArgs);
+        }
+        catch (IllegalArgumentException ex) {
+            throw new AopInvocationException(&quot;Mismatch on arguments to advice method [&quot; +
+                    this.aspectJAdviceMethod + &quot;]; pointcut expression [&quot; +
+                    this.pointcut.getPointcutExpression() + &quot;]&quot;, ex);
+        }
+        catch (InvocationTargetException ex) {
+            throw ex.getTargetException();
+        }
+    }
+</code></pre>
+<p>invokeAdviceMethodWithGivenArgs方法中的aspectJAdviceMethod正是对于前置增强的方法，在这里实现了调用。</p>
+<ul>
+<li>AspectJAfterAdvice</li>
+</ul>
+<p>后置增强与前置增强有稍许不一致的地方。回顾之前讲过的前置增强，大致的结构是在拦截器链中放置MethodBeforeAdviceInterceptor，而在MethodBeforeAdviceinterceptor中又放置了AspectJMethodBeforeAdvice，并在调用invoke时先串联调用。但是在后置增强的时候却不一样，没有提供中间的类而是直接在拦截器链中使用了中间的AspectJAfterAdvice。</p>
+<pre><code class="java">    public class AspectJAfterAdvice extends AbstractAspectJAdvice
+        implements MethodInterceptor, AfterAdvice, Serializable {
+
+    public AspectJAfterAdvice(
+            Method aspectJBeforeAdviceMethod, AspectJExpressionPointcut pointcut, AspectInstanceFactory aif) {
+
+        super(aspectJBeforeAdviceMethod, pointcut, aif);
+    }
+
+
+    @Override
+    public Object invoke(MethodInvocation mi) throws Throwable {
+        try {
+            return mi.proceed();
+        }
+        finally {
+            // 激活增强方法
+            invokeAdviceMethod(getJoinPointMatch(), null, null);
+        }
+    }
+
+    @Override
+    public boolean isBeforeAdvice() {
+        return false;
+    }
+
+    @Override
+    public boolean isAfterAdvice() {
+        return true;
+    }
+
+}</code></pre>
+<p><strong>2.增加同步实例化增强器</strong></p>
+<p>如果寻找的增强器不为空而且又配置了增强延迟初始化，那么就需要在首位加入同步实例化强器。同步实例化增强器SyntheticlnstantiationAdvisor如下：</p>
+<pre><code class="java">    protected static class SyntheticInstantiationAdvisor extends DefaultPointcutAdvisor {
+
+        public SyntheticInstantiationAdvisor(final MetadataAwareAspectInstanceFactory aif) {
+            // 目标方法前调用，类似@Before
+            super(aif.getAspectMetadata().getPerClausePointcut(), (MethodBeforeAdvice)
+                  //　简单初始化 aspect
+                    (method, args, target) -&gt; aif.getAspectInstance());
+        }
+    }</code></pre>
+<p><strong>3.获取DeclareParents注解</strong></p>
+<p>DeclareParents主要用于引介增强的注解形式的实现，而其实方式与普通增强很类似，只不过使用DeclareParentsAdvisor对功能进行封装。</p>
+<pre><code class="java">    @Nullable
+    private Advisor getDeclareParentsAdvisor(Field introductionField) {
+        DeclareParents declareParents = introductionField.getAnnotation(DeclareParents.class);
+        if (declareParents == null) {
+            // Not an introduction field
+            return null;
+        }
+
+        if (DeclareParents.class == declareParents.defaultImpl()) {
+            throw new IllegalStateException(&quot;&#39;defaultImpl&#39; attribute must be set on DeclareParents&quot;);
+        }
+
+        return new DeclareParentsAdvisor(
+                introductionField.getType(), declareParents.value(), declareParents.defaultImpl());
+    }</code></pre>
+<h2 id="寻找匹配的增强器"><a href="#寻找匹配的增强器" class="headerlink" title="寻找匹配的增强器"></a>寻找匹配的增强器</h2><p>前面的函数中已经完成了所有增强器的解析，但是对于所有增强器来讲，并不一定都适用当前的Bean，还要挑出适合的增强器，也就满足们配的通配符的增强器。具实现在findAdvisorsThatCanApply中。</p>
+<pre><code class="java">    public static List&lt;Advisor&gt; findAdvisorsThatCanApply(List&lt;Advisor&gt; candidateAdvisors, Class&lt;?&gt; clazz) {
+        if (candidateAdvisors.isEmpty()) {
+            return candidateAdvisors;
+        }
+        List&lt;Advisor&gt; eligibleAdvisors = new ArrayList&lt;&gt;();
+        //　首先处理引介增强器
+        for (Advisor candidate : candidateAdvisors) {
+            if (candidate instanceof IntroductionAdvisor &amp;&amp; canApply(candidate, clazz)) {
+                eligibleAdvisors.add(candidate);
+            }
+        }
+        boolean hasIntroductions = !eligibleAdvisors.isEmpty();
+
+        for (Advisor candidate : candidateAdvisors) {
+            // 引介增前器已处理
+            if (candidate instanceof IntroductionAdvisor) {
+                // already processed
+                continue;
+            }
+            //　对于普通bean的处理
+            if (canApply(candidate, clazz, hasIntroductions)) {
+                eligibleAdvisors.add(candidate);
+            }
+        }
+        return eligibleAdvisors;
+    }</code></pre>
+<p>findAdvisorsThatCanApply函数的主要功能是寻找所有增强器中适用于当前class的增强器。引介强与普通的增强处理是不一样的，所以分开处理。而对于真正的匹配在canApply中现。</p>
+<pre><code class="java">    public static boolean canApply(Advisor advisor, Class&lt;?&gt; targetClass, boolean hasIntroductions) {
+        if (advisor instanceof IntroductionAdvisor) {
+            return ((IntroductionAdvisor) advisor).getClassFilter().matches(targetClass);
+        }
+        else if (advisor instanceof PointcutAdvisor) {
+            PointcutAdvisor pca = (PointcutAdvisor) advisor;
+            return canApply(pca.getPointcut(), targetClass, hasIntroductions);
+        }
+        else {
+            // It doesn&#39;t have a pointcut so we assume it applies.
+            return true;
+        }
+    }
+
+    // 继续跟踪方法canApply
+    public static boolean canApply(Pointcut pc, Class&lt;?&gt; targetClass, boolean hasIntroductions) {
+        Assert.notNull(pc, &quot;Pointcut must not be null&quot;);
+        if (!pc.getClassFilter().matches(targetClass)) {
+            return false;
+        }
+
+        MethodMatcher methodMatcher = pc.getMethodMatcher();
+        if (methodMatcher == MethodMatcher.TRUE) {
+            // No need to iterate the methods if we&#39;re matching any method anyway...
+            return true;
+        }
+
+        IntroductionAwareMethodMatcher introductionAwareMethodMatcher = null;
+        if (methodMatcher instanceof IntroductionAwareMethodMatcher) {
+            introductionAwareMethodMatcher = (IntroductionAwareMethodMatcher) methodMatcher;
+        }
+
+        Set&lt;Class&lt;?&gt;&gt; classes = new LinkedHashSet&lt;&gt;();
+        if (!Proxy.isProxyClass(targetClass)) {
+            classes.add(ClassUtils.getUserClass(targetClass));
+        }
+        classes.addAll(ClassUtils.getAllInterfacesForClassAsSet(targetClass));
+
+        for (Class&lt;?&gt; clazz : classes) {
+            Method[] methods = ReflectionUtils.getAllDeclaredMethods(clazz);
+            for (Method method : methods) {
+                if (introductionAwareMethodMatcher != null ?
+                        introductionAwareMethodMatcher.matches(method, targetClass, hasIntroductions) :
+                        methodMatcher.matches(method, targetClass)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }</code></pre>
+<h2 id="创建代理"><a href="#创建代理" class="headerlink" title="创建代理"></a>创建代理</h2><p>获取了所有对应bean的增强器后，便可以进行代理的创建了。</p>
+<pre><code class="java">    protected Object createProxy(Class&lt;?&gt; beanClass, @Nullable String beanName,
+            @Nullable Object[] specificInterceptors, TargetSource targetSource) {
+
+        if (this.beanFactory instanceof ConfigurableListableBeanFactory) {
+            AutoProxyUtils.exposeTargetClass((ConfigurableListableBeanFactory) this.beanFactory, beanName, beanClass);
+        }
+
+        ProxyFactory proxyFactory = new ProxyFactory();       
+        // 获取当前类中相关属性
+        proxyFactory.copyFrom(this);
+        // 决定对于给定的bean是否应该使用targetClass而不是它的接口代理
+        // 检查proxyTargetclass设置以及preserveTargetClass属性
+        if (!proxyFactory.isProxyTargetClass()) {
+            if (shouldProxyTargetClass(beanClass, beanName)) {
+                proxyFactory.setProxyTargetClass(true);
+            }
+            else {
+                // 添加接口代理
+                evaluateProxyInterfaces(beanClass, proxyFactory);
+            }
+        }
+
+        // 加入增强方器
+        Advisor[] advisors = buildAdvisors(beanName, specificInterceptors);
+        proxyFactory.addAdvisors(advisors);
+        // 设置要代理的类
+        proxyFactory.setTargetSource(targetSource);
+        // 定制代理
+        customizeProxyFactory(proxyFactory);
+        // 用来控制代理工厂被配置之后，是否还允许修改通知
+        // 缺省值为false(即在代理被配置后，不允许修改代理的配置)
+        proxyFactory.setFrozen(this.freezeProxy);
+        if (advisorsPreFiltered()) {
+            proxyFactory.setPreFiltered(true);
+        }
+
+        return proxyFactory.getProxy(getProxyClassLoader());
+    }
+
+    // 跟踪代码 添加接口代理
+    protected void evaluateProxyInterfaces(Class&lt;?&gt; beanClass, ProxyFactory proxyFactory) {
+        Class&lt;?&gt;[] targetInterfaces = ClassUtils.getAllInterfacesForClass(beanClass, getProxyClassLoader());
+        boolean hasReasonableProxyInterface = false;
+        for (Class&lt;?&gt; ifc : targetInterfaces) {
+            if (!isConfigurationCallbackInterface(ifc) &amp;&amp; !isInternalLanguageInterface(ifc) &amp;&amp;
+                    ifc.getMethods().length &gt; 0) {
+                hasReasonableProxyInterface = true;
+                break;
+            }
+        }
+        if (hasReasonableProxyInterface) {
+            // Must allow for introductions; can&#39;t just set interfaces to the target&#39;s interfaces only.
+            for (Class&lt;?&gt; ifc : targetInterfaces) {
+                proxyFactory.addInterface(ifc);
+            }
+        }
+        else {
+            proxyFactory.setProxyTargetClass(true);
+        }</code></pre>
+<p>对于代理类的创建及处理，Spring委托给了ProxyFactorγ去处理，而在此函数中主要是对ProxyFactory的初始化操作，进而对真正的创建代理做准备，这些初始化操作包括如下内容。</p>
+<p>1.获当前类中的属性。</p>
+<p>2.添加代理接口。</p>
+<p>3.封装Advisor并加入到ProxyFactory中。</p>
+<p>4.设置要代理的类。</p>
+<p>5.当然在Spring中还为子类提供了定制的函数customizeProxyFactory，子类可以在此函数中进行对ProxyFactory的进一步封装。</p>
+<p>6.进行获取代理操作。</p>
+<p>其中，封装Advisor加入到ProxyFactory中以及创建代理是两个相对繁琐的过程，可以通过ProxyFactory提供的addAdvisor方法直接将增强器置人代理创建工厂中，但是将拦截器封装为增强器还需要一定的逻辑的。</p>
+<pre><code class="java">    protected Advisor[] buildAdvisors(@Nullable String beanName, @Nullable Object[] specificInterceptors) {
+        // Handle prototypes correctly...
+        // 解析注册的所有InterceptorName
+        Advisor[] commonInterceptors = resolveInterceptorNames();
+
+        List&lt;Object&gt; allInterceptors = new ArrayList&lt;&gt;();
+        if (specificInterceptors != null) {
+            // 加入拦截器
+            allInterceptors.addAll(Arrays.asList(specificInterceptors));
+            if (commonInterceptors.length &gt; 0) {
+                if (this.applyCommonInterceptorsFirst) {
+                    allInterceptors.addAll(0, Arrays.asList(commonInterceptors));
+                }
+                else {
+                    allInterceptors.addAll(Arrays.asList(commonInterceptors));
+                }
+            }
+        }
+        if (logger.isDebugEnabled()) {
+            int nrOfCommonInterceptors = commonInterceptors.length;
+            int nrOfSpecificInterceptors = (specificInterceptors != null ? specificInterceptors.length : 0);
+            logger.debug(&quot;Creating implicit proxy for bean &#39;&quot; + beanName + &quot;&#39; with &quot; + nrOfCommonInterceptors +
+                    &quot; common interceptors and &quot; + nrOfSpecificInterceptors + &quot; specific interceptors&quot;);
+        }
+
+        Advisor[] advisors = new Advisor[allInterceptors.size()];
+        for (int i = 0; i &lt; allInterceptors.size(); i++) {
+            // 拦截器转进行封装转为Advisor
+            advisors[i] = this.advisorAdapterRegistry.wrap(allInterceptors.get(i));
+        }
+        return advisors;
+    }
+
+
+    // 继续跟踪warp方法
+    public Advisor wrap(Object adviceObject) throws UnknownAdviceTypeException {
+        // 如果要封装电的对象是本身就是Advisor类型，那么无须再做过多的处理
+        if (adviceObject instanceof Advisor) {
+            return (Advisor) adviceObject;
+        }
+        // 因为此封装方法只对Adviosr与Advice两种类型的数据有效，如果不是将不能封装
+        if (!(adviceObject instanceof Advice)) {
+            throw new UnknownAdviceTypeException(adviceObject);
+        }
+        Advice advice = (Advice) adviceObject;
+        if (advice instanceof MethodInterceptor) {
+            // 如果是MethodInterceptor类型则使用DefaultPointcutAdvisor封装
+            // So well-known it doesn&#39;t even need an adapter.
+            return new DefaultPointcutAdvisor(advice);
+        }
+        // 如果存在Advisor的适配器那么也同样需要进行封装
+        for (AdvisorAdapter adapter : this.adapters) {
+            // Check that it is supported.
+            if (adapter.supportsAdvice(advice)) {
+                return new DefaultPointcutAdvisor(advice);
+            }
+        }
+        throw new UnknownAdviceTypeException(advice);
+    }</code></pre>
+<p>由于Spring中涉及过多的拦截器、增强器、增强方法等方式来对逻辑进行增强，所以非常有必要统一封装Advisor来进行代理的创建，完成了增强的封装过程，那么解析最重要的一步就是代理的创建与获取了。</p>
+<pre><code class="java">    public Object getProxy(@Nullable ClassLoader classLoader) {
+        return createAopProxy().getProxy(classLoader);
+    }</code></pre>
+<h3 id="1-创建代理"><a href="#1-创建代理" class="headerlink" title="1.创建代理"></a>1.创建代理</h3><pre><code class="java">    protected final synchronized AopProxy createAopProxy() {
+        if (!this.active) {
+            activate();
+        }
+        // 创建代理
+        return getAopProxyFactory().createAopProxy(this);
+    }
+
+    // 继续跟踪方法
+    public AopProxy createAopProxy(AdvisedSupport config) throws AopConfigException {
+        if (config.isOptimize() || config.isProxyTargetClass() || hasNoUserSuppliedProxyInterfaces(config)) {
+            Class&lt;?&gt; targetClass = config.getTargetClass();
+            if (targetClass == null) {
+                throw new AopConfigException(&quot;TargetSource cannot determine target class: &quot; +
+                        &quot;Either an interface or a target is required for proxy creation.&quot;);
+            }
+            if (targetClass.isInterface() || Proxy.isProxyClass(targetClass)) {
+                // jdk动态代理
+                return new JdkDynamicAopProxy(config);
+            }
+            // cglib代理
+            return new ObjenesisCglibAopProxy(config);
+        }
+        else {
+            return new JdkDynamicAopProxy(config);
+        }
+    }</code></pre>
+<p>此已经完成了代理的创建，不管我们之前否阅读过pring源代码，但是都或多或少地过对于Spring的代中JDKProxy的实现CglibProxy的实现。Spring是如何选取的呢？网上的介绍有很多，现在我们就从惊代码的角度分析，看看到底Spring是如何选择代理方式的。</p>
+<p>从if中的判断条件可以看到3个方面影响着Spring的判断。</p>
+<ul>
+<li><p><strong>optimize：</strong>用来控制通过CGLIB创建的代理是否使用激进的优化策略。除非完全了解AOP代理如何处理优化，否则不推荐用户使用这个设直。目前这个属性仅用于CGLIB代理，对于JDK动态代理（默认代理）无效。</p>
+</li>
+<li><p><strong>proxyTargetClass：</strong>这个属性为true时，目标类本身被代理而不是目标类的接口。如果个属性值被设为true,CGLIB代理将被创建，设置方式为＜aop:aspectj-autoproxy-proxy-target-class＝”true”／＞。</p>
+</li>
+<li><p><strong>hasNoUserSuppliedProxyinterfaces：</strong>是否存在代理接口。</p>
+</li>
+</ul>
+<p>下面是对JDK与Cglib方式的总结。</p>
+<ul>
+<li><p>如果目标对象实现了接口，默认情况下会采用JDK的动态代理实现AOP。</p>
+</li>
+<li><p>如果目标对象实现了接口，可以强制使用CGLIB实现AOP。</p>
+</li>
+<li><p>如果目标对象没有实现接口，必须采用CGLIB库，Spring会自动在JDK动态代理和CGLB之间转换。</p>
+</li>
+</ul>
+<p>如何强制使用CGLIB实现AOP?</p>
+<ul>
+<li><p>添加CGLIB库，Spring_HOME/cglib/*.jar。</p>
+</li>
+<li><p>在Spring配直文件中加入＜aop:aspectj-autoproxyproxy-target-class＝”true’/&gt;。</p>
+</li>
+</ul>
+<p>JDK动态代理和CGLIB字节码生成的区别？</p>
+<ul>
+<li><p>JDK动态代理只能对实现了接口的类生成代理，而不能针对类。</p>
+</li>
+<li><p>CGLIB是针对类实现代理，主要是对指定的类生成一个子类，覆盖其中的方法，因为是继承，所以该类或方法最好不要声明成final。</p>
+</li>
+</ul>
+<h3 id="2-获取代理"><a href="#2-获取代理" class="headerlink" title="2.获取代理"></a>2.获取代理</h3><p>确定了使用哪种代理方式后便可以进行代理的创建了，但是创建之前有必要回顾一下两种方式的使用方法。</p>
+<h4 id="1-JDK代理使用示例"><a href="#1-JDK代理使用示例" class="headerlink" title="1.JDK代理使用示例"></a>1.JDK代理使用示例</h4><p>创建业务接口，业务对外提供的接口，包含着业务可以对外的提供的功能</p>
+<pre><code class="java">public interface IUserDao {
+   // 目标方法
+    void save();
+}</code></pre>
+<p>创建业务接口实现类</p>
+<pre><code class="java">public class UserDao implements IUserDao {
+    @Override
+    public void save() {
+        System.out.println(&quot;save ...&quot;);
+    }
+}</code></pre>
+<p>创建自定义代理工厂</p>
+<pre><code class="java">public class ProxyFactory {
+
+    // 目标对象
+    private Object target;
+    // 构造方法
+    public ProxyFactory(Object target) {
+        this.target = target;
+    }
+   // 获取目标对象的代理对象
+    public Object getProxyInstance() {
+
+        return Proxy.newProxyInstance(target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(),
+                new InvocationHandler() {
+                    // 执行目标对象的方法
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        System.out.println(&quot;start log&quot;);
+                        Object returnValue = method.invoke(target, args);
+                        System.out.println(&quot;end log&quot;);
+                        return returnValue;
+                    }
+                });
+    }
+}
+</code></pre>
+<p>最后测试类，验证对于接口的增强是否祈祷作用</p>
+<pre><code class="java"> public static void main(String[] args) {
+         // 实例化目标对象
+        IUserDao target = new UserDao();
+        System.out.println(target.getClass());
+         // 生成代理对象
+        IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstance();
+        System.out.println(proxy.getClass());
+
+         // 调用代理对象的方法
+        proxy.save();
+    }</code></pre>
+<p>起来很简单，其实这基本上就是AOP的一个简单实现了，在目标对象的方法执行之前和l执行之后进行了增强。Spring的AOP实现其实也是用了Proxy和InvocationHandler这两个东西的。</p>
+<p>我们再次来回顾一下使用JDK代理的方式，在整个创建过程中，对于InvocationHandler的创建是最为核心的，在自定义的InvocationHandler中需要重写3个函数。</p>
+<ul>
+<li><p>构造函数，将代理的对象传入。</p>
+</li>
+<li><p>invoke方法，此方法中实现了AOP增强的所有逻辑。</p>
+</li>
+<li><p>getProxy方法，此方法千篇一律，但是必不可少。</p>
+</li>
+</ul>
+<p>我们看看Spring中的JDK代理实现是不是也是这么做的呢？继续之前的跟踪，到达JdkDynamicAopProxy的getProxy。</p>
+<pre><code class="java">    public Object getProxy(@Nullable ClassLoader classLoader) {
+        if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Creating JDK dynamic proxy: target source is &quot; + this.advised.getTargetSource());
+        }
+        Class&lt;?&gt;[] proxiedInterfaces = AopProxyUtils.completeProxiedInterfaces(this.advised, true);
+        findDefinedEqualsAndHashCodeMethods(proxiedInterfaces);
+        return Proxy.newProxyInstance(classLoader, proxiedInterfaces, this);
+    }</code></pre>
+<p>通过之前的示例我们知道，JDKProxy的使用关键是创建自定义的InvocationHandler，而InvocationHandler中包含了需要覆盖的函数getProxy，而当前的方法正是完成了这个操作。再次确认一下Jd.kDynamicAopProxy也确实实现了lnvocationHandler口，那么我们就可以推断出，在Jd.kDynamicAopProxy中一定会有个invoke函数，并且JdkDynamicAopProxy会把AOP的核心逻辑写其中。查看代码，果然有这样一个函数：</p>
+<pre><code class="java">    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object oldProxy = null;
+        boolean setProxyContext = false;
+
+        TargetSource targetSource = this.advised.targetSource;
+        Object target = null;
+
+        try {
+            // equals方法的处理
+            if (!this.equalsDefined &amp;&amp; AopUtils.isEqualsMethod(method)) {
+                // The target does not implement the equals(Object) method itself.
+                return equals(args[0]);
+            }
+            // hash方法的处理
+            else if (!this.hashCodeDefined &amp;&amp; AopUtils.isHashCodeMethod(method)) {
+                // The target does not implement the hashCode() method itself.
+                return hashCode();
+            }
+            else if (method.getDeclaringClass() == DecoratingProxy.class) {
+                // There is only getDecoratedClass() declared -&gt; dispatch to proxy config.
+                return AopProxyUtils.ultimateTargetClass(this.advised);
+            }
+            /**
+             * Class类的isAssignableFrorn(Classe cls）方法：
+             * 如果调用这个方法的class或接口与参数cls表示的类或接口相间，
+             * 或者是参数els表示的类或接口的父类，则返回true。
+             * 形象地．自身类classisAssignableFr。rn（自身类或子类.class)返回true
+             *     例：
+             * Systern.out.println(ArrayL工st.classisAssignableFrorn(Object.class));
+             * //false
+             * Systern.out.printl(Object.class.isAssignableFrorn(ArrayList.class));
+             * //true
+             */
+            else if (!this.advised.opaque &amp;&amp; method.getDeclaringClass().isInterface() &amp;&amp;
+                    method.getDeclaringClass().isAssignableFrom(Advised.class)) {
+                // Service invocations on ProxyConfig with the proxy config...
+                return AopUtils.invokeJoinpointUsingReflection(this.advised, method, args);
+            }
+
+            Object retVal;
+
+            // 有时候目标对象内部的自我调用将无法实施切面中的增强则需要通过此属性暴露代理
+            if (this.advised.exposeProxy) {
+                // Make invocation available if necessary.
+                oldProxy = AopContext.setCurrentProxy(proxy);
+                setProxyContext = true;
+            }
+
+            // Get as late as possible to minimize the time we &quot;own&quot; the target,
+            // in case it comes from a pool.
+            target = targetSource.getTarget();
+            Class&lt;?&gt; targetClass = (target != null ? target.getClass() : null);
+
+            // Get the interception chain for this method.
+            // 获取当前方法的拦截链
+            List&lt;Object&gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
+
+            // Check whether we have any advice. If we don&#39;t, we can fallback on direct
+            // reflective invocation of the target, and avoid creating a MethodInvocation.
+            if (chain.isEmpty()) {
+                // We can skip creating a MethodInvocation: just invoke the target directly
+                // Note that the final invoker must be an InvokerInterceptor so we know it does
+                // nothing but a reflective operation on the target, and no hot swapping or fancy proxying.
+                // 如果没有发现任何拦截链那么直接调用切点方法
+                Object[] argsToUse = AopProxyUtils.adaptArgumentsIfNecessary(method, args);
+                retVal = AopUtils.invokeJoinpointUsingReflection(target, method, argsToUse);
+            }
+            else {
+                // We need to create a method invocation...
+                // 将拦截器封装在ReflectiveMethodInvocation
+                // 以便于使用其proceed进行拦截链表用拦截器
+                MethodInvocation invocation =
+                        new ReflectiveMethodInvocation(proxy, target, method, args, targetClass, chain);
+                // Proceed to the joinpoint through the interceptor chain.
+                retVal = invocation.proceed();
+            }
+
+            // Massage return value if necessary.
+            Class&lt;?&gt; returnType = method.getReturnType();
+            // 返回结果
+            if (retVal != null &amp;&amp; retVal == target &amp;&amp;
+                    returnType != Object.class &amp;&amp; returnType.isInstance(proxy) &amp;&amp;
+                    !RawTargetAccess.class.isAssignableFrom(method.getDeclaringClass())) {
+                // Special case: it returned &quot;this&quot; and the return type of the method
+                // is type-compatible. Note that we can&#39;t help if the target sets
+                // a reference to itself in another returned object.
+                retVal = proxy;
+            }
+            else if (retVal == null &amp;&amp; returnType != Void.TYPE &amp;&amp; returnType.isPrimitive()) {
+                throw new AopInvocationException(
+                        &quot;Null return value from advice does not match primitive return type for: &quot; + method);
+            }
+            return retVal;
+        }
+        finally {
+            if (target != null &amp;&amp; !targetSource.isStatic()) {
+                // Must have come from TargetSource.
+                targetSource.releaseTarget(target);
+            }
+            if (setProxyContext) {
+                // Restore old proxy.
+                AopContext.setCurrentProxy(oldProxy);
+            }
+        }
+    }</code></pre>
+<p>上面的函数中最主要的工作就是创建了一个拦截器链，并使用ReflectiveMethodlnvocation类进行了链的封装，而在ReflectiveMethodlnvocation类的proceed方法中实现了拦截器的逐一调用，那么我们继续来探究，在proceed方法中是怎么实现前置增强在目标方法前调用后置增强在目标方法后调用的逻辑呢？</p>
+<pre><code class="java">    public Object proceed() throws Throwable {
+        // We start with an index of -1 and increment early.
+        // 执行完所有增强后执行切点方法
+        if (this.currentInterceptorIndex == this.interceptorsAndDynamicMethodMatchers.size() - 1) {
+            return invokeJoinpoint();
+        }
+
+        // 获取下一个要执行的拦截器
+        Object interceptorOrInterceptionAdvice =
+                this.interceptorsAndDynamicMethodMatchers.get(++this.currentInterceptorIndex);
+        if (interceptorOrInterceptionAdvice instanceof InterceptorAndDynamicMethodMatcher) {
+            // Evaluate dynamic method matcher here: static part will already have
+            // been evaluated and found to match.
+            // 动态匹配
+            InterceptorAndDynamicMethodMatcher dm =
+                    (InterceptorAndDynamicMethodMatcher) interceptorOrInterceptionAdvice;
+            if (dm.methodMatcher.matches(this.method, this.targetClass, this.arguments)) {
+                return dm.interceptor.invoke(this);
+            }
+            else {
+                // Dynamic matching failed.
+                // Skip this interceptor and invoke the next in the chain.
+                // 不匹配则不执行拦截器
+                return proceed();
+            }
+        }
+        else {
+            // It&#39;s an interceptor, so we just invoke it: The pointcut will have
+            // been evaluated statically before this object was constructed.
+            /**
+             * 普通拦截器直接调用
+             * Exposeinvocationinterceptor、
+             * DelegatePerTargetObjectintroductioninterceptor、
+             * MethodBeforeAdviceinterceptor、
+             * AspectJAroundAdvice、
+             * AspectJAfterAdvice
+             */
+            // 将this作为参数传递以保证当前实例中调用链的执行
+            return ((MethodInterceptor) interceptorOrInterceptionAdvice).invoke(this);
+        }
+    }</code></pre>
+<p>proceed方法中，或许代码逻辑并没有我们想象得那么复杂，ReflectiveMethodlnvocation中的主要职责是维护了链接调用的计数器，记录着当前调用链接的位置，以便链可以有序地进行下去，那么在这个方法中并没有我们之前设想的维护各种增强的顺序，而是将此工作委托给了各个增强器，使各个增强器在内部进行逻辑实现。</p>
+<h4 id="2-CGLIB使用示例"><a href="#2-CGLIB使用示例" class="headerlink" title="2.CGLIB使用示例"></a>2.CGLIB使用示例</h4><p>CGLIB是一个强大的高性能的代码生成包。它广泛地被许多AOP的框架使用，例如SpringAOP和dynaop，为它们提供方法的Interception（拦截）。最流行的OR Mapping工具Hibernate也使用CGLIB来代理单端single-ended（多对一和一对一）关联（对集合的延迟抓取是采用其他机制实现的）。EasyMock和jMock是通过使用模仿（moke）对象来测试Java代码的包。它们都通过使用CGLIB来为那些没有接口的类创建模仿（moke）对象。</p>
+<p>CGLIB包的底层通过使用一个小而快的字节码处理框架ASM，来转换字节码并生成新的类。除了CGLIB包，脚本语言例如Groovy和BeanShell，也是使用ASM来生成Java的字节码。当然不鼓励直接使用ASM，因为它要求你必须对JVM内部结构（包括class文件的格式和指令集）都很熟悉。</p>
+<p>目标类</p>
+<pre><code class="java">public class UserDao {
+    //目标方法
+    public void save() {
+        System.out.println(&quot;save ...&quot;);
+    }
+}</code></pre>
+<p>代理工厂类</p>
+<pre><code class="java">import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
+import java.lang.reflect.Method;
+
+public class ProxyFactory implements MethodInterceptor {
+    //维护目标对象
+    private Object target;
+    public ProxyFactory(Object target) {
+        this.target = target;
+    }
+    public Object getProxyInstance() {
+
+        //工具类
+        Enhancer enhancer = new Enhancer();
+
+        //设置父类
+        enhancer.setSuperclass(target.getClass());
+
+        //设置回调函数
+        enhancer.setCallback(this);
+
+        //创建子类（代理对象）
+        return enhancer.create();
+    }
+
+    @Override
+    public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+
+        System.out.println(&quot;cg lib proxy start &quot;);
+        Object returnValue = method.invoke(target, args);
+
+        System.out.println(&quot;cg lib proxy end&quot;);
+        return returnValue;
+    }
+}</code></pre>
+<p>代理类是运行时CGLIB产生的</p>
+<p>完成CGLIB理的类是委托给Cglib2AopProxy类去实现的，我们进入这个类一探究竟。</p>
+<p>按照前面提供的示例，我们容易判断出来，Cglib2AopProxy的入口应该是在getProxy，也就是说在Cglib2AopProxy类的getProxy方法中实现了Enhancer的创建及接口封装</p>
+<pre><code class="java">    public Object getProxy(@Nullable ClassLoader classLoader) {
+        if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Creating CGLIB proxy: target source is &quot; + this.advised.getTargetSource());
+        }
+
+        try {
+            Class&lt;?&gt; rootClass = this.advised.getTargetClass();
+            Assert.state(rootClass != null, &quot;Target class must be available for creating a CGLIB proxy&quot;);
+
+            Class&lt;?&gt; proxySuperClass = rootClass;
+            if (ClassUtils.isCglibProxyClass(rootClass)) {
+                proxySuperClass = rootClass.getSuperclass();
+                Class&lt;?&gt;[] additionalInterfaces = rootClass.getInterfaces();
+                for (Class&lt;?&gt; additionalInterface : additionalInterfaces) {
+                    this.advised.addInterface(additionalInterface);
+                }
+            }
+
+            // Validate the class, writing log messages as necessary.
+            validateClassIfNecessary(proxySuperClass, classLoader);
+
+            // Configure CGLIB Enhancer...
+            Enhancer enhancer = createEnhancer();
+            if (classLoader != null) {
+                enhancer.setClassLoader(classLoader);
+                if (classLoader instanceof SmartClassLoader &amp;&amp;
+                        ((SmartClassLoader) classLoader).isClassReloadable(proxySuperClass)) {
+                    enhancer.setUseCache(false);
+                }
+            }
+            enhancer.setSuperclass(proxySuperClass);
+            enhancer.setInterfaces(AopProxyUtils.completeProxiedInterfaces(this.advised));
+            enhancer.setNamingPolicy(SpringNamingPolicy.INSTANCE);
+            enhancer.setStrategy(new ClassLoaderAwareUndeclaredThrowableStrategy(classLoader));
+
+            // 设置拦截器
+            Callback[] callbacks = getCallbacks(rootClass);
+            Class&lt;?&gt;[] types = new Class&lt;?&gt;[callbacks.length];
+            for (int x = 0; x &lt; types.length; x++) {
+                types[x] = callbacks[x].getClass();
+            }
+            // fixedInterceptorMap only populated at this point, after getCallbacks call above
+            enhancer.setCallbackFilter(new ProxyCallbackFilter(
+                    this.advised.getConfigurationOnlyCopy(), this.fixedInterceptorMap, this.fixedInterceptorOffset));
+            enhancer.setCallbackTypes(types);
+
+            // Generate the proxy class and create a proxy instance.
+            // 生成代理类以及创建代理
+            return createProxyClassAndInstance(enhancer, callbacks);
+        }
+        catch (CodeGenerationException | IllegalArgumentException ex) {
+            throw new AopConfigException(&quot;Could not generate CGLIB subclass of &quot; + this.advised.getTargetClass() +
+                    &quot;: Common causes of this problem include using a final class or a non-visible class&quot;,
+                    ex);
+        }
+        catch (Throwable ex) {
+            // TargetSource.getTarget() failed
+            throw new AopConfigException(&quot;Unexpected AOP exception&quot;, ex);
+        }
+    }
+
+    // 跟踪代理  生成代理类以及创建代理
+    protected Object createProxyClassAndInstance(Enhancer enhancer, Callback[] callbacks) {
+        enhancer.setInterceptDuringConstruction(false);
+        enhancer.setCallbacks(callbacks);
+        return (this.constructorArgs != null &amp;&amp; this.constructorArgTypes != null ?
+                enhancer.create(this.constructorArgTypes, this.constructorArgs) :
+                enhancer.create());
+    }</code></pre>
+<p>上函数完整地阐述了一个创建Spring的Enhancer的过程，读者可以参考Enhancer的文档查看每个步骤的含义，这里最重要的是通过getCallbacks方法设置拦截器链。</p>
+<pre><code class="java">    private Callback[] getCallbacks(Class&lt;?&gt; rootClass) throws Exception {
+        // Parameters used for optimization choices...
+        // 对于expose-proxy属性的处理
+        boolean exposeProxy = this.advised.isExposeProxy();
+        boolean isFrozen = this.advised.isFrozen();
+        boolean isStatic = this.advised.getTargetSource().isStatic();
+
+        // Choose an &quot;aop&quot; interceptor (used for AOP calls).
+        // 将拦截器分装在DynamicAdvisedInterceptor
+        Callback aopInterceptor = new DynamicAdvisedInterceptor(this.advised);
+
+        // Choose a &quot;straight to target&quot; interceptor. (used for calls that are
+        // unadvised but can return this). May be required to expose the proxy.
+        Callback targetInterceptor;
+        if (exposeProxy) {
+            targetInterceptor = (isStatic ?
+                    new StaticUnadvisedExposedInterceptor(this.advised.getTargetSource().getTarget()) :
+                    new DynamicUnadvisedExposedInterceptor(this.advised.getTargetSource()));
+        }
+        else {
+            targetInterceptor = (isStatic ?
+                    new StaticUnadvisedInterceptor(this.advised.getTargetSource().getTarget()) :
+                    new DynamicUnadvisedInterceptor(this.advised.getTargetSource()));
+        }
+
+        // Choose a &quot;direct to target&quot; dispatcher (used for
+        // unadvised calls to static targets that cannot return this).
+        Callback targetDispatcher = (isStatic ?
+                new StaticDispatcher(this.advised.getTargetSource().getTarget()) : new SerializableNoOp());
+
+        Callback[] mainCallbacks = new Callback[] {
+                   // 将拦截器链加入Callback中
+                aopInterceptor,  // for normal advice
+                targetInterceptor,  // invoke target without considering advice, if optimized
+                new SerializableNoOp(),  // no override for methods mapped to this
+                targetDispatcher, this.advisedDispatcher,
+                new EqualsInterceptor(this.advised),
+                new HashCodeInterceptor(this.advised)
+        };
+
+        Callback[] callbacks;
+
+        // If the target is a static one and the advice chain is frozen,
+        // then we can make some optimizations by sending the AOP calls
+        // direct to the target using the fixed chain for that method.
+        if (isStatic &amp;&amp; isFrozen) {
+            Method[] methods = rootClass.getMethods();
+            Callback[] fixedCallbacks = new Callback[methods.length];
+            this.fixedInterceptorMap = new HashMap&lt;&gt;(methods.length);
+
+            // TODO: small memory optimization here (can skip creation for methods with no advice)
+            for (int x = 0; x &lt; methods.length; x++) {
+                Method method = methods[x];
+                List&lt;Object&gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, rootClass);
+                fixedCallbacks[x] = new FixedChainStaticTargetInterceptor(
+                        chain, this.advised.getTargetSource().getTarget(), this.advised.getTargetClass());
+                this.fixedInterceptorMap.put(methods.toString(), x);
+            }
+
+            // Now copy both the callbacks from mainCallbacks
+            // and fixedCallbacks into the callbacks array.
+            callbacks = new Callback[mainCallbacks.length + fixedCallbacks.length];
+            System.arraycopy(mainCallbacks, 0, callbacks, 0, mainCallbacks.length);
+            System.arraycopy(fixedCallbacks, 0, callbacks, mainCallbacks.length, fixedCallbacks.length);
+            this.fixedInterceptorOffset = mainCallbacks.length;
+        }
+        else {
+            callbacks = mainCallbacks;
+        }
+        return callbacks;
+    }</code></pre>
+<p>在getCallback中Spring考虑了很多情况，但是对于我们说，只需要理解最常用的就可以了，比如将advised属性封装在DynamicAdvisedlnterc巳ptor并加入在callbacks中，这么做的目的是什么呢，如何调用呢？在前面的示例中，我了解到CLIB中对于方法的拦截是通过将自定义的拦截器（实现Methodlnterceptor接口）加入Callback中并在调用代理时直接激活拦截器中的intercept方法来实现的，那么在getCallback中正是实现了这样一目的，Dynamic­Advisedlnterceptor继承自Methodlnterceptor，加入Callback中后，在再次调用代理时会直接调用DynamicAdvisedInterceptor中的intercept方法，由此推断，对于CGLIB方式实现的代理，其核心逻辑必然在DynamicAdvisedInterceptor中的intercept中。</p>
+<pre><code class="java">    public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+        Object oldProxy = null;
+        boolean setProxyContext = false;
+        Object target = null;
+        TargetSource targetSource = this.advised.getTargetSource();
+        try {
+        if (this.advised.exposeProxy) {
+            // Make invocation available if necessary.
+            oldProxy = AopContext.setCurrentProxy(proxy);
+            setProxyContext = true;
+        }
+        // Get as late as possible to minimize the time we &quot;own&quot; the target, in case it comes from a pool...
+        target = targetSource.getTarget();
+        Class&lt;?&gt; targetClass = (target != null ? target.getClass() : null);
+        // 获取连接器链
+        List&lt;Object&gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
+        Object retVal;
+        // Check whether we only have one InvokerInterceptor: that is,
+        // no real advice, but just reflective invocation of the target.
+        if (chain.isEmpty() &amp;&amp; Modifier.isPublic(method.getModifiers())) {
+            // We can skip creating a MethodInvocation: just invoke the target directly.
+            // Note that the final invoker must be an InvokerInterceptor, so we know
+            // it does nothing but a reflective operation on the target, and no hot
+            // swapping or fancy proxying.
+            Object[] argsToUse = AopProxyUtils.adaptArgumentsIfNecessary(method, args);
+            // 如果拦截器链为空则直接激活原方法
+            retVal = methodProxy.invoke(target, argsToUse);
+        }
+        else {
+            // We need to create a method invocation...
+            // 进入链
+            retVal = new CglibMethodInvocation(proxy, target, method, args, targetClass, chain, methodProxy).proceed();
+        }
+        retVal = processReturnType(proxy, target, method, retVal);
+        return retVal;
+        }
+        finally {
+        if (target != null &amp;&amp; !targetSource.isStatic()) {
+            targetSource.releaseTarget(target);
+        }
+        if (setProxyContext) {
+            // Restore old proxy.
+            AopContext.setCurrentProxy(oldProxy);
+        }
+        }
+    }</code></pre>
+<p>上述的实现与JDK方式实现代理中的invoke方法大同小异，都是首先构造链，然后封装此链进行串联调用，稍有些区别就是在JDK中直接构造ReflectiveMethodInvocation，而在cglib中使用CglibMethodInvocation。CglibMethodlnvocation继承自ReflectiveMethodInvocation，但是proceed方法并没有重写。</p>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Spring源码分析（26）动态AOP</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">9.8k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="莫问-廖远佩">莫问-廖远佩</a></p>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 内容非商用，仅作为学习记录之用若有侵权请联系：liaoyuanpei@foxmail.com。
+    </p>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020 莫问-廖远佩</p>
+
+<!--<p class="footer-entry">-->
+    <!--<a _ngcontent-c1="" href="https://www.upyun.com/" target="_blank" rel="noopener" style="display: inline-block; opacity: .55">-->
+        <!--<img _ngcontent-c1="" alt="upyun logo" src="/blog/img/upanyun_logo2.png" style="width:55px;height:24px">-->
+        <!--又拍云提供加速-->
+    <!--</a>-->
+<!--</p>-->
+<p class="footer-entry">
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61092402000103" target="_blank"><img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">陕公安备案61092402000103号</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>如果喜欢就打赏一下,鼓励下呗!</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/blog/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/blog/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/blog/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/blog/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#理财','#生活','#方法论','#编程','#算法','#技巧','#工具','#java','#框架','#spring','#win10','#devops','#docker','#中间件','#正则','#linux','#登天梯','#数据库','#mysql','#mybatis','#面试','#redis','#读书','#python','#思维导图','#目录','#git','#程序','#ide','#前端','#js','#vue','#jvm','#GC','#杂项','#线程','#设计模式',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/blog/img/blog_bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>mysql基础 | 莫问的博客</title>
+  <meta name="keywords" content=" 编程 , 数据库 ">
+  <meta name="description" content="mysql基础 | 莫问的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="网址ip查询修改ip 免费HTTPS证书证书 webpack入口 Entry  出口 Output 加载器 Loaders 插件 Plugins 基础配置# 初始化 npm init # 本地局部安装webpack cnpm install webpack --save-dev # 安装webpack-dev-server (启动服务、热更新、接口代理) cnpm install webpack-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iview">
+<meta property="og:url" content="http://blog.jiyijy.com/2020/study/web/web/index.html">
+<meta property="og:site_name" content="莫问的博客">
+<meta property="og:description" content="网址ip查询修改ip 免费HTTPS证书证书 webpack入口 Entry  出口 Output 加载器 Loaders 插件 Plugins 基础配置# 初始化 npm init # 本地局部安装webpack cnpm install webpack --save-dev # 安装webpack-dev-server (启动服务、热更新、接口代理) cnpm install webpack-">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-04-21T07:16:48.993Z">
+<meta property="article:modified_time" content="2020-04-21T04:14:56.202Z">
+<meta property="article:author" content="莫问-廖远佩">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/blog/img/avatar.jpg">
+
+<link href="/blog/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/blog/css/hl_theme/zenbum.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/blog/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/blog/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/blog">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/blog/" class="avatar_target">
+    <img class="avatar" src="/blog/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>莫问-廖远佩</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(97)</small></div></li>
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(4)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="win10">win10<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="理财">理财<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法"><i class="fold iconfont icon-right"></i>算法<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="排序算法">排序算法<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂项">杂项<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="框架"><i class="fold iconfont icon-right"></i>框架<small>(36)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="mybatis">mybatis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="spring">spring<small>(33)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringCloud">SpringCloud<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="devops"><i class="fold iconfont icon-right"></i>devops<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="jenkins">jenkins<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="python">python<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="docker">docker<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="中间件"><i class="fold iconfont icon-right"></i>中间件<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="redis">redis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="基础">基础<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="面试">面试<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶">进阶<small>(17)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="规范">规范<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶a">进阶a<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="思维导图">思维导图<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="新特性">新特性<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="GC">GC<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具">工具<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="阅读">阅读<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/blog/">关于</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="97">
+<input type="hidden" id="yelog_site_word_count" value="174.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">理财</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">技巧</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">win10</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">devops</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">中间件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">正则</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">登天梯</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mybatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">思维导图</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ide</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">GC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">杂项</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">设计模式</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="工具 "
+           href="/blog/2020/study/tool/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"
+           data-tag="生活,工具,程序"
+           data-author="" >
+            <span class="post-title" title="工具推荐">工具推荐</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/2020/life/finance/money/"
+           data-tag="理财,生活"
+           data-author="" >
+            <span class="post-title" title="理财入门">理财入门</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/2020/life/finance/%E7%90%86%E8%B4%A2%E6%84%8F%E8%AF%86/"
+           data-tag="理财,生活,方法论"
+           data-author="" >
+            <span class="post-title" title="理财意识觉醒">理财意识觉醒</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="算法 排序算法 "
+           href="/blog/2020/study/algorithm/%E5%9B%BE%E7%A4%BA%E7%AE%97%E6%B3%95/"
+           data-tag="编程,算法"
+           data-author="" >
+            <span class="post-title" title="图示经典算法">图示经典算法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/2020/life/windows/bat/"
+           data-tag="生活,技巧"
+           data-author="" >
+            <span class="post-title" title="BAT">BAT</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/life/windows/security/"
+           data-tag="技巧,工具"
+           data-author="" >
+            <span class="post-title" title="security">security</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/Spring/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="0.Spring介绍">0.Spring介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/2020/life/windows/use/"
+           data-tag="技巧,win10"
+           data-author="" >
+            <span class="post-title" title="win10使用">win10使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops jenkins "
+           href="/blog/2020/study/docker/devops/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="jenkins">jenkins</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/2020/study/middleware/RocketMq/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="RocketMQ">RocketMQ</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/java/reg/"
+           data-tag="编程,工具,正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops docker "
+           href="/blog/2020/study/docker/docker/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="docker">docker</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/2020/study/middleware/nginx/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/"
+           data-tag="linux,登天梯"
+           data-author="" >
+            <span class="post-title" title="梯子">梯子</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/linux_mint/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="linux mint">linux mint</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/2020/study/linux/linux/"
+           data-tag="编程,linux"
+           data-author="" >
+            <span class="post-title" title="linux">linux</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/2020/study/mysql/SQL%E8%AF%AD%E8%A8%80%E5%88%86%E7%B1%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="SQL分类">SQL分类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 mybatis "
+           href="/blog/2020/study/mybatis/mybatis%E9%9D%A2%E8%AF%95/"
+           data-tag="mybatis,面试"
+           data-author="" >
+            <span class="post-title" title="mybatis面试">mybatis面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 面试 "
+           href="/blog/2020/study/mysql/sql%E4%BC%98%E5%8C%96/"
+           data-tag="编程,java,框架,mysql,面试"
+           data-author="" >
+            <span class="post-title" title="面试sql优化">面试sql优化</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="中间件 redis "
+           href="/blog/2020/study/mysql/redis/"
+           data-tag="编程,中间件,redis"
+           data-author="" >
+            <span class="post-title" title="redis">redis</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96demo/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="实验数据">实验数据</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/2020/study/mysql/mysql%E5%9F%BA%E7%A1%80/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="mysql基础">mysql基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="数据库系统原理">数据库系统原理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 读书 "
+           href="/blog/2020/study/mysql/%E9%AB%98%E6%80%A7%E8%83%BD/"
+           data-tag="编程,数据库,mysql,读书"
+           data-author="" >
+            <span class="post-title" title="mysql高性能(第三版)">mysql高性能(第三版)</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 规范 "
+           href="/blog/2020/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%9358%E5%86%9B%E8%A7%84/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="58同城数据库军规">58同城数据库军规</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="devops python "
+           href="/blog/2020/study/other/python/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="思维导图 "
+           href="/blog/2020/study/other/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag="编程,思维导图,目录"
+           data-author="" >
+            <span class="post-title" title="思维导图目录">思维导图目录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/ffmpeg/"
+           data-tag="生活,编程,工具"
+           data-author="" >
+            <span class="post-title" title="ffmpeg使用">ffmpeg使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/git/"
+           data-tag="编程,工具,git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/mysqlcli/"
+           data-tag="编程,工具,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql client">mysql client</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/tool/ide/"
+           data-tag="编程,工具,ide"
+           data-author="" >
+            <span class="post-title" title="ide">ide</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/js/"
+           data-tag="编程,前端,js"
+           data-author="" >
+            <span class="post-title" title="JS">JS</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/web/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="iview">iview</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/2020/study/web/vue/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 新特性 "
+           href="/blog/2020/study/java/base/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="jdk8新特性">jdk8新特性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/01/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（01）基本介绍">Spring源码分析（01）基本介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java GC "
+           href="/blog/2020/study/java/base/%E5%9F%BA%E6%9C%AC%E5%8A%9F-GC/"
+           data-tag="编程,jvm,GC"
+           data-author="" >
+            <span class="post-title" title="GC基础">GC基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/02/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（02）容器基本用法">Spring源码分析（02）容器基本用法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/05/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（05）获取Document">Spring源码分析（05）获取Document</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/03/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（03）容器核心类">Spring源码分析（03）容器核心类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/08/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（08）AbstractBeanDefinition属性">Spring源码分析（08）AbstractBeanDefinition属性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/06/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（06）解析和注册BeanDefinitions">Spring源码分析（06）解析和注册BeanDefinitions</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/04/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（04）容器的基础XmlBeanFactory">Spring源码分析（04）容器的基础XmlBeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/10/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（10）注册解析的BeanDefinition">Spring源码分析（10）注册解析的BeanDefinition</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/09/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（09）解析默认标签中的自定义标签元素">Spring源码分析（09）解析默认标签中的自定义标签元素</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/11/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（11）bean的加载">Spring源码分析（11）bean的加载</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/13/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（13）缓存中获取单例bean">Spring源码分析（13）缓存中获取单例bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/12/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（12）FactoryBean的使用">Spring源码分析（12）FactoryBean的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/14/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（14）从bean的实例中获取对象">Spring源码分析（14）从bean的实例中获取对象</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/16/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（16）准备创建bean">Spring源码分析（16）准备创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/15/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（15）获取单例">Spring源码分析（15）获取单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/17/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（17）循环依赖">Spring源码分析（17）循环依赖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/19/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（19）容器的功能扩展概览">Spring源码分析（19）容器的功能扩展概览</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/20/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（20）准备环境">Spring源码分析（20）准备环境</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/21/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（21）加载BeanFactory">Spring源码分析（21）加载BeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/24/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（24）初始化非延迟加载单例">Spring源码分析（24）初始化非延迟加载单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/22/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（22）功能扩展">Spring源码分析（22）功能扩展</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/23/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（23）BeanFactory的后处理">Spring源码分析（23）BeanFactory的后处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/25/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（25）finishRefresh">Spring源码分析（25）finishRefresh</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/27/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（27）静态AOP">Spring源码分析（27）静态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/28/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（28）mvc快速体验">Spring源码分析（28）mvc快速体验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/29/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（29）ContextLoaderListener">Spring源码分析（29）ContextLoaderListener</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/26/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（26）动态AOP">Spring源码分析（26）动态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/31/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（31）DispatcherServlet的逻辑处理">Spring源码分析（31）DispatcherServlet的逻辑处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/arthas/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="Arthas">Arthas</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/spring%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,框架,spring,面试"
+           data-author="" >
+            <span class="post-title" title="spring面试问题与答案集锦">spring面试问题与答案集锦</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/30/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（30）DispatcherServlet">Spring源码分析（30）DispatcherServlet</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/tool/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="javap">javap</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/2020/study/java/jvmtool/jstat/"
+           data-tag="编程,工具,java"
+           data-author="" >
+            <span class="post-title" title="jstat命令手册">jstat命令手册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/study/java/netease/2020%E4%BD%9C%E4%B8%9A/"
+           data-tag="编程,java,杂项"
+           data-author="" >
+            <span class="post-title" title="作业记录">作业记录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/2020/study/java/netease/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JAVA%E8%99%9A%E6%8B%9F%E6%9C%BA/"
+           data-tag="编程,java,读书,jvm"
+           data-author="" >
+            <span class="post-title" title="深入理解虚拟机-作业">深入理解虚拟机-作业</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/2020/study/java/springcloud/springBoot/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="SpringBoot">SpringBoot</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/2020/study/java/springcloud/springCloud/"
+           data-tag="编程,java,框架"
+           data-author="" >
+            <span class="post-title" title="SpringCloud">SpringCloud</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/2020/study/java/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,面试,线程"
+           data-author="" >
+            <span class="post-title" title="一次简单的线程池面试">一次简单的线程池面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java 阅读 "
+           href="/blog/2020/study/java/%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="JAVA性能优化权威">JAVA性能优化权威</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/2020/study/java/%E4%BC%98%E5%8C%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="编程,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/2020/study/java/%E5%B7%A5%E5%85%B7/maven/"
+           data-tag="编程,工具"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶a "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/01.awk/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="1.AWK">1.AWK</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/02.%E5%91%A8%E6%9C%9F%E6%80%A7%E9%97%AE%E9%A2%98%E5%AE%9E%E9%AA%8C/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="2.MySQL周期性波动试验">2.MySQL周期性波动试验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/03.%E5%AF%B9%E4%BA%8E%E4%B8%8D%E8%A7%84%E5%88%99%E7%9A%84%E5%BB%B6%E8%BF%9F%E7%8E%B0%E8%B1%A1%E7%9A%84%E8%A7%82%E5%AF%9F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="3.对于不规则的延迟现象的观察">3.对于不规则的延迟现象的观察</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/04.%E5%88%97%E7%9A%84%E9%80%89%E6%8B%A9/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="4.选择原则">4.选择原则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/05.%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="5.索引的优化--生效规则">5.索引的优化--生效规则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/06.%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="6.聚簇索引与非聚簇索引">6.聚簇索引与非聚簇索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/10.%E7%B4%A2%E5%BC%95%E4%B8%8E%E6%8E%92%E5%BA%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="10.索引与排序">10.索引与排序</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/09.%E5%BB%B6%E8%BF%9F%E5%85%B3%E8%81%94/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="9.延迟关联">9.延迟关联</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/07.%E7%B4%A2%E5%BC%95%E8%A6%86%E7%9B%96/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="7.索引覆盖">7.索引覆盖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/08.%E7%B4%A2%E5%BC%95%E9%95%BF%E5%BA%A6/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="8.索引长度与区分度">8.索引长度与区分度</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/11.%E9%87%8D%E5%A4%8D%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%86%97%E4%BD%99%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="11.重复索引与冗余索引">11.重复索引与冗余索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/12.%E7%B4%A2%E5%BC%95%E7%A2%8E%E7%89%87%E4%BF%AE%E5%A4%8D/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="12.索引碎片与维护">12.索引碎片与维护</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/13.explain/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="13.explain分析sql效果">13.explain分析sql效果</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/14.%E5%AD%90%E6%9F%A5%E8%AF%A2/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="14.子查询">14.子查询</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/16.%E5%8F%98%E9%87%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="16.变量的使用">16.变量的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/15.%E6%8A%80%E5%B7%A7/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="15.奇技淫巧">15.奇技淫巧</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/17.%E4%BA%8B%E5%8A%A1/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="17.事务">17.事务</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/2020/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/18.%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="18.读写分离">18.读写分离</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/18/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（18）创建bean">Spring源码分析（18）创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/2020/study/java/cnblogSpring/07/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（07）bean标签的解析及注册">Spring源码分析（07）bean标签的解析及注册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-21 15:16:48">2020/04/21</span>-->
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-study/mysql/mysql基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">mysql基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>/
+            
+                <a  data-rel="基础">基础</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">编程</a>
+            
+            <a class="color4">数据库</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        <!--暂时影藏时间-->
+        <!---->
+        <!--创建时间:<time class="date" title='更新时间: 2020-04-21 12:14:56'>2020-04-21 15:16</time>-->
+        <!---->
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.9k</span>
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础知识"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数据库的连接"><span class="toc-text">1.数据库的连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-库级知识"><span class="toc-text">2:库级知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-显示数据库"><span class="toc-text">2.1 显示数据库:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-选择数据库"><span class="toc-text">2.2 选择数据库:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-创建数据库"><span class="toc-text">2.3 创建数据库:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-删除数据库"><span class="toc-text">2.3 删除数据库:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-表级操作"><span class="toc-text">3: 表级操作:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-显示库下面的表"><span class="toc-text">3.1 显示库下面的表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-查看表的结构"><span class="toc-text">3.2 查看表的结构:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-查看表的创建过程"><span class="toc-text">3.3 查看表的创建过程:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-创建表"><span class="toc-text">3.4 创建表:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-修改表"><span class="toc-text">3.5 修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-1-修改表之增加列"><span class="toc-text">3.5.1    修改表之增加列:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-2-修改表之修改列"><span class="toc-text">3.5.2    修改表之修改列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-3-修改表之减少列"><span class="toc-text">3.5.3    修改表之减少列:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-4-修改表之增加主键"><span class="toc-text">3.5.4    修改表之增加主键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-5-修改表之删除主键"><span class="toc-text">3.5.5    修改表之删除主键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-6-修改表之增加索引"><span class="toc-text">3.5.6    修改表之增加索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-7-修改表之删除索引"><span class="toc-text">3.5.7    修改表之删除索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-8-清空表的数据"><span class="toc-text">3.5.8    清空表的数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-列类型讲解"><span class="toc-text">4:列类型讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-增删改查基本操作"><span class="toc-text">5:增删改查基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-插入数据"><span class="toc-text">5.1 插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3修改数据"><span class="toc-text">5.3修改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4删除数据"><span class="toc-text">5.4删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-查询"><span class="toc-text">5.5 查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-连接查询"><span class="toc-text">6:    连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-字符集"><span class="toc-text">8: 字符集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#存储引擎-engine-1-2"><span class="toc-text">存储引擎 engine&#x3D;1&#x2F;2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#触发器-trigger"><span class="toc-text">触发器 trigger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#索引"><span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#索引类型"><span class="toc-text">索引类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综合练习"><span class="toc-text">综合练习:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查询知识"><span class="toc-text">查询知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-基础查询-where的练习"><span class="toc-text">1: 基础查询 where的练习:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-主键为32的商品"><span class="toc-text">1.1:主键为32的商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-不属第3栏目的所有商品"><span class="toc-text">1.2:不属第3栏目的所有商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-本店价格高于3000元的商品"><span class="toc-text">1.3:本店价格高于3000元的商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-本店价格低于或等于100元的商品"><span class="toc-text">1.4:本店价格低于或等于100元的商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-取出第4栏目或第11栏目的商品-不许用or"><span class="toc-text">1.5:取出第4栏目或第11栏目的商品(不许用or)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-取出100-lt-价格-lt-500的商品-不许用and"><span class="toc-text">1.6:取出100&lt;&#x3D;价格&lt;&#x3D;500的商品(不许用and)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-取出不属于第3栏目且不属于第11栏目的商品-and-或not-in分别实现"><span class="toc-text">1.7:取出不属于第3栏目且不属于第11栏目的商品(and,或not in分别实现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-取出价格大于100且小于300-或者大于4000且小于5000的商品"><span class="toc-text">1.8:取出价格大于100且小于300,或者大于4000且小于5000的商品()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-取出第3个栏目下面价格-lt-1000或-gt-3000-并且点击量-gt-5的系列商品"><span class="toc-text">1.9:取出第3个栏目下面价格&lt;1000或&gt;3000,并且点击量&gt;5的系列商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-取出第1个栏目下面的商品-注意-1栏目下面没商品-但其子栏目下有"><span class="toc-text">1.10:取出第1个栏目下面的商品(注意:1栏目下面没商品,但其子栏目下有)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-11-取出名字以”诺基亚”开头的商品"><span class="toc-text">1.11:取出名字以”诺基亚”开头的商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-12-取出名字为”诺基亚Nxx”的手机"><span class="toc-text">1.12:取出名字为”诺基亚Nxx”的手机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-13-取出名字不以”诺基亚”开头的商品"><span class="toc-text">1.13:取出名字不以”诺基亚”开头的商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-14-取出第3个栏目下面价格在1000到3000之间-并且点击量-gt-5-“诺基亚”开头的系列商品"><span class="toc-text">1.14:取出第3个栏目下面价格在1000到3000之间,并且点击量&gt;5 “诺基亚”开头的系列商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-15-一道面试题"><span class="toc-text">1.15 一道面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-16-练习题"><span class="toc-text">1.16 练习题:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-分组查询group"><span class="toc-text">2    分组查询group:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-查出最贵的商品的价格"><span class="toc-text">2.1:查出最贵的商品的价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-查出最大-最新-的商品编号"><span class="toc-text">2.2:查出最大(最新)的商品编号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-查出最便宜的商品的价格"><span class="toc-text">2.3:查出最便宜的商品的价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-查出最旧-最小-的商品编号"><span class="toc-text">2.4:查出最旧(最小)的商品编号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-查询该店所有商品的库存总量"><span class="toc-text">2.5:查询该店所有商品的库存总量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-查询所有商品的平均价"><span class="toc-text">2.6:查询所有商品的平均价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-查询该店一共有多少种商品"><span class="toc-text">2.7:查询该店一共有多少种商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-查询每个栏目下面"><span class="toc-text">2.8:查询每个栏目下面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-having与group综合运用查询"><span class="toc-text">3 having与group综合运用查询:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-查询该店的商品比市场价所节省的价格"><span class="toc-text">3.1:查询该店的商品比市场价所节省的价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-查询每个商品所积压的货款-提示-库存-单价"><span class="toc-text">3.2:查询每个商品所积压的货款(提示:库存*单价)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-查询该店积压的总货款"><span class="toc-text">3.3:查询该店积压的总货款</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-查询该店每个栏目下面积压的货款"><span class="toc-text">3.4:查询该店每个栏目下面积压的货款.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-查询比市场价省钱200元以上的商品及该商品所省的钱-where和having分别实现"><span class="toc-text">3.5:查询比市场价省钱200元以上的商品及该商品所省的钱(where和having分别实现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-查询积压货款超过2W元的栏目-以及该栏目积压的货款"><span class="toc-text">3.6:查询积压货款超过2W元的栏目,以及该栏目积压的货款</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-where-having-group综合练习题"><span class="toc-text">3.7:where-having-group综合练习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-order-by-与-limit查询"><span class="toc-text">4:    order by 与 limit查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-按价格由高到低排序"><span class="toc-text">4.1:按价格由高到低排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-按发布时间由早到晚排序"><span class="toc-text">4.2:按发布时间由早到晚排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-接栏目由低到高排序-栏目内部按价格由高到低排序"><span class="toc-text">4.3:接栏目由低到高排序,栏目内部按价格由高到低排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-取出价格最高的前三名商品"><span class="toc-text">4.4:取出价格最高的前三名商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-取出点击量前三名到前5名的商品"><span class="toc-text">4.5:取出点击量前三名到前5名的商品</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-连接查询"><span class="toc-text">5    连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-取出所有商品的商品名-栏目名-价格"><span class="toc-text">5.1:取出所有商品的商品名,栏目名,价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-取出第4个栏目下的商品的商品名-栏目名-价格"><span class="toc-text">5.2:取出第4个栏目下的商品的商品名,栏目名,价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-取出第4个栏目下的商品的商品名-栏目名-与品牌名"><span class="toc-text">5.3:取出第4个栏目下的商品的商品名,栏目名,与品牌名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-用友面试题"><span class="toc-text">5.4: 用友面试题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-union查询"><span class="toc-text">6    union查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-把ecs-comment-ecs-feedback两个表中的数据-各取出4列-并把结果集union成一个结果集"><span class="toc-text">6.1:把ecs_comment,ecs_feedback两个表中的数据,各取出4列,并把结果集union成一个结果集.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-3期学员碰到的一道面试题"><span class="toc-text">6.2:3期学员碰到的一道面试题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-子查询"><span class="toc-text">7: 子查询:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-查询出最新一行商品-以商品编号最大为最新-用子查询实现"><span class="toc-text">7.1:查询出最新一行商品(以商品编号最大为最新,用子查询实现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-查询出编号为19的商品的栏目名称-用左连接查询和子查询分别"><span class="toc-text">7.2:查询出编号为19的商品的栏目名称(用左连接查询和子查询分别)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-用where型子查询把ecs-goods表中的每个栏目下面最新的商品取出来"><span class="toc-text">7.3:用where型子查询把ecs_goods表中的每个栏目下面最新的商品取出来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-用from型子查询把ecs-goods表中的每个栏目下面最新的商品取出来"><span class="toc-text">7.4:用from型子查询把ecs_goods表中的每个栏目下面最新的商品取出来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-用exists型子查询-查出所有有商品的栏目"><span class="toc-text">7.5 用exists型子查询,查出所有有商品的栏目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用户权限"><span class="toc-text">用户权限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql"><span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储过程"><span class="toc-text">存储过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#客户端使用"><span class="toc-text">客户端使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#批量修改字符集"><span class="toc-text">批量修改字符集</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="1-数据库的连接"><a href="#1-数据库的连接" class="headerlink" title="1.数据库的连接"></a>1.数据库的连接</h2><pre><code class="bash">mysql -uroot -p1234 [-h]mysql.rds.aliyun.com
+# -u 用户名
+# -p 密码
+# -h host主机</code></pre>
+<h2 id="2-库级知识"><a href="#2-库级知识" class="headerlink" title="2:库级知识"></a>2:库级知识</h2><h3 id="2-1-显示数据库"><a href="#2-1-显示数据库" class="headerlink" title="2.1 显示数据库:"></a>2.1 显示数据库:</h3><pre><code class="sql">show databases;</code></pre>
+<h3 id="2-2-选择数据库"><a href="#2-2-选择数据库" class="headerlink" title="2.2 选择数据库:"></a>2.2 选择数据库:</h3><pre><code class="sql">use dbname;</code></pre>
+<h3 id="2-3-创建数据库"><a href="#2-3-创建数据库" class="headerlink" title="2.3 创建数据库:"></a>2.3 创建数据库:</h3><pre><code class="sql">create database dbname charset utf8;</code></pre>
+<h3 id="2-3-删除数据库"><a href="#2-3-删除数据库" class="headerlink" title="2.3 删除数据库:"></a>2.3 删除数据库:</h3><pre><code class="sql">drop database dbname;</code></pre>
+<h2 id="3-表级操作"><a href="#3-表级操作" class="headerlink" title="3: 表级操作:"></a>3: 表级操作:</h2><h3 id="3-1-显示库下面的表"><a href="#3-1-显示库下面的表" class="headerlink" title="3.1 显示库下面的表"></a>3.1 显示库下面的表</h3><pre><code class="sql">show tables;</code></pre>
+<h3 id="3-2-查看表的结构"><a href="#3-2-查看表的结构" class="headerlink" title="3.2 查看表的结构:"></a>3.2 查看表的结构:</h3><pre><code class="sql">desc tableName;</code></pre>
+<h3 id="3-3-查看表的创建过程"><a href="#3-3-查看表的创建过程" class="headerlink" title="3.3 查看表的创建过程:"></a>3.3 查看表的创建过程:</h3><pre><code class="sql">show create table  tableName;</code></pre>
+<h3 id="3-4-创建表"><a href="#3-4-创建表" class="headerlink" title="3.4 创建表:"></a>3.4 创建表:</h3><pre><code class="sql">　create table tbName (
+列名称1　列类型　[列参数]　[not null default ],
+....列2...
+....
+列名称N　列类型　[列参数]　[not null default ]
+)engine myisam/innodb charset utf8/gbk
+-- 3.4的例子:
+create table user (
+    id int auto_increment,
+    name varchar(20) not null default &#39;&#39;,
+    age tinyint unsigned not null default 0,
+   index id (id)
+   )engine=innodb charset=utf8;
+-- 注:innodb是表引擎,也可以是myisam或其他,但最常用的是myisam和innodb,charset 常用的有utf8,gbk;</code></pre>
+<h3 id="3-5-修改表"><a href="#3-5-修改表" class="headerlink" title="3.5 修改表"></a>3.5 修改表</h3><h4 id="3-5-1-修改表之增加列"><a href="#3-5-1-修改表之增加列" class="headerlink" title="3.5.1    修改表之增加列:"></a>3.5.1    修改表之增加列:</h4><pre><code class="sql">alter table tbName 
+add 列名称１　列类型　[列参数]　[not null default ]　
+-- #(add之后的旧列名之后的语法和创建表时的列声明一样)</code></pre>
+<h4 id="3-5-2-修改表之修改列"><a href="#3-5-2-修改表之修改列" class="headerlink" title="3.5.2    修改表之修改列"></a>3.5.2    修改表之修改列</h4><pre><code class="sql">alter table tbName
+change 旧列名  新列名  列类型　[列参数]　[not null default ]
+-- (注:旧列名之后的语法和创建表时的列声明一样)</code></pre>
+<h4 id="3-5-3-修改表之减少列"><a href="#3-5-3-修改表之减少列" class="headerlink" title="3.5.3    修改表之减少列:"></a>3.5.3    修改表之减少列:</h4><pre><code class="sql">alter table tbName 
+drop 列名称;</code></pre>
+<h4 id="3-5-4-修改表之增加主键"><a href="#3-5-4-修改表之增加主键" class="headerlink" title="3.5.4    修改表之增加主键"></a>3.5.4    修改表之增加主键</h4><pre><code class="sql">alter table tbName add primary key(主键所在列名);
+-- 例:alter table goods add primary key(id)
+-- 该例是把主键建立在id列上</code></pre>
+<h4 id="3-5-5-修改表之删除主键"><a href="#3-5-5-修改表之删除主键" class="headerlink" title="3.5.5    修改表之删除主键"></a>3.5.5    修改表之删除主键</h4><pre><code class="sql">alter table tbName　drop primary key;</code></pre>
+<h4 id="3-5-6-修改表之增加索引"><a href="#3-5-6-修改表之增加索引" class="headerlink" title="3.5.6    修改表之增加索引"></a>3.5.6    修改表之增加索引</h4><pre><code class="sql">alter table tbName add [unique|fulltext] index 索引名(列名);</code></pre>
+<h4 id="3-5-7-修改表之删除索引"><a href="#3-5-7-修改表之删除索引" class="headerlink" title="3.5.7    修改表之删除索引"></a>3.5.7    修改表之删除索引</h4><pre><code class="sql">alter table tbName drop index 索引名;</code></pre>
+<h4 id="3-5-8-清空表的数据"><a href="#3-5-8-清空表的数据" class="headerlink" title="3.5.8    清空表的数据"></a>3.5.8    清空表的数据</h4><pre><code class="sql">truncate tableName;</code></pre>
+<h2 id="4-列类型讲解"><a href="#4-列类型讲解" class="headerlink" title="4:列类型讲解"></a>4:列类型讲解</h2><p>列类型:<br>        整型:tinyint (0<del>255/-128</del>127) smallint (0<del>65535/-32768</del>32767) mediumint int bigint (参考手册11.2)<br>        参数解释:<br>        unsigned 无符号(不能为负)  zerofill 0填充  M 填充后的宽度<br>        举例:tinyint unsigned;<br>             tinyint(6) zerofill;<br>数值型<br>        浮点型:float double<br>        格式:float(M,D)  unsigned\zerofill;</p>
+<p>字符型<br>        char(m) 定长<br>        varchar(m)变长<br>        text</p>
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>实存字符i</th>
+<th>实占空间</th>
+<th>利用率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char(M)</td>
+<td>0&lt;=i&lt;=M</td>
+<td>M</td>
+<td>i/m&lt;=100%</td>
+</tr>
+<tr>
+<td>varchar(M)</td>
+<td>0&lt;=i&lt;=M</td>
+<td>i+1,2</td>
+<td>i/i+1/2&lt;100%</td>
+</tr>
+<tr>
+<td>year</td>
+<td>YYYY 范围:1901~2155. 可输入值2位和4位(如98,2012)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>YYYY-MM-DD 如:2010-03-14</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td>HH:MM:SS    如:19:26:32</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>YYYY-MM-DD  HH:MM:SS 如:2010-03-14 19:26:32</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>YYYY-MM-DD  HH:MM:SS 特性:不用赋值,该列会为自己赋当前的具体时间</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="5-增删改查基本操作"><a href="#5-增删改查基本操作" class="headerlink" title="5:增删改查基本操作"></a>5:增删改查基本操作</h2><h3 id="5-1-插入数据"><a href="#5-1-插入数据" class="headerlink" title="5.1 插入数据"></a>5.1 插入数据</h3><pre><code class="sql">    insert into 表名(col1,col2,……) values(val1,val2……); -- 插入指定列
+    insert into 表名 values (,,,,); -- 插入所有列
+    insert into 表名 values    -- 一次插入多行 
+    (val1,val2……),
+    (val1,val2……),
+    (val1,val2……);</code></pre>
+<h3 id="5-3修改数据"><a href="#5-3修改数据" class="headerlink" title="5.3修改数据"></a>5.3修改数据</h3><pre><code class="sql">    update tablename 
+    set 
+    col1=newval1,  
+    col2=newval2,
+    ...
+    ...
+    colN=newvalN
+    where 条件;</code></pre>
+<h3 id="5-4删除数据"><a href="#5-4删除数据" class="headerlink" title="5.4删除数据"></a>5.4删除数据</h3><pre><code class="sql">delete from tablenaeme where 条件;</code></pre>
+<h3 id="5-5-查询"><a href="#5-5-查询" class="headerlink" title="5.5 查询"></a>5.5 查询</h3><p>  （1）  条件查询   where<br>                a. 条件表达式的意义，表达式为真，则该行取出<br>                b.  比较运算符  = ，!=，&lt; &gt; &lt;=  &gt;=<br>                c.  like , not like (‘%’匹配任意多个字符,’_‘匹配任意单个字符) ,in , not in , between and<br>                d. is null , is not null<br>  （2）  分组       group by  (一般要配合5个聚合函数使用:max,min,sum,avg,count)<br>  （3）  筛选       having<br>  （4）  排序       order by<br>  （5）  限制       limit</p>
+<h3 id="6-连接查询"><a href="#6-连接查询" class="headerlink" title="6:    连接查询"></a>6:    连接查询</h3><ol>
+<li>左连接 left join .. on<br>```sql</li>
+</ol>
+<p>– table A left join table B on tableA.col1 = tableB.col2<br>select 列名 from table A left join table B on tableA.col1 = tableB.col2</p>
+<pre><code>2.  右链接: right join
+3.  内连接:  inner join
+
+左右连接都是以在左边的表的数据为准,沿着左表查右表.
+内连接是以两张表都有的共同部分数据为准,也就是左右连接的数据之交集
+#### 7    子查询
+  where 型子查询:内层sql的返回值在where后作为条件表达式的一部分
+```sql
+select * from tableA where colA = (select colB from tableB where ...);</code></pre><p>  from 型子查询:内层sql查询结果,作为一张表,供外层的sql语句再次查询</p>
+<pre><code class="sql"> select * from (select * from ...) as tableName where ....</code></pre>
+<h4 id="8-字符集"><a href="#8-字符集" class="headerlink" title="8: 字符集"></a>8: 字符集</h4><p>客服端sql编码 character_set_client<br>服务器转化后的sql编码 character_set_connection<br>服务器返回给客户端的结果集编码     character_set_results<br>快速把以上3个变量设为相同值: set names 字符集</p>
+<h4 id="存储引擎-engine-1-2"><a href="#存储引擎-engine-1-2" class="headerlink" title="存储引擎 engine=1/2"></a>存储引擎 engine=1/2</h4><p>1 Myisam  速度快 不支持事务 回滚<br>2 Innodb  速度慢 支持事务,回滚</p>
+<p>①开启事务          start transaction<br>②运行sql;<br>③提交,同时生效\回滚 commit\rollback</p>
+<h4 id="触发器-trigger"><a href="#触发器-trigger" class="headerlink" title="触发器 trigger"></a>触发器 trigger</h4><p>监视地点:表<br>监视行为:增 删 改<br>触发时间:after\before<br>触发事件:增 删 改</p>
+<pre><code class="sql"> -- 创建触发器语法
+create trigger tgName
+after/before insert/delete/update 
+on tableName
+for each row
+sql; -- 触发语句
+
+-- 删除触发器
+drop trigger tgName</code></pre>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p> 提高查询速度,但是降低了增删改的速度,所以使用索引时,要综合考虑.<br> 索引不是越多越好,一般我们在常出现于条件表达式中的列加索引.<br> 值越分散的列，索引的效果越好</p>
+<h5 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h5><p> primary key主键索引<br> index 普通索引<br> unique index 唯一性索引<br> fulltext index 全文索引</p>
+<h2 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习:"></a>综合练习:</h2><p>连接上数据库服务器<br>创建一个gbk编码的数据库<br>建立商品表和栏目表,字段如下:</p>
+<p>商品表:goods<br>goods_id　–主键,<br>goods_name – 商品名称<br>cat_id  – 栏目id<br>brand_id – 品牌id<br>goods_sn – 货号<br>goods_number – 库存量<br>shop_price  – 价格<br>goods_desc　–商品详细描述</p>
+<p>栏目表:category<br>cat_id –主键<br>cat_name – 栏目名称<br>parent_id – 栏目的父id</p>
+<p>建表完成后,作以下操作:<br>删除goods表的goods_desc 字段,及货号字段<br>并增加字段:click_count  – 点击量</p>
+<p>在goods_name列上加唯一性索引<br>在shop_price列上加普通索引<br>在clcik_count列上加普通索引<br>删除click_count列上的索引</p>
+<p>对goods表插入以下数据:<br>| goods_id | goods_name                   | cat_id | brand_id | goods_sn  | goods_number | shop_price | click_count |<br>|–|–|–|–|–|–|–|–|–|–|<br>|        1 | KD876                        |      4 |        8 | ECS000000 |           10 |    1388.00 |           7 |<br>|        4 | 诺基亚N85原装充电器          |      8 |        1 | ECS000004 |           17 |      58.00 |           0 |<br>|        3 | 诺基亚原装5800耳机           |      8 |        1 | ECS000002 |           24 |      68.00 |           3 |<br>|        5 | 索爱原装M2卡读卡器           |     11 |        7 | ECS000005 |            8 |      20.00 |           3 |<br>|        6 | 胜创KINGMAX内存卡            |     11 |        0 | ECS000006 |           15 |      42.00 |           0 |<br>|        7 | 诺基亚N85原装立体声耳机HS-82 |      8 |        1 | ECS000007 |           20 |     100.00 |           0 |<br>|        8 | 飞利浦9@9v                   |      3 |        4 | ECS000008 |           17 |     399.00 |           9 |<br>|        9 | 诺基亚E66                    |      3 |        1 | ECS000009 |           13 |    2298.00 |          20 |<br>|       10 | 索爱C702c                    |      3 |        7 | ECS000010 |            7 |    1328.00 |          11 |<br>|       11 | 索爱C702c                    |      3 |        7 | ECS000011 |            1 |    1300.00 |           0 |<br>|       12 | 摩托罗拉A810                 |      3 |        2 | ECS000012 |            8 |     983.00 |          14 |<br>|       13 | 诺基亚5320 XpressMusic       |      3 |        1 | ECS000013 |            8 |    1311.00 |          13 |<br>|       14 | 诺基亚5800XM                 |      4 |        1 | ECS000014 |            4 |    2625.00 |           6 |<br>|       15 | 摩托罗拉A810                 |      3 |        2 | ECS000015 |            3 |     788.00 |           8 |<br>|       16 | 恒基伟业G101                 |      2 |       11 | ECS000016 |            0 |     823.33 |           3 |<br>|       17 | 夏新N7                       |      3 |        5 | ECS000017 |            1 |    2300.00 |           2 |<br>|       18 | 夏新T5                       |      4 |        5 | ECS000018 |            1 |    2878.00 |           0 |<br>|       19 | 三星SGH-F258                 |      3 |        6 | ECS000019 |            0 |     858.00 |           7 |<br>|       20 | 三星BC01                     |      3 |        6 | ECS000020 |           13 |     280.00 |          14 |<br>|       21 | 金立 A30                     |      3 |       10 | ECS000021 |           40 |    2000.00 |           4 |<br>|       22 | 多普达Touch HD               |      3 |        3 | ECS000022 |            0 |    5999.00 |          15 |<br>|       23 | 诺基亚N96                    |      5 |        1 | ECS000023 |            8 |    3700.00 |          17 |<br>|       24 | P806                         |      3 |        9 | ECS000024 |          148 |    2000.00 |          36 |<br>|       25 | 小灵通/固话50元充值卡        |     13 |        0 | ECS000025 |            2 |      48.00 |           0 |<br>|       26 | 小灵通/固话20元充值卡        |     13 |        0 | ECS000026 |            2 |      19.00 |           0 |<br>|       27 | 联通100元充值卡              |     15 |        0 | ECS000027 |            2 |      95.00 |           0 |<br>|       28 | 联通50元充值卡               |     15 |        0 | ECS000028 |            0 |      45.00 |           0 |<br>|       29 | 移动100元充值卡              |     14 |        0 | ECS000029 |            0 |      90.00 |           0 |<br>|       30 | 移动20元充值卡               |     14 |        0 | ECS000030 |            9 |      18.00 |           1 |<br>|       31 | 摩托罗拉E8                   |      3 |        2 | ECS000031 |            1 |    1337.00 |           5 |<br>|       32 | 诺基亚N85                    |      3 |        1 | ECS000032 |            1 |    3010.00 |           9 |</p>
+<h1 id="查询知识"><a href="#查询知识" class="headerlink" title="查询知识"></a>查询知识</h1><p>注:以下查询基于ecshop网站的商品表(ecs_goods)<br>在练习时可以只取部分列,方便查看.</p>
+<h2 id="1-基础查询-where的练习"><a href="#1-基础查询-where的练习" class="headerlink" title="1: 基础查询 where的练习:"></a>1: 基础查询 where的练习:</h2><p>查出满足以下条件的商品</p>
+<h3 id="1-1-主键为32的商品"><a href="#1-1-主键为32的商品" class="headerlink" title="1.1:主键为32的商品"></a>1.1:主键为32的商品</h3><pre><code class="sql">select goods_id,goods_name,shop_price from ecs_goods where goods_id=32;</code></pre>
+<h3 id="1-2-不属第3栏目的所有商品"><a href="#1-2-不属第3栏目的所有商品" class="headerlink" title="1.2:不属第3栏目的所有商品"></a>1.2:不属第3栏目的所有商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where cat_id!=3;</code></pre>
+<h3 id="1-3-本店价格高于3000元的商品"><a href="#1-3-本店价格高于3000元的商品" class="headerlink" title="1.3:本店价格高于3000元的商品"></a>1.3:本店价格高于3000元的商品</h3><pre><code class="sql"> select goods_id,cat_id,goods_name,shop_price  from ecs_goods where shop_price &gt;3000;</code></pre>
+<h3 id="1-4-本店价格低于或等于100元的商品"><a href="#1-4-本店价格低于或等于100元的商品" class="headerlink" title="1.4:本店价格低于或等于100元的商品"></a>1.4:本店价格低于或等于100元的商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where shop_price &lt;=100;</code></pre>
+<h3 id="1-5-取出第4栏目或第11栏目的商品-不许用or"><a href="#1-5-取出第4栏目或第11栏目的商品-不许用or" class="headerlink" title="1.5:取出第4栏目或第11栏目的商品(不许用or)"></a>1.5:取出第4栏目或第11栏目的商品(不许用or)</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where cat_id in (4,11);</code></pre>
+<h3 id="1-6-取出100-lt-价格-lt-500的商品-不许用and"><a href="#1-6-取出100-lt-价格-lt-500的商品-不许用and" class="headerlink" title="1.6:取出100&lt;=价格&lt;=500的商品(不许用and)"></a>1.6:取出100&lt;=价格&lt;=500的商品(不许用and)</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where shop_price between 100 and 500;</code></pre>
+<h3 id="1-7-取出不属于第3栏目且不属于第11栏目的商品-and-或not-in分别实现"><a href="#1-7-取出不属于第3栏目且不属于第11栏目的商品-and-或not-in分别实现" class="headerlink" title="1.7:取出不属于第3栏目且不属于第11栏目的商品(and,或not in分别实现)"></a>1.7:取出不属于第3栏目且不属于第11栏目的商品(and,或not in分别实现)</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods     where cat_id!=3 and cat_id!=11;
+
+select goods_id,cat_id,goods_name,shop_price  from ecs_goods     where cat_id not in (3,11);</code></pre>
+<h3 id="1-8-取出价格大于100且小于300-或者大于4000且小于5000的商品"><a href="#1-8-取出价格大于100且小于300-或者大于4000且小于5000的商品" class="headerlink" title="1.8:取出价格大于100且小于300,或者大于4000且小于5000的商品()"></a>1.8:取出价格大于100且小于300,或者大于4000且小于5000的商品()</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where shop_price&gt;100 and shop_price &lt;300 or shop_price &gt;4000 and shop_price &lt;5000;</code></pre>
+<h3 id="1-9-取出第3个栏目下面价格-lt-1000或-gt-3000-并且点击量-gt-5的系列商品"><a href="#1-9-取出第3个栏目下面价格-lt-1000或-gt-3000-并且点击量-gt-5的系列商品" class="headerlink" title="1.9:取出第3个栏目下面价格&lt;1000或&gt;3000,并且点击量&gt;5的系列商品"></a>1.9:取出第3个栏目下面价格&lt;1000或&gt;3000,并且点击量&gt;5的系列商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price,click_count from ecs_goods where cat_id=3 and (shop_price &lt;1000 or shop_price&gt;3000) and click_count&gt;5;</code></pre>
+<h3 id="1-10-取出第1个栏目下面的商品-注意-1栏目下面没商品-但其子栏目下有"><a href="#1-10-取出第1个栏目下面的商品-注意-1栏目下面没商品-但其子栏目下有" class="headerlink" title="1.10:取出第1个栏目下面的商品(注意:1栏目下面没商品,但其子栏目下有)"></a>1.10:取出第1个栏目下面的商品(注意:1栏目下面没商品,但其子栏目下有)</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price,click_count from ecs_goods where cat_id in (2,3,4,5);</code></pre>
+<h3 id="1-11-取出名字以”诺基亚”开头的商品"><a href="#1-11-取出名字以”诺基亚”开头的商品" class="headerlink" title="1.11:取出名字以”诺基亚”开头的商品"></a>1.11:取出名字以”诺基亚”开头的商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods     where goods_name like &#39;诺基亚%&#39;;</code></pre>
+<h3 id="1-12-取出名字为”诺基亚Nxx”的手机"><a href="#1-12-取出名字为”诺基亚Nxx”的手机" class="headerlink" title="1.12:取出名字为”诺基亚Nxx”的手机"></a>1.12:取出名字为”诺基亚Nxx”的手机</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods  where goods_name like &#39;诺基亚N__&#39;;</code></pre>
+<h3 id="1-13-取出名字不以”诺基亚”开头的商品"><a href="#1-13-取出名字不以”诺基亚”开头的商品" class="headerlink" title="1.13:取出名字不以”诺基亚”开头的商品"></a>1.13:取出名字不以”诺基亚”开头的商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price from ecs_goos where goods_name not like &#39;诺基亚%&#39;;</code></pre>
+<h3 id="1-14-取出第3个栏目下面价格在1000到3000之间-并且点击量-gt-5-“诺基亚”开头的系列商品"><a href="#1-14-取出第3个栏目下面价格在1000到3000之间-并且点击量-gt-5-“诺基亚”开头的系列商品" class="headerlink" title="1.14:取出第3个栏目下面价格在1000到3000之间,并且点击量&gt;5 “诺基亚”开头的系列商品"></a>1.14:取出第3个栏目下面价格在1000到3000之间,并且点击量&gt;5 “诺基亚”开头的系列商品</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price  from ecs_goods where cat_id=3 and shop_price&gt;1000 and shop_price &lt;3000 and click_count&gt;5 and goods_name like &#39;诺基亚%&#39;;
+
+select goods_id,cat_id,goods_name,shop_price  from ecs_goods where shop_price between 1000 and 3000 and cat_id=3  and click_count&gt;5 and goods_name like &#39;诺基亚%&#39;;</code></pre>
+<h3 id="1-15-一道面试题"><a href="#1-15-一道面试题" class="headerlink" title="1.15 一道面试题"></a>1.15 一道面试题</h3><p>有如下表和数组<br>把num值处于[20,29]之间,改为20<br>num值处于[30,39]之间的,改为30<br>mian表<br>| num  |<br>|–|<br>|    3 |<br>|   12 |<br>|   15 |<br>|   25 |<br>|   23 |<br>|   29 |<br>|   34 |<br>|   37 |<br>|   32 |<br>|   45 |<br>|   48 |<br>|   52 |</p>
+<h3 id="1-16-练习题"><a href="#1-16-练习题" class="headerlink" title="1.16 练习题:"></a>1.16 练习题:</h3><p>把good表中商品名为’诺基亚xxxx’的商品,改为’HTCxxxx’,<br>提示:大胆的把列看成变量,参与运算,甚至调用函数来处理 .<br>substring(),concat()</p>
+<h2 id="2-分组查询group"><a href="#2-分组查询group" class="headerlink" title="2    分组查询group:"></a>2    分组查询group:</h2><h3 id="2-1-查出最贵的商品的价格"><a href="#2-1-查出最贵的商品的价格" class="headerlink" title="2.1:查出最贵的商品的价格"></a>2.1:查出最贵的商品的价格</h3><pre><code class="sql">select max(shop_price) from ecs_goods;</code></pre>
+<h3 id="2-2-查出最大-最新-的商品编号"><a href="#2-2-查出最大-最新-的商品编号" class="headerlink" title="2.2:查出最大(最新)的商品编号"></a>2.2:查出最大(最新)的商品编号</h3><pre><code class="sql">select max(goods_id) from ecs_goods;</code></pre>
+<h3 id="2-3-查出最便宜的商品的价格"><a href="#2-3-查出最便宜的商品的价格" class="headerlink" title="2.3:查出最便宜的商品的价格"></a>2.3:查出最便宜的商品的价格</h3><pre><code class="sql">select min(shop_price) from ecs_goods;</code></pre>
+<h3 id="2-4-查出最旧-最小-的商品编号"><a href="#2-4-查出最旧-最小-的商品编号" class="headerlink" title="2.4:查出最旧(最小)的商品编号"></a>2.4:查出最旧(最小)的商品编号</h3><pre><code class="sql">select min(goods_id) from ecs_goods;</code></pre>
+<h3 id="2-5-查询该店所有商品的库存总量"><a href="#2-5-查询该店所有商品的库存总量" class="headerlink" title="2.5:查询该店所有商品的库存总量"></a>2.5:查询该店所有商品的库存总量</h3><pre><code class="sql">select sum(goods_number) from ecs_goods;</code></pre>
+<h3 id="2-6-查询所有商品的平均价"><a href="#2-6-查询所有商品的平均价" class="headerlink" title="2.6:查询所有商品的平均价"></a>2.6:查询所有商品的平均价</h3><pre><code class="sql"> select avg(shop_price) from ecs_goods;</code></pre>
+<h3 id="2-7-查询该店一共有多少种商品"><a href="#2-7-查询该店一共有多少种商品" class="headerlink" title="2.7:查询该店一共有多少种商品"></a>2.7:查询该店一共有多少种商品</h3><pre><code class="sql"> select count(*) from ecs_goods;</code></pre>
+<h3 id="2-8-查询每个栏目下面"><a href="#2-8-查询每个栏目下面" class="headerlink" title="2.8:查询每个栏目下面"></a>2.8:查询每个栏目下面</h3><p>最贵商品价格<br>最低商品价格<br>商品平均价格<br>商品库存量<br>商品种类<br>提示:(5个聚合函数,sum,avg,max,min,count与group综合运用)</p>
+<pre><code class="sql">select cat_id,max(shop_price) from ecs_goods  group by cat_id;</code></pre>
+<h2 id="3-having与group综合运用查询"><a href="#3-having与group综合运用查询" class="headerlink" title="3 having与group综合运用查询:"></a>3 having与group综合运用查询:</h2><h3 id="3-1-查询该店的商品比市场价所节省的价格"><a href="#3-1-查询该店的商品比市场价所节省的价格" class="headerlink" title="3.1:查询该店的商品比市场价所节省的价格"></a>3.1:查询该店的商品比市场价所节省的价格</h3><pre><code class="sql">select goods_id,goods_name,market_price-shop_price as j from ecs_goods ;</code></pre>
+<h3 id="3-2-查询每个商品所积压的货款-提示-库存-单价"><a href="#3-2-查询每个商品所积压的货款-提示-库存-单价" class="headerlink" title="3.2:查询每个商品所积压的货款(提示:库存*单价)"></a>3.2:查询每个商品所积压的货款(提示:库存*单价)</h3><pre><code class="sql">select goods_id,goods_name,goods_number*shop_price  from ecs_goods</code></pre>
+<h3 id="3-3-查询该店积压的总货款"><a href="#3-3-查询该店积压的总货款" class="headerlink" title="3.3:查询该店积压的总货款"></a>3.3:查询该店积压的总货款</h3><pre><code class="sql">select sum(goods_number*shop_price) from ecs_goods;</code></pre>
+<h3 id="3-4-查询该店每个栏目下面积压的货款"><a href="#3-4-查询该店每个栏目下面积压的货款" class="headerlink" title="3.4:查询该店每个栏目下面积压的货款."></a>3.4:查询该店每个栏目下面积压的货款.</h3><pre><code class="sql">select cat_id,sum(goods_number*shop_price) as k from ecs_goods group by cat_id;</code></pre>
+<h3 id="3-5-查询比市场价省钱200元以上的商品及该商品所省的钱-where和having分别实现"><a href="#3-5-查询比市场价省钱200元以上的商品及该商品所省的钱-where和having分别实现" class="headerlink" title="3.5:查询比市场价省钱200元以上的商品及该商品所省的钱(where和having分别实现)"></a>3.5:查询比市场价省钱200元以上的商品及该商品所省的钱(where和having分别实现)</h3><pre><code class="sql">select goods_id,goods_name,market_price-shop_price  as k from ecs_goods
+where market_price-shop_price &gt;200;
+
+select goods_id,goods_name,market_price-shop_price  as k from ecs_goods having k &gt;200;</code></pre>
+<h3 id="3-6-查询积压货款超过2W元的栏目-以及该栏目积压的货款"><a href="#3-6-查询积压货款超过2W元的栏目-以及该栏目积压的货款" class="headerlink" title="3.6:查询积压货款超过2W元的栏目,以及该栏目积压的货款"></a>3.6:查询积压货款超过2W元的栏目,以及该栏目积压的货款</h3><pre><code class="sql">select cat_id,sum(goods_number*shop_price) as k from ecs_goods group by cat_id having k&gt;20000</code></pre>
+<h3 id="3-7-where-having-group综合练习题"><a href="#3-7-where-having-group综合练习题" class="headerlink" title="3.7:where-having-group综合练习题"></a>3.7:where-having-group综合练习题</h3><p>有如下表及数据<br>| name | subject | score |<br>|–|–|–|<br>| 张三 | 数学    |    90 |<br>| 张三 | 语文    |    50 |<br>| 张三 | 地理    |    40 |<br>| 李四 | 语文    |    55 |<br>| 李四 | 政治    |    45 |<br>| 王五 | 政治    |    30 |</p>
+<p>要求:查询出2门及2门以上不及格者的平均成绩</p>
+<p>！！一种错误做法</p>
+<pre><code class="sql">select name,count(score&lt;60) as k,avg(score) from stu group by name having k&gt;=2;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>k</th>
+<th>avg(score)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>3</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>2 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```sql</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select name,count(score&lt;60) as k,avg(score) from stu group by name;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>k</td>
+<td>avg(score)</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>3</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>1</td>
+<td>30.0000</td>
+</tr>
+<tr>
+<td>3 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```sql</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select name,count(score&lt;60) as k,avg(score) from stu group by name having k&gt;=2;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>k</td>
+<td>avg(score)</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>3</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>2 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#加上赵六后错误暴露</p>
+<pre><code class="sql">insert into stu 
+    -&gt; values 
+    -&gt; (&#39;赵六&#39;,&#39;A&#39;,100),
+    -&gt; (&#39;赵六&#39;,&#39;B&#39;,99),
+    -&gt; (&#39;赵六&#39;,&#39;C&#39;,98);</code></pre>
+<p>Query OK, 3 rows affected (0.05 sec)<br>Records: 3  Duplicates: 0  Warnings: 0</p>
+<p>#错误显现</p>
+<pre><code class="sql">select name,count(score&lt;60) as k,avg(score) from stu group by name having k&gt;=2;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>k</th>
+<th>avg(score)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>3</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>3</td>
+<td>99.0000</td>
+</tr>
+<tr>
+<td>3 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#正确思路,先查看每个人的平均成绩</p>
+<pre><code class="sql">select name,avg(score) from stu group by name;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>avg(score)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>30.0000</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>99.0000</td>
+</tr>
+<tr>
+<td>4 rows in set (0.00 sec)</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#看每个人挂科情况</p>
+<pre><code class="sql">select name,score &lt; 60 from stu;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>score &lt; 60</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>0</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>1</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>1</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>1</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>1</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>1</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>0</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>0</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9 rows in set (0.00 sec)</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#计算每个人的挂科科目</p>
+<pre><code class="sql">select name,sum(score &lt; 60) from stu group by name;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>sum(score &lt; 60)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>2</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>1</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4 rows in set (0.00 sec)</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#同时计算每人的平均分</p>
+<pre><code class="sql">select name,sum(score &lt; 60),avg(score) as pj from stu group by name;</code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>sum(score &lt; 60)</th>
+<th>pj</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>2</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>1</td>
+<td>30.0000</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>0</td>
+<td>99.0000</td>
+</tr>
+<tr>
+<td>4 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>#利用having筛选挂科2门以上的.、</p>
+<pre><code class="sql">select name,sum(score &lt; 60) as gk ,avg(score) as pj from stu group by name having gk &gt;=2; </code></pre>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>gk</th>
+<th>pj</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>2</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>2</td>
+<td>50.0000</td>
+</tr>
+<tr>
+<td>2 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="4-order-by-与-limit查询"><a href="#4-order-by-与-limit查询" class="headerlink" title="4:    order by 与 limit查询"></a>4:    order by 与 limit查询</h2><h3 id="4-1-按价格由高到低排序"><a href="#4-1-按价格由高到低排序" class="headerlink" title="4.1:按价格由高到低排序"></a>4.1:按价格由高到低排序</h3><pre><code class="sql">select goods_id,goods_name,shop_price from ecs_goods order by shop_price desc;</code></pre>
+<h3 id="4-2-按发布时间由早到晚排序"><a href="#4-2-按发布时间由早到晚排序" class="headerlink" title="4.2:按发布时间由早到晚排序"></a>4.2:按发布时间由早到晚排序</h3><pre><code class="sql">select goods_id,goods_name,add_time from ecs_goods order by add_time;</code></pre>
+<h3 id="4-3-接栏目由低到高排序-栏目内部按价格由高到低排序"><a href="#4-3-接栏目由低到高排序-栏目内部按价格由高到低排序" class="headerlink" title="4.3:接栏目由低到高排序,栏目内部按价格由高到低排序"></a>4.3:接栏目由低到高排序,栏目内部按价格由高到低排序</h3><pre><code class="sql">select goods_id,cat_id,goods_name,shop_price from ecs_goods order by cat_id ,shop_price desc;</code></pre>
+<h3 id="4-4-取出价格最高的前三名商品"><a href="#4-4-取出价格最高的前三名商品" class="headerlink" title="4.4:取出价格最高的前三名商品"></a>4.4:取出价格最高的前三名商品</h3><pre><code class="sql">select goods_id,goods_name,shop_price from ecs_goods order by shop_price desc limit 3;</code></pre>
+<h3 id="4-5-取出点击量前三名到前5名的商品"><a href="#4-5-取出点击量前三名到前5名的商品" class="headerlink" title="4.5:取出点击量前三名到前5名的商品"></a>4.5:取出点击量前三名到前5名的商品</h3><pre><code class="sql">select goods_id,goods_name,click_count from ecs_goods order by click_count desc limit 2,3;</code></pre>
+<h2 id="5-连接查询"><a href="#5-连接查询" class="headerlink" title="5    连接查询"></a>5    连接查询</h2><h3 id="5-1-取出所有商品的商品名-栏目名-价格"><a href="#5-1-取出所有商品的商品名-栏目名-价格" class="headerlink" title="5.1:取出所有商品的商品名,栏目名,价格"></a>5.1:取出所有商品的商品名,栏目名,价格</h3><pre><code>select goods_name,cat_name,shop_price from ecs_goods left join ecs_category on ecs_goods.cat_id=ecs_category.cat_id;</code></pre><h3 id="5-2-取出第4个栏目下的商品的商品名-栏目名-价格"><a href="#5-2-取出第4个栏目下的商品的商品名-栏目名-价格" class="headerlink" title="5.2:取出第4个栏目下的商品的商品名,栏目名,价格"></a>5.2:取出第4个栏目下的商品的商品名,栏目名,价格</h3><pre><code class="sql">select goods_name,cat_name,shop_price from ecs_goods left join ecs_category on ecs_goods.cat_id=ecs_category.cat_id where ecs_goods.cat_id = 4;</code></pre>
+<h3 id="5-3-取出第4个栏目下的商品的商品名-栏目名-与品牌名"><a href="#5-3-取出第4个栏目下的商品的商品名-栏目名-与品牌名" class="headerlink" title="5.3:取出第4个栏目下的商品的商品名,栏目名,与品牌名"></a>5.3:取出第4个栏目下的商品的商品名,栏目名,与品牌名</h3><pre><code class="sql">select goods_name,cat_name,brand_name from 
+ecs_goods left join ecs_category
+on ecs_goods.cat_id=ecs_category.cat_id
+left join ecs_brand 
+on ecs_goods.brand_id=ecs_brand.brand_id
+where ecs_goods.cat_id = 4;</code></pre>
+<h3 id="5-4-用友面试题"><a href="#5-4-用友面试题" class="headerlink" title="5.4: 用友面试题"></a>5.4: 用友面试题</h3><p>根据给出的表结构按要求写出SQL语句。<br>Match 赛程表<br>字段名称    字段类型    描述<br>matchID    int    主键<br>hostTeamID    int    主队的ID<br>guestTeamID    int    客队的ID<br>matchResult    varchar(20)    比赛结果，如（2:0）<br>matchTime    date    比赛开始时间</p>
+<p>Team 参赛队伍表<br>字段名称    字段类型    描述<br>teamID    int    主键<br>teamName    varchar(20)    队伍名称</p>
+<p>Match的hostTeamID与guestTeamID都与Team中的teamID关联<br>查出 2006-6-1 到2006-7-1之间举行的所有比赛，并且用以下形式列出：<br>拜仁  2：0 不来梅 2006-6-21</p>
+<pre><code class="sql">select * from m;</code></pre>
+<table>
+<thead>
+<tr>
+<th>mid</th>
+<th>hid</th>
+<th>gid</th>
+<th>mres</th>
+<th>matime</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2:0</td>
+<td>2006-05-21</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>1:2</td>
+<td>2006-06-21</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>2:5</td>
+<td>2006-06-25</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>3:2</td>
+<td>2006-07-21</td>
+</tr>
+<tr>
+<td>4 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```sql</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select * from t;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tid</td>
+<td>tname</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>国安</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>申花</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>公益联队</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```sql</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select hid,t1.tname as hname ,mres,gid,t2.tname as gname,matime</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>m left join t as t1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>on m.hid = t1.tid</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>left join t as t2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>on m.gid = t2.tid;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>```</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>hid</td>
+<td>hname</td>
+<td>mres</td>
+<td>gid</td>
+<td>gname</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>1</td>
+<td>国安</td>
+<td>2:0</td>
+<td>2</td>
+<td>申花</td>
+</tr>
+<tr>
+<td>2</td>
+<td>申花</td>
+<td>1:2</td>
+<td>3</td>
+<td>公益联队</td>
+</tr>
+<tr>
+<td>3</td>
+<td>公益联队</td>
+<td>2:5</td>
+<td>1</td>
+<td>国安</td>
+</tr>
+<tr>
+<td>2</td>
+<td>申花</td>
+<td>3:2</td>
+<td>1</td>
+<td>国安</td>
+</tr>
+<tr>
+<td>4 rows in set (0.00 sec)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="6-union查询"><a href="#6-union查询" class="headerlink" title="6    union查询"></a>6    union查询</h2><h3 id="6-1-把ecs-comment-ecs-feedback两个表中的数据-各取出4列-并把结果集union成一个结果集"><a href="#6-1-把ecs-comment-ecs-feedback两个表中的数据-各取出4列-并把结果集union成一个结果集" class="headerlink" title="6.1:把ecs_comment,ecs_feedback两个表中的数据,各取出4列,并把结果集union成一个结果集."></a>6.1:把ecs_comment,ecs_feedback两个表中的数据,各取出4列,并把结果集union成一个结果集.</h3><h3 id="6-2-3期学员碰到的一道面试题"><a href="#6-2-3期学员碰到的一道面试题" class="headerlink" title="6.2:3期学员碰到的一道面试题"></a>6.2:3期学员碰到的一道面试题</h3><p>A表:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>num</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>5</td>
+</tr>
+<tr>
+<td>b</td>
+<td>10</td>
+</tr>
+<tr>
+<td>c</td>
+<td>15</td>
+</tr>
+<tr>
+<td>d</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p>B表:<br>| id   | num  |<br>|–|–|<br>| b    |    5 |<br>| c    |   15 |<br>| d    |   20 |<br>| e    |   99 |</p>
+<p>要求查询出以下效果:<br>| id   |    num   |<br>|–|–|<br>| a    |        5 |<br>| b    |       15 |<br>| c    |       30 |<br>| d    |       30 |<br>| e    |       99 |</p>
+<pre><code class="sql">create table a (
+id char(1),
+num int
+)engine myisam charset utf8;
+
+insert into a values (&#39;a&#39;,5),(&#39;b&#39;,10),(&#39;c&#39;,15),(&#39;d&#39;,10);
+
+create table b (
+id char(1),
+num int
+)engine myisam charset utf8;
+
+insert into b values (&#39;b&#39;,5),(&#39;c&#39;,15),(&#39;d&#39;,20),(&#39;e&#39;,99);</code></pre>
+<p>#合并 ,注意all的作用</p>
+<pre><code class="sql">select * from ta union all select * from tb;</code></pre>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>num</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>5</td>
+</tr>
+<tr>
+<td>b</td>
+<td>10</td>
+</tr>
+<tr>
+<td>c</td>
+<td>15</td>
+</tr>
+<tr>
+<td>d</td>
+<td>10</td>
+</tr>
+<tr>
+<td>b</td>
+<td>5</td>
+</tr>
+<tr>
+<td>c</td>
+<td>15</td>
+</tr>
+<tr>
+<td>d</td>
+<td>20</td>
+</tr>
+<tr>
+<td>e</td>
+<td>99</td>
+</tr>
+</tbody></table>
+<p>参考答案:<br>#sum,group求和</p>
+<pre><code class="sql">select id,sum(num) from (select * from ta union all select * from tb) as tmp group by id; </code></pre>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>sum(num)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>5</td>
+</tr>
+<tr>
+<td>b</td>
+<td>15</td>
+</tr>
+<tr>
+<td>c</td>
+<td>30</td>
+</tr>
+<tr>
+<td>d</td>
+<td>30</td>
+</tr>
+<tr>
+<td>e</td>
+<td>99</td>
+</tr>
+<tr>
+<td>5 rows in set (0.00 sec)</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="7-子查询"><a href="#7-子查询" class="headerlink" title="7: 子查询:"></a>7: 子查询:</h2><h3 id="7-1-查询出最新一行商品-以商品编号最大为最新-用子查询实现"><a href="#7-1-查询出最新一行商品-以商品编号最大为最新-用子查询实现" class="headerlink" title="7.1:查询出最新一行商品(以商品编号最大为最新,用子查询实现)"></a>7.1:查询出最新一行商品(以商品编号最大为最新,用子查询实现)</h3><pre><code class="sql">select goods_id,goods_name from ecs_goods where goods_id =(select max(goods_id) from ecs_goods);</code></pre>
+<h3 id="7-2-查询出编号为19的商品的栏目名称-用左连接查询和子查询分别"><a href="#7-2-查询出编号为19的商品的栏目名称-用左连接查询和子查询分别" class="headerlink" title="7.2:查询出编号为19的商品的栏目名称(用左连接查询和子查询分别)"></a>7.2:查询出编号为19的商品的栏目名称(用左连接查询和子查询分别)</h3><h3 id="7-3-用where型子查询把ecs-goods表中的每个栏目下面最新的商品取出来"><a href="#7-3-用where型子查询把ecs-goods表中的每个栏目下面最新的商品取出来" class="headerlink" title="7.3:用where型子查询把ecs_goods表中的每个栏目下面最新的商品取出来"></a>7.3:用where型子查询把ecs_goods表中的每个栏目下面最新的商品取出来</h3><pre><code class="sql">select goods_id,goods_name,cat_id from ecs_goods where goods_id in (select max(goods_id) from ecs_goods group by cat_id);</code></pre>
+<h3 id="7-4-用from型子查询把ecs-goods表中的每个栏目下面最新的商品取出来"><a href="#7-4-用from型子查询把ecs-goods表中的每个栏目下面最新的商品取出来" class="headerlink" title="7.4:用from型子查询把ecs_goods表中的每个栏目下面最新的商品取出来"></a>7.4:用from型子查询把ecs_goods表中的每个栏目下面最新的商品取出来</h3><pre><code class="sql">select * from (select goods_id,cat_id,goods_name from ecs_goods order by goods_id desc) as t group by cat_id;</code></pre>
+<h3 id="7-5-用exists型子查询-查出所有有商品的栏目"><a href="#7-5-用exists型子查询-查出所有有商品的栏目" class="headerlink" title="7.5 用exists型子查询,查出所有有商品的栏目"></a>7.5 用exists型子查询,查出所有有商品的栏目</h3><pre><code class="sql">select * from category
+where exists (select * from goods where goods.cat_id=category.cat_id);</code></pre>
+<p>创建触发器:</p>
+<pre><code class="sql"> CREATE  trigger tg2
+after insert on ord
+for each row
+update goods set goods_number=goods_number-new.num where id=new.gid
+
+CREATE trigger tg3
+after delete on ord
+for each row
+update goods set goods_number=good_number+old.num where id=old.gid
+
+CREATE  trigger tg4
+after update on ord
+for each row
+update goods set goods_number=goods_number+old.num-new.num where id=old.gid</code></pre>
+<h1 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h1><pre><code class="sql">CREATE USER &#39;cmsUser&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;Walkclass_2016!&#39;;
+
+CREATE USER &#39;cmsUser&#39;@&#39;%&#39; IDENTIFIED BY &#39;Walkclass_2016!&#39;;
+
+GRANT ALL ON jeesite.* TO &#39;cmsUser&#39;@&#39;localhost&#39;;
+GRANT ALL ON jeesite.* TO &#39;cmsUser&#39;@&#39;%&#39;;
+
+
+-- 关闭外键约束
+SET FOREIGN_KEY_CHECKS=0;</code></pre>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><pre><code class="sql">#时间操作
+date_add(CRETE_TS,interval FLOOR(RAND()*70) second ); -- date_sub()减法;
+set @dt = now();
+select date_add(@dt, interval 1 day);           - 加1天
+select date_add(@dt, interval 1 hour);                -加1小时
+select date_add(@dt, interval 1 minute);    - 加1分钟
+select date_add(@dt, interval 1 second);             -加1秒
+select date_add(@dt, interval 1 microsecond);     -加1毫秒
+select date_add(@dt, interval 1 week);         -加1周
+select date_add(@dt, interval 1 month);        -加1月
+select date_add(@dt, interval 1 quarter);             -加1季
+select date_add(@dt, interval 1 year);           -加1年</code></pre>
+<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><pre><code class="sql">CREATE PROCEDURE `procedureTest`()
+    LANGUAGE SQL
+    NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+    COMMENT &#39;&#39;
+BEGIN
+ DECLARE i int;
+ DECLARE j int;
+ DECLARE total int;
+ DECLARE uId varchar(36);
+ SET i = 0;
+ SET j = 1;
+ SET total = (SELECT COUNT(USER_ID) FROM AMEP_USER);
+ while i&lt; total do
+     SET uId =  CONCAT(&#39;SELECT USER_ID FROM AMEP_USER LIMIT 1 OFFSET&#39;, i);
+
+         UPDATE AMEP_USER SET CRETE_TS = date_add(CRETE_TS,interval FLOOR(RAND()*70) second) where USER_ID = uId;
+ end while;
+END
+-- LIMIT OFFSET不能直接接变量 用CONCAT解决</code></pre>
+<h1 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h1><p>云数据库允许云服务器链接，mysql客户端可以通过ssh隧道值直接链接云数据库</p>
+<h2 id="批量修改字符集"><a href="#批量修改字符集" class="headerlink" title="批量修改字符集"></a>批量修改字符集</h2><pre><code class="sql">SELECT 
+CONCAT(&quot;ALTER TABLE `&quot;, TABLE_NAME,&quot;` CONVERT TO CHARACTER SET utf8mb4 COLLATE UTF8MB4_UNICODE_CI;&quot;) 
+AS target_tables
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA=&quot;amepdb&quot;
+AND TABLE_TYPE=&quot;BASE TABLE&quot;;
+
+ALTER DATABASE amepdb CHARSET=utf8mb4 COLLATE=UTF8MB4_UNICODE_CI;
+
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+
+
+SET FOREIGN_KEY_CHECKS = 1;
+</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>mysql基础</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4.9k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="莫问-廖远佩">莫问-廖远佩</a></p>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 内容非商用，仅作为学习记录之用若有侵权请联系：liaoyuanpei@foxmail.com。
+    </p>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020 莫问-廖远佩</p>
+
+<!--<p class="footer-entry">-->
+    <!--<a _ngcontent-c1="" href="https://www.upyun.com/" target="_blank" rel="noopener" style="display: inline-block; opacity: .55">-->
+        <!--<img _ngcontent-c1="" alt="upyun logo" src="/blog/img/upanyun_logo2.png" style="width:55px;height:24px">-->
+        <!--又拍云提供加速-->
+    <!--</a>-->
+<!--</p>-->
+<p class="footer-entry">
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61092402000103" target="_blank"><img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">陕公安备案61092402000103号</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>如果喜欢就打赏一下,鼓励下呗!</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/blog/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/blog/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/blog/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/blog/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#理财','#生活','#方法论','#编程','#算法','#技巧','#工具','#java','#框架','#spring','#win10','#devops','#docker','#中间件','#正则','#linux','#登天梯','#数据库','#mysql','#mybatis','#面试','#redis','#读书','#python','#思维导图','#目录','#git','#程序','#ide','#前端','#js','#vue','#jvm','#GC','#杂项','#线程','#设计模式',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/blog/img/blog_bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
