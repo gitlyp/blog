@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>图示经典算法 | 莫问的博客</title>
+  <meta name="keywords" content=" 编程 , 算法 ">
+  <meta name="description" content="图示经典算法 | 莫问的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="win10使用– win10隐藏文件夹 HKEY_LOCAL_MACHINE＼SOFTWARE＼Microsoft＼Windows＼CurrentVersion＼Explorer＼FolderDescriptions  图片文件夹：{0ddd015d-b06c-45d5-8c4c-f59713854639}＼PropertyBag  3D文件夹：  {31C0DD25-9439-4F12-BF41">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10使用">
+<meta property="og:url" content="http://blog.jiyijy.com/life/windows/use/index.html">
+<meta property="og:site_name" content="莫问的博客">
+<meta property="og:description" content="win10使用– win10隐藏文件夹 HKEY_LOCAL_MACHINE＼SOFTWARE＼Microsoft＼Windows＼CurrentVersion＼Explorer＼FolderDescriptions  图片文件夹：{0ddd015d-b06c-45d5-8c4c-f59713854639}＼PropertyBag  3D文件夹：  {31C0DD25-9439-4F12-BF41">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://blog.jiyijy.com/life/windows/use/image-20191123214806597.png">
+<meta property="article:published_time" content="2020-04-22T12:15:35.006Z">
+<meta property="article:modified_time" content="2020-04-21T04:14:57.431Z">
+<meta property="article:author" content="莫问-廖远佩">
+<meta property="article:tag" content="技巧">
+<meta property="article:tag" content="win10">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jiyijy.com/life/windows/use/image-20191123214806597.png">
+
+
+<link rel="icon" href="/blog/img/avatar.jpg">
+
+<link href="/blog/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/blog/css/hl_theme/zenbum.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/blog/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/blog/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/blog">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/blog/" class="avatar_target">
+    <img class="avatar" src="/blog/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>莫问-廖远佩</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(100)</small></div></li>
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="理财">理财<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="win10">win10<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂项">杂项<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法"><i class="fold iconfont icon-right"></i>算法<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="排序算法">排序算法<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="devops"><i class="fold iconfont icon-right"></i>devops<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="jenkins">jenkins<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="docker">docker<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="python">python<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="框架"><i class="fold iconfont icon-right"></i>框架<small>(36)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="spring">spring<small>(33)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="mybatis">mybatis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringCloud">SpringCloud<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="中间件"><i class="fold iconfont icon-right"></i>中间件<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="redis">redis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="基础">基础<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="面试">面试<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶">进阶<small>(18)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="规范">规范<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="思维导图">思维导图<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(9)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="新特性">新特性<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具">工具<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="基础">基础<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="GC">GC<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="阅读">阅读<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/blog/">关于</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="100">
+<input type="hidden" id="yelog_site_word_count" value="180.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">成长</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">书单</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">时间管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">技巧</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">理财</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">win10</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">devops</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">正则</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">登天梯</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">中间件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mybatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ide</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">思维导图</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">锁</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">GC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">杂项</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">设计模式</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="生活 读书 "
+           href="/blog/life/reading/Reading/"
+           data-tag="生活,读书,成长,书单"
+           data-author="" >
+            <span class="post-title" title="阅读计划">阅读计划</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a id="top" class="工具 "
+           href="/blog/study/tool/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"
+           data-tag="生活,工具,程序"
+           data-author="" >
+            <span class="post-title" title="工具推荐">工具推荐</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 读书 "
+           href="/blog/life/reading/%E5%93%AA%E6%9C%89%E6%B2%A1%E6%9C%89%E6%97%B6%E9%97%B4%E8%BF%99%E5%9B%9E%E4%BA%8B/"
+           data-tag="生活,读书,成长,时间管理"
+           data-author="" >
+            <span class="post-title" title="哪有没有时间这回事">哪有没有时间这回事</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/life/windows/bat/"
+           data-tag="生活,技巧"
+           data-author="" >
+            <span class="post-title" title="BAT">BAT</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/life/finance/money/"
+           data-tag="生活,理财"
+           data-author="" >
+            <span class="post-title" title="理财入门">理财入门</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/life/finance/%E7%90%86%E8%B4%A2%E6%84%8F%E8%AF%86/"
+           data-tag="生活,理财,方法论"
+           data-author="" >
+            <span class="post-title" title="理财意识觉醒">理财意识觉醒</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/life/windows/use/"
+           data-tag="技巧,win10"
+           data-author="" >
+            <span class="post-title" title="win10使用">win10使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:35">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/life/windows/security/"
+           data-tag="技巧,工具"
+           data-author="" >
+            <span class="post-title" title="security">security</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:35">2020/04/22</span>-->
+        </a>
+        
+        <a  class="算法 排序算法 "
+           href="/blog/study/algorithm/%E5%9B%BE%E7%A4%BA%E7%AE%97%E6%B3%95/"
+           data-tag="编程,算法"
+           data-author="" >
+            <span class="post-title" title="图示经典算法">图示经典算法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops jenkins "
+           href="/blog/study/docker/devops/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="jenkins">jenkins</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops docker "
+           href="/blog/study/docker/docker/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="docker">docker</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/Spring/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="0.Spring介绍">0.Spring介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/linux/"
+           data-tag="编程,linux"
+           data-author="" >
+            <span class="post-title" title="linux">linux</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/linux_mint/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="linux mint">linux mint</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/java/reg/"
+           data-tag="工具,编程,正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/"
+           data-tag="linux,登天梯"
+           data-author="" >
+            <span class="post-title" title="梯子">梯子</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/study/middleware/RocketMq/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="RocketMQ">RocketMQ</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/study/middleware/nginx/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/study/mysql/SQL%E8%AF%AD%E8%A8%80%E5%88%86%E7%B1%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="SQL分类">SQL分类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/study/mysql/mysql%E5%9F%BA%E7%A1%80/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="mysql基础">mysql基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 redis "
+           href="/blog/study/mysql/redis/"
+           data-tag="编程,中间件,redis"
+           data-author="" >
+            <span class="post-title" title="redis">redis</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 面试 "
+           href="/blog/study/mysql/sql%E4%BC%98%E5%8C%96/"
+           data-tag="编程,java,框架,mysql,面试"
+           data-author="" >
+            <span class="post-title" title="面试sql优化">面试sql优化</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96demo/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="实验数据">实验数据</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 规范 "
+           href="/blog/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%9358%E5%86%9B%E8%A7%84/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="58同城数据库军规">58同城数据库军规</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="数据库系统原理">数据库系统原理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 读书 "
+           href="/blog/study/mysql/%E9%AB%98%E6%80%A7%E8%83%BD/"
+           data-tag="读书,编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql高性能(第三版)">mysql高性能(第三版)</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/ffmpeg/"
+           data-tag="生活,工具,编程"
+           data-author="" >
+            <span class="post-title" title="ffmpeg使用">ffmpeg使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 mybatis "
+           href="/blog/study/mybatis/mybatis%E9%9D%A2%E8%AF%95/"
+           data-tag="面试,mybatis"
+           data-author="" >
+            <span class="post-title" title="mybatis面试">mybatis面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/git/"
+           data-tag="工具,编程,git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/ide/"
+           data-tag="工具,编程,ide"
+           data-author="" >
+            <span class="post-title" title="ide">ide</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/mysqlcli/"
+           data-tag="工具,编程,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql client">mysql client</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops python "
+           href="/blog/study/other/python/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="思维导图 "
+           href="/blog/study/other/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag="编程,思维导图,目录"
+           data-author="" >
+            <span class="post-title" title="思维导图目录">思维导图目录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/js/"
+           data-tag="编程,前端,js"
+           data-author="" >
+            <span class="post-title" title="JS">JS</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/web/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="iview">iview</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/vue/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/arthas/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="Arthas">Arthas</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/jstat/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="jstat命令手册">jstat命令手册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/tool/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="javap">javap</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 新特性 "
+           href="/blog/study/java/base/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="jdk8新特性">jdk8新特性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 基础 "
+           href="/blog/study/java/lock/%E9%94%81%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%85%B3%E9%94%AE%E5%AD%97/"
+           data-tag="编程,java,锁"
+           data-author="" >
+            <span class="post-title" title="锁与同步关键字">锁与同步关键字</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/02/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（02）容器基本用法">Spring源码分析（02）容器基本用法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java GC "
+           href="/blog/study/java/base/%E5%9F%BA%E6%9C%AC%E5%8A%9F-GC/"
+           data-tag="编程,jvm,GC"
+           data-author="" >
+            <span class="post-title" title="GC基础">GC基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/01/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（01）基本介绍">Spring源码分析（01）基本介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/03/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（03）容器核心类">Spring源码分析（03）容器核心类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/05/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（05）获取Document">Spring源码分析（05）获取Document</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/04/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（04）容器的基础XmlBeanFactory">Spring源码分析（04）容器的基础XmlBeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/06/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（06）解析和注册BeanDefinitions">Spring源码分析（06）解析和注册BeanDefinitions</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/08/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（08）AbstractBeanDefinition属性">Spring源码分析（08）AbstractBeanDefinition属性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/10/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（10）注册解析的BeanDefinition">Spring源码分析（10）注册解析的BeanDefinition</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/09/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（09）解析默认标签中的自定义标签元素">Spring源码分析（09）解析默认标签中的自定义标签元素</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/11/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（11）bean的加载">Spring源码分析（11）bean的加载</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/12/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（12）FactoryBean的使用">Spring源码分析（12）FactoryBean的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/13/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（13）缓存中获取单例bean">Spring源码分析（13）缓存中获取单例bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/15/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（15）获取单例">Spring源码分析（15）获取单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/16/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（16）准备创建bean">Spring源码分析（16）准备创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/17/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（17）循环依赖">Spring源码分析（17）循环依赖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/19/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（19）容器的功能扩展概览">Spring源码分析（19）容器的功能扩展概览</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/20/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（20）准备环境">Spring源码分析（20）准备环境</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/21/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（21）加载BeanFactory">Spring源码分析（21）加载BeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/22/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（22）功能扩展">Spring源码分析（22）功能扩展</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/23/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（23）BeanFactory的后处理">Spring源码分析（23）BeanFactory的后处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/24/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（24）初始化非延迟加载单例">Spring源码分析（24）初始化非延迟加载单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/25/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（25）finishRefresh">Spring源码分析（25）finishRefresh</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/27/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（27）静态AOP">Spring源码分析（27）静态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/26/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（26）动态AOP">Spring源码分析（26）动态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/28/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（28）mvc快速体验">Spring源码分析（28）mvc快速体验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/29/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（29）ContextLoaderListener">Spring源码分析（29）ContextLoaderListener</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/30/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（30）DispatcherServlet">Spring源码分析（30）DispatcherServlet</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/31/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（31）DispatcherServlet的逻辑处理">Spring源码分析（31）DispatcherServlet的逻辑处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/spring%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,框架,spring,面试"
+           data-author="" >
+            <span class="post-title" title="spring面试问题与答案集锦">spring面试问题与答案集锦</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/study/java/netease/2020%E4%BD%9C%E4%B8%9A/"
+           data-tag="编程,java,杂项"
+           data-author="" >
+            <span class="post-title" title="作业记录">作业记录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/study/java/netease/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JAVA%E8%99%9A%E6%8B%9F%E6%9C%BA/"
+           data-tag="读书,编程,java,jvm"
+           data-author="" >
+            <span class="post-title" title="深入理解虚拟机-作业">深入理解虚拟机-作业</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/study/java/springcloud/springBoot/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="SpringBoot">SpringBoot</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/study/java/springcloud/springCloud/"
+           data-tag="编程,java,框架"
+           data-author="" >
+            <span class="post-title" title="SpringCloud">SpringCloud</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/study/java/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,面试,线程"
+           data-author="" >
+            <span class="post-title" title="一次简单的线程池面试">一次简单的线程池面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 阅读 "
+           href="/blog/study/java/%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="JAVA性能优化权威">JAVA性能优化权威</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/study/java/%E4%BC%98%E5%8C%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="编程,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/java/%E5%B7%A5%E5%85%B7/maven/"
+           data-tag="工具,编程"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/01.awk/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="1.AWK">1.AWK</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/02.%E5%91%A8%E6%9C%9F%E6%80%A7%E9%97%AE%E9%A2%98%E5%AE%9E%E9%AA%8C/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="2.MySQL周期性波动试验">2.MySQL周期性波动试验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/03.%E5%AF%B9%E4%BA%8E%E4%B8%8D%E8%A7%84%E5%88%99%E7%9A%84%E5%BB%B6%E8%BF%9F%E7%8E%B0%E8%B1%A1%E7%9A%84%E8%A7%82%E5%AF%9F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="3.对于不规则的延迟现象的观察">3.对于不规则的延迟现象的观察</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/04.%E5%88%97%E7%9A%84%E9%80%89%E6%8B%A9/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="4.选择原则">4.选择原则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/05.%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="5.索引的优化--生效规则">5.索引的优化--生效规则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/06.%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="6.聚簇索引与非聚簇索引">6.聚簇索引与非聚簇索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/07.%E7%B4%A2%E5%BC%95%E8%A6%86%E7%9B%96/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="7.索引覆盖">7.索引覆盖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/08.%E7%B4%A2%E5%BC%95%E9%95%BF%E5%BA%A6/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="8.索引长度与区分度">8.索引长度与区分度</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/09.%E5%BB%B6%E8%BF%9F%E5%85%B3%E8%81%94/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="9.延迟关联">9.延迟关联</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/10.%E7%B4%A2%E5%BC%95%E4%B8%8E%E6%8E%92%E5%BA%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="10.索引与排序">10.索引与排序</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/11.%E9%87%8D%E5%A4%8D%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%86%97%E4%BD%99%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="11.重复索引与冗余索引">11.重复索引与冗余索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/12.%E7%B4%A2%E5%BC%95%E7%A2%8E%E7%89%87%E4%BF%AE%E5%A4%8D/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="12.索引碎片与维护">12.索引碎片与维护</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/13.explain/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="13.explain分析sql效果">13.explain分析sql效果</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/14.%E5%AD%90%E6%9F%A5%E8%AF%A2/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="14.子查询">14.子查询</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/16.%E5%8F%98%E9%87%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="16.变量的使用">16.变量的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/15.%E6%8A%80%E5%B7%A7/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="15.奇技淫巧">15.奇技淫巧</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/17.%E4%BA%8B%E5%8A%A1/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="17.事务">17.事务</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/18.%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="18.读写分离">18.读写分离</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/14/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（14）从bean的实例中获取对象">Spring源码分析（14）从bean的实例中获取对象</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/18/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（18）创建bean">Spring源码分析（18）创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/07/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（07）bean标签的解析及注册">Spring源码分析（07）bean标签的解析及注册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-study/algorithm/图示算法" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">图示经典算法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="算法">算法</a>/
+            
+                <a  data-rel="排序算法">排序算法</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">编程</a>
+            
+            <a class="color3">算法</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        <!--暂时影藏时间-->
+        <!---->
+        <!--创建时间:<time class="date" title='更新时间: 2020-04-21 12:14:56'>2020-04-22 20:15</time>-->
+        <!---->
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.2k</span>
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图示经典算法"><span class="toc-text">图示经典算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、冒泡排序"><span class="toc-text">1、冒泡排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、选择排序"><span class="toc-text">2、选择排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、插入排序"><span class="toc-text">3、插入排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、希尔排序"><span class="toc-text">4、希尔排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、归并排序"><span class="toc-text">5、归并排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、快速排序"><span class="toc-text">6、快速排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、堆排序"><span class="toc-text">7、堆排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8、计数排序"><span class="toc-text">8、计数排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9、桶排序"><span class="toc-text">9、桶排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10、基数排序"><span class="toc-text">10、基数排序</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h1 id="图示经典算法"><a href="#图示经典算法" class="headerlink" title="图示经典算法"></a>图示经典算法</h1><p><a href="https://github.com/hustcc/JS-Sorting-Algorithm" target="_blank" rel="noopener">github项目</a></p>
+<p><a href="https://mp.weixin.qq.com/s?src=11&timestamp=1586160036&ver=2261&signature=1vKz3IFOSkkYEZqjb1**t2Y--oqrb-86zB0SP2jvZ*U-oKOoY-3PFqgJskgnTe2msnUv7DPqJGxfK0OkvpTJ3qbgpAgrXqDQDWtCh9OAOrri3FHG2qdYD0nwXXahh1FV&new=1" target="_blank" rel="noopener">其他算法与司法公平</a></p>
+</blockquote>
+<p>排序算法是《数据结构与算法》中最基本的算法之一。</p>
+<p>排序算法可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。常见的内部排序算法有：<strong>插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序</strong>等。用一张图概括：</p>
+<img src="0.gif" alt="0" style="zoom:50%;">
+
+
+
+<p><strong>关于时间复杂度：</strong></p>
+<ol>
+<li>平方阶 (O(n2)) 排序 各类简单排序：直接插入、直接选择和冒泡排序。</li>
+<li>线性对数阶 (O(nlog2n)) 排序 快速排序、堆排序和归并排序；</li>
+<li>O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。希尔排序</li>
+<li>线性阶 (O(n)) 排序 基数排序，此外还有桶、箱排序。</li>
+</ol>
+<p><strong>关于稳定性：</strong></p>
+<ul>
+<li>稳定的排序算法：冒泡排序、插入排序、归并排序和基数排序。</li>
+<li>不是稳定的排序算法：选择排序、快速排序、希尔排序、堆排序。</li>
+</ul>
+<p><strong>名词解释：</strong></p>
+<ul>
+<li><p><strong>n</strong>：</p>
+<p>数据规模</p>
+</li>
+<li><p><strong>k</strong>：</p>
+<p>“桶”的个数</p>
+</li>
+<li><p><strong>In-place</strong>：</p>
+<p>占用常数内存，不占用额外内存</p>
+</li>
+<li><p><strong>Out-place</strong>：</p>
+<p>占用额外内存</p>
+</li>
+<li><p><strong>稳定性</strong>：排序后 2 个相等键值的顺序和排序之前它们的顺序相同</p>
+</li>
+</ul>
+<h1 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a><strong>1、冒泡排序</strong></h1><p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>作为最简单的排序算法之一，冒泡排序给我的感觉就像 Abandon 在单词书里出现的感觉一样，每次都在第一页第一位，所以最熟悉。冒泡排序还有一种优化算法，就是立一个 flag，当在一趟序列遍历中元素没有发生交换，则证明该序列已经有序。但这种改进对于提升性能来说并没有什么太大作用。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<p><strong>（2）动图演示</strong></p>
+<img src="1.gif" alt="2" style="zoom:50%;">
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def bubbleSort(arr):
+    for i in range(1, len(arr)):
+        for j in range(0, len(arr)-i):
+            if arr[j] &gt; arr[j+1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr</code></pre>
+<h1 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a><strong>2、选择排序</strong></h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置</li>
+<li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
+<li>重复第二步，直到所有元素均排序完毕。</li>
+</ol>
+<p><strong>（2）动图演示</strong></p>
+<img src="2.gif" alt="2" style="zoom:50%;">
+
+
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def selectionSort(arr):
+    for i in range(len(arr) - 1):
+        # 记录最小数的索引
+        minIndex = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] &lt; arr[minIndex]:
+                minIndex = j
+        # i 不是最小数时，将 i 和最小数进行交换
+        if i != minIndex:
+            arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    return arr</code></pre>
+<h1 id="3、插入排序"><a href="#3、插入排序" class="headerlink" title="3、插入排序"></a><strong>3、插入排序</strong></h1><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<p>插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</li>
+<li>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</li>
+</ol>
+<p><strong>（2）动图演示</strong></p>
+<img src="3.gif" alt="3" style="zoom:50%;">
+
+
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def insertionSort(arr):
+    for i in range(len(arr)):
+        preIndex = i-1
+        current = arr[i]
+        while preIndex &gt;= 0 and arr[preIndex] &gt; current:
+            arr[preIndex+1] = arr[preIndex]
+            preIndex-=1
+        arr[preIndex+1] = current
+    return arr</code></pre>
+<h1 id="4、希尔排序"><a href="#4、希尔排序" class="headerlink" title="4、希尔排序"></a><strong>4、希尔排序</strong></h1><p>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。</p>
+<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
+<ul>
+<li>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；</li>
+<li>但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；</li>
+</ul>
+<p>希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk = 1；</li>
+<li>按增量序列个数 k，对序列进行 k 趟排序；</li>
+<li>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
+</ol>
+<p><strong>（2）Python 代码</strong></p>
+<pre><code class="python">def shellSort(arr):
+    import math
+    gap=1
+    while(gap &lt; len(arr)/3):
+        gap = gap*3+1
+    while gap &gt; 0:
+        for i in range(gap,len(arr)):
+            temp = arr[i]
+            j = i-gap
+            while j &gt;=0 and arr[j] &gt; temp:
+                arr[j+gap]=arr[j]
+                j-=gap
+            arr[j+gap] = temp
+        gap = math.floor(gap/3)
+    return arr
+}</code></pre>
+<h1 id="5、归并排序"><a href="#5、归并排序" class="headerlink" title="5、归并排序"></a><strong>5、归并排序</strong></h1><p>归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
+<p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
+<ul>
+<li>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第 2 种方法）；</li>
+<li>自下而上的迭代；</li>
+</ul>
+<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn) 的时间复杂度。代价是需要额外的内存空间。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</li>
+<li>设定两个指针，最初位置分别为两个已经排序序列的起始位置；</li>
+<li>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</li>
+<li>重复步骤 3 直到某一指针达到序列尾；</li>
+<li>将另一序列剩下的所有元素直接复制到合并序列尾。</li>
+</ol>
+<p><strong>（2）动图演示</strong></p>
+<img src="5.gif" alt="5" style="zoom:50%;">
+
+
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def mergeSort(arr):
+    import math
+    if(len(arr)&lt;2):
+        return arr
+    middle = math.floor(len(arr)/2)
+    left, right = arr[0:middle], arr[middle:]
+    return merge(mergeSort(left), mergeSort(right))
+
+def merge(left,right):
+    result = []
+    while left and right:
+        if left[0] &lt;= right[0]:
+            result.append(left.pop(0));
+        else:
+            result.append(right.pop(0));
+    while left:
+        result.append(left.pop(0));
+    while right:
+        result.append(right.pop(0));
+    return result</code></pre>
+<h1 id="6、快速排序"><a href="#6、快速排序" class="headerlink" title="6、快速排序"></a><strong>6、快速排序</strong></h1><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
+<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
+<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
+<blockquote>
+<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
+</blockquote>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>从数列中挑出一个元素，称为 “基准”（pivot）;</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li>
+<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</li>
+</ol>
+<p>递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
+<p><strong>（2）动图演示</strong></p>
+<img src="6.gif" alt="6" style="zoom:50%;">
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def quickSort(arr, left=None, right=None):
+    left = 0 if not isinstance(left,(int, float)) else left
+    right = len(arr)-1 if not isinstance(right,(int, float)) else right
+    if left &lt; right:
+        partitionIndex = partition(arr, left, right)
+        quickSort(arr, left, partitionIndex-1)
+        quickSort(arr, partitionIndex+1, right)
+    return arr
+
+def partition(arr, left, right):
+    pivot = left
+    index = pivot+1
+    i = index
+    while  i &lt;= right:
+        if arr[i] &lt; arr[pivot]:
+            swap(arr, i, index)
+            index+=1
+        i+=1
+    swap(arr,pivot,index-1)
+    return index-1
+
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]</code></pre>
+<h1 id="7、堆排序"><a href="#7、堆排序" class="headerlink" title="7、堆排序"></a><strong>7、堆排序</strong></h1><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
+<ol>
+<li>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；</li>
+<li>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；</li>
+</ol>
+<p>堆排序的平均时间复杂度为 Ο(nlogn)。</p>
+<p><strong>（1）算法步骤</strong></p>
+<ol>
+<li>创建一个堆 H[0……n-1]；</li>
+<li>把堆首（最大值）和堆尾互换；</li>
+<li>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</li>
+<li>重复步骤 2，直到堆的尺寸为 1。</li>
+</ol>
+<p><strong>（2）动图演示</strong></p>
+<img src="7.gif" alt="7" style="zoom: 67%;">
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def buildMaxHeap(arr):
+    import math
+    for i in range(math.floor(len(arr)/2),-1,-1):
+        heapify(arr,i)
+
+def heapify(arr, i):
+    left = 2*i+1
+    right = 2*i+2
+    largest = i
+    if left &lt; arrLen and arr[left] &gt; arr[largest]:
+        largest = left
+    if right &lt; arrLen and arr[right] &gt; arr[largest]:
+        largest = right
+
+    if largest != i:
+        swap(arr, i, largest)
+        heapify(arr, largest)
+
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]
+
+def heapSort(arr):
+    global arrLen
+    arrLen = len(arr)
+    buildMaxHeap(arr)
+    for i in range(len(arr)-1,0,-1):
+        swap(arr,0,i)
+        arrLen -=1
+        heapify(arr, 0)
+    return arr</code></pre>
+<h1 id="8、计数排序"><a href="#8、计数排序" class="headerlink" title="8、计数排序"></a><strong>8、计数排序</strong></h1><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<p><strong>（1）动图演示</strong></p>
+<img src="8.gif" alt="8" style="zoom:50%;">
+
+<p><strong>（2）Python 代码</strong></p>
+<pre><code class="python">def countingSort(arr, maxValue):
+    bucketLen = maxValue+1
+    bucket = [0]*bucketLen
+    sortedIndex =0
+    arrLen = len(arr)
+    for i in range(arrLen):
+        if not bucket[arr[i]]:
+            bucket[arr[i]]=0
+        bucket[arr[i]]+=1
+    for j in range(bucketLen):
+        while bucket[j]&gt;0:
+            arr[sortedIndex] = j
+            sortedIndex+=1
+            bucket[j]-=1
+    return arr</code></pre>
+<h1 id="9、桶排序"><a href="#9、桶排序" class="headerlink" title="9、桶排序"></a><strong>9、桶排序</strong></h1><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
+<ol>
+<li>在额外空间充足的情况下，尽量增大桶的数量</li>
+<li>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中</li>
+</ol>
+<p>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
+<p><strong>（1）什么时候最快</strong></p>
+<p>当输入的数据可以均匀的分配到每一个桶中。</p>
+<p><strong>（2）什么时候最慢</strong></p>
+<p>当输入的数据被分配到了同一个桶中。</p>
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">def bucket_sort(s):    &quot;&quot;&quot;桶排序&quot;&quot;&quot;    min_num = min(s)    max_num = max(s)    # 桶的大小    bucket_range = (max_num-min_num) / len(s)    # 桶数组    count_list = [ [] for i in range(len(s) + 1)]    # 向桶数组填数    for i in s:        count_list[int((i-min_num)//bucket_range)].append(i)    s.clear()    # 回填，这里桶内部排序直接调用了sorted    for i in count_list:        for j in sorted(i):            s.append(j)if __name__ == __main__ :    a = [3.2,6,8,def bucket_sort(s):
+    &quot;&quot;&quot;桶排序&quot;&quot;&quot;
+    min_num = min(s)
+    max_num = max(s)
+    # 桶的大小
+    bucket_range = (max_num-min_num) / len(s)
+    # 桶数组
+    count_list = [ [] for i in range(len(s) + 1)]
+    # 向桶数组填数
+    for i in s:
+        count_list[int((i-min_num)//bucket_range)].append(i)
+    s.clear()
+    # 回填，这里桶内部排序直接调用了sorted
+    for i in count_list:
+        for j in sorted(i):
+            s.append(j)
+
+if __name__ == __main__ :
+    a = [3.2,6,8,4,2,6,7,3]
+    bucket_sort(a)
+    print(a) # [2, 3, 3.2, 4, 6, 6, 7, 8]4,2,6,7,3]    bucket_sort(a)    print(a) # [2, 3, 3.2, 4, 6, 6, 7, 8]</code></pre>
+<h1 id="10、基数排序"><a href="#10、基数排序" class="headerlink" title="10、基数排序"></a><strong>10、基数排序</strong></h1><p>基数排序是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
+<p><strong>（1）基数排序 vs 计数排序 vs 桶排序</strong></p>
+<p>这三种排序算法都利用了桶的概念，但对桶的使用方法上有明显差异：</p>
+<ul>
+<li>基数排序：根据键值的每位数字来分配桶；</li>
+<li>计数排序：每个桶只存储单一键值；</li>
+<li>桶排序：每个桶存储一定范围的数值。</li>
+</ul>
+<p><strong>（2）动图演示</strong></p>
+<img src="10.gif" alt="10" style="zoom:50%;">
+
+<p><strong>（3）Python 代码</strong></p>
+<pre><code class="python">ef RadixSort(list):
+    i = 0                                    #初始为个位排序
+    n = 1                                     #最小的位数置为1（包含0）
+    max_num = max(list) #得到带排序数组中最大数
+    while max_num &gt; 10**n: #得到最大数是几位数
+        n += 1
+    while i &lt; n:
+        bucket = {} #用字典构建桶
+        for x in range(10):
+            bucket.setdefault(x, []) #将每个桶置空
+        for x in list: #对每一位进行排序
+            radix =int((x / (10**i)) % 10) #得到每位的基数
+            bucket[radix].append(x) #将对应的数组元素加入到相 #应位基数的桶中
+        j = 0
+        for k in range(10):
+            if len(bucket[k]) != 0: #若桶不为空
+                for y in bucket[k]: #将该桶中每个元素
+                    list[j] = y #放回到数组中
+                    j += 1
+        i += 1
+return  list</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+<!--TODO: 底部版权信息-->
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>图示经典算法</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="莫问-廖远佩">莫问-廖远佩</a></p>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 内容非商用，仅作为学习记录之用若有侵权请联系：liaoyuanpei@foxmail.com。
+    </p>
+</div>
+
+
+<!--TODO: 评论系统-->
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020 莫问-廖远佩</p>
+
+<!--<p class="footer-entry">-->
+    <!--<a _ngcontent-c1="" href="https://www.upyun.com/" target="_blank" rel="noopener" style="display: inline-block; opacity: .55">-->
+        <!--<img _ngcontent-c1="" alt="upyun logo" src="/blog/img/upanyun_logo2.png" style="width:55px;height:24px">-->
+        <!--又拍云提供加速-->
+    <!--</a>-->
+<!--</p>-->
+<p class="footer-entry">
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61092402000103" target="_blank"><img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">陕公安备案61092402000103号</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>如果喜欢就打赏一下,鼓励下呗!</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/blog/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/blog/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/blog/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/blog/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#生活','#读书','#成长','#书单','#时间管理','#技巧','#理财','#方法论','#win10','#工具','#编程','#算法','#devops','#docker','#java','#框架','#spring','#linux','#正则','#登天梯','#中间件','#数据库','#mysql','#redis','#面试','#mybatis','#git','#ide','#程序','#python','#思维导图','#目录','#前端','#js','#vue','#锁','#jvm','#GC','#杂项','#线程','#设计模式',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/blog/img/blog_bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

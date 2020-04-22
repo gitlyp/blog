@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spring源码分析（22）功能扩展 | 莫问的博客</title>
+  <meta name="keywords" content=" 编程 , java , 框架 , spring ">
+  <meta name="description" content="Spring源码分析（22）功能扩展 | 莫问的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="win10使用– win10隐藏文件夹 HKEY_LOCAL_MACHINE＼SOFTWARE＼Microsoft＼Windows＼CurrentVersion＼Explorer＼FolderDescriptions  图片文件夹：{0ddd015d-b06c-45d5-8c4c-f59713854639}＼PropertyBag  3D文件夹：  {31C0DD25-9439-4F12-BF41">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10使用">
+<meta property="og:url" content="http://blog.jiyijy.com/life/windows/use/index.html">
+<meta property="og:site_name" content="莫问的博客">
+<meta property="og:description" content="win10使用– win10隐藏文件夹 HKEY_LOCAL_MACHINE＼SOFTWARE＼Microsoft＼Windows＼CurrentVersion＼Explorer＼FolderDescriptions  图片文件夹：{0ddd015d-b06c-45d5-8c4c-f59713854639}＼PropertyBag  3D文件夹：  {31C0DD25-9439-4F12-BF41">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://blog.jiyijy.com/life/windows/use/image-20191123214806597.png">
+<meta property="article:published_time" content="2020-04-22T12:15:35.006Z">
+<meta property="article:modified_time" content="2020-04-21T04:14:57.431Z">
+<meta property="article:author" content="莫问-廖远佩">
+<meta property="article:tag" content="技巧">
+<meta property="article:tag" content="win10">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jiyijy.com/life/windows/use/image-20191123214806597.png">
+
+
+<link rel="icon" href="/blog/img/avatar.jpg">
+
+<link href="/blog/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/blog/css/hl_theme/zenbum.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/blog/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/blog/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/blog">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/blog/" class="avatar_target">
+    <img class="avatar" src="/blog/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>莫问-廖远佩</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(100)</small></div></li>
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="理财">理财<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="win10">win10<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂项">杂项<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法"><i class="fold iconfont icon-right"></i>算法<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="排序算法">排序算法<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="devops"><i class="fold iconfont icon-right"></i>devops<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="jenkins">jenkins<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="docker">docker<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="python">python<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="框架"><i class="fold iconfont icon-right"></i>框架<small>(36)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="spring">spring<small>(33)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="mybatis">mybatis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringCloud">SpringCloud<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="中间件"><i class="fold iconfont icon-right"></i>中间件<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="redis">redis<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="基础">基础<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="面试">面试<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="进阶">进阶<small>(18)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="规范">规范<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书">读书<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="思维导图">思维导图<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(9)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="新特性">新特性<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具">工具<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="基础">基础<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="GC">GC<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="阅读">阅读<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/blog/">关于</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="100">
+<input type="hidden" id="yelog_site_word_count" value="180.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">成长</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">书单</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">时间管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">技巧</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">理财</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">win10</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">devops</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">正则</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">登天梯</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">中间件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mybatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ide</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">思维导图</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">锁</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">GC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">杂项</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">设计模式</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="生活 读书 "
+           href="/blog/life/reading/Reading/"
+           data-tag="生活,读书,成长,书单"
+           data-author="" >
+            <span class="post-title" title="阅读计划">阅读计划</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a id="top" class="工具 "
+           href="/blog/study/tool/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"
+           data-tag="生活,工具,程序"
+           data-author="" >
+            <span class="post-title" title="工具推荐">工具推荐</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 读书 "
+           href="/blog/life/reading/%E5%93%AA%E6%9C%89%E6%B2%A1%E6%9C%89%E6%97%B6%E9%97%B4%E8%BF%99%E5%9B%9E%E4%BA%8B/"
+           data-tag="生活,读书,成长,时间管理"
+           data-author="" >
+            <span class="post-title" title="哪有没有时间这回事">哪有没有时间这回事</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/life/windows/bat/"
+           data-tag="生活,技巧"
+           data-author="" >
+            <span class="post-title" title="BAT">BAT</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/life/finance/money/"
+           data-tag="生活,理财"
+           data-author="" >
+            <span class="post-title" title="理财入门">理财入门</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 理财 "
+           href="/blog/life/finance/%E7%90%86%E8%B4%A2%E6%84%8F%E8%AF%86/"
+           data-tag="生活,理财,方法论"
+           data-author="" >
+            <span class="post-title" title="理财意识觉醒">理财意识觉醒</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="生活 win10 "
+           href="/blog/life/windows/use/"
+           data-tag="技巧,win10"
+           data-author="" >
+            <span class="post-title" title="win10使用">win10使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:35">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/life/windows/security/"
+           data-tag="技巧,工具"
+           data-author="" >
+            <span class="post-title" title="security">security</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:35">2020/04/22</span>-->
+        </a>
+        
+        <a  class="算法 排序算法 "
+           href="/blog/study/algorithm/%E5%9B%BE%E7%A4%BA%E7%AE%97%E6%B3%95/"
+           data-tag="编程,算法"
+           data-author="" >
+            <span class="post-title" title="图示经典算法">图示经典算法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops jenkins "
+           href="/blog/study/docker/devops/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="jenkins">jenkins</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops docker "
+           href="/blog/study/docker/docker/"
+           data-tag="编程,devops,docker"
+           data-author="" >
+            <span class="post-title" title="docker">docker</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/Spring/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="0.Spring介绍">0.Spring介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/linux/"
+           data-tag="编程,linux"
+           data-author="" >
+            <span class="post-title" title="linux">linux</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/linux_mint/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="linux mint">linux mint</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/java/reg/"
+           data-tag="工具,编程,正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="linux "
+           href="/blog/study/linux/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/"
+           data-tag="linux,登天梯"
+           data-author="" >
+            <span class="post-title" title="梯子">梯子</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/study/middleware/RocketMq/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="RocketMQ">RocketMQ</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 "
+           href="/blog/study/middleware/nginx/"
+           data-tag="编程,中间件"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/study/mysql/SQL%E8%AF%AD%E8%A8%80%E5%88%86%E7%B1%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="SQL分类">SQL分类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 基础 "
+           href="/blog/study/mysql/mysql%E5%9F%BA%E7%A1%80/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="mysql基础">mysql基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="中间件 redis "
+           href="/blog/study/mysql/redis/"
+           data-tag="编程,中间件,redis"
+           data-author="" >
+            <span class="post-title" title="redis">redis</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 面试 "
+           href="/blog/study/mysql/sql%E4%BC%98%E5%8C%96/"
+           data-tag="编程,java,框架,mysql,面试"
+           data-author="" >
+            <span class="post-title" title="面试sql优化">面试sql优化</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96demo/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="实验数据">实验数据</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 规范 "
+           href="/blog/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%9358%E5%86%9B%E8%A7%84/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="58同城数据库军规">58同城数据库军规</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="数据库系统原理">数据库系统原理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 读书 "
+           href="/blog/study/mysql/%E9%AB%98%E6%80%A7%E8%83%BD/"
+           data-tag="读书,编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql高性能(第三版)">mysql高性能(第三版)</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/ffmpeg/"
+           data-tag="生活,工具,编程"
+           data-author="" >
+            <span class="post-title" title="ffmpeg使用">ffmpeg使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 mybatis "
+           href="/blog/study/mybatis/mybatis%E9%9D%A2%E8%AF%95/"
+           data-tag="面试,mybatis"
+           data-author="" >
+            <span class="post-title" title="mybatis面试">mybatis面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/git/"
+           data-tag="工具,编程,git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/ide/"
+           data-tag="工具,编程,ide"
+           data-author="" >
+            <span class="post-title" title="ide">ide</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/tool/mysqlcli/"
+           data-tag="工具,编程,mysql"
+           data-author="" >
+            <span class="post-title" title="mysql client">mysql client</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="devops python "
+           href="/blog/study/other/python/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="思维导图 "
+           href="/blog/study/other/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag="编程,思维导图,目录"
+           data-author="" >
+            <span class="post-title" title="思维导图目录">思维导图目录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/js/"
+           data-tag="编程,前端,js"
+           data-author="" >
+            <span class="post-title" title="JS">JS</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/web/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="iview">iview</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="前端 "
+           href="/blog/study/web/vue/"
+           data-tag="编程,前端,js,vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/arthas/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="Arthas">Arthas</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/jstat/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="jstat命令手册">jstat命令手册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 工具 "
+           href="/blog/study/java/jvmtool/tool/"
+           data-tag="工具,编程,java"
+           data-author="" >
+            <span class="post-title" title="javap">javap</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 新特性 "
+           href="/blog/study/java/base/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="编程"
+           data-author="" >
+            <span class="post-title" title="jdk8新特性">jdk8新特性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 基础 "
+           href="/blog/study/java/lock/%E9%94%81%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%85%B3%E9%94%AE%E5%AD%97/"
+           data-tag="编程,java,锁"
+           data-author="" >
+            <span class="post-title" title="锁与同步关键字">锁与同步关键字</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/02/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（02）容器基本用法">Spring源码分析（02）容器基本用法</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java GC "
+           href="/blog/study/java/base/%E5%9F%BA%E6%9C%AC%E5%8A%9F-GC/"
+           data-tag="编程,jvm,GC"
+           data-author="" >
+            <span class="post-title" title="GC基础">GC基础</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/01/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（01）基本介绍">Spring源码分析（01）基本介绍</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/03/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（03）容器核心类">Spring源码分析（03）容器核心类</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/05/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（05）获取Document">Spring源码分析（05）获取Document</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/04/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（04）容器的基础XmlBeanFactory">Spring源码分析（04）容器的基础XmlBeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/06/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（06）解析和注册BeanDefinitions">Spring源码分析（06）解析和注册BeanDefinitions</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/08/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（08）AbstractBeanDefinition属性">Spring源码分析（08）AbstractBeanDefinition属性</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/10/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（10）注册解析的BeanDefinition">Spring源码分析（10）注册解析的BeanDefinition</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/09/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（09）解析默认标签中的自定义标签元素">Spring源码分析（09）解析默认标签中的自定义标签元素</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/11/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（11）bean的加载">Spring源码分析（11）bean的加载</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/12/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（12）FactoryBean的使用">Spring源码分析（12）FactoryBean的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/13/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（13）缓存中获取单例bean">Spring源码分析（13）缓存中获取单例bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/15/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（15）获取单例">Spring源码分析（15）获取单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/16/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（16）准备创建bean">Spring源码分析（16）准备创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/17/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（17）循环依赖">Spring源码分析（17）循环依赖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/19/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（19）容器的功能扩展概览">Spring源码分析（19）容器的功能扩展概览</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/20/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（20）准备环境">Spring源码分析（20）准备环境</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/21/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（21）加载BeanFactory">Spring源码分析（21）加载BeanFactory</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/22/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（22）功能扩展">Spring源码分析（22）功能扩展</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/23/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（23）BeanFactory的后处理">Spring源码分析（23）BeanFactory的后处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/24/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（24）初始化非延迟加载单例">Spring源码分析（24）初始化非延迟加载单例</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/25/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（25）finishRefresh">Spring源码分析（25）finishRefresh</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/27/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（27）静态AOP">Spring源码分析（27）静态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/26/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（26）动态AOP">Spring源码分析（26）动态AOP</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/28/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（28）mvc快速体验">Spring源码分析（28）mvc快速体验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/29/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（29）ContextLoaderListener">Spring源码分析（29）ContextLoaderListener</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/30/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（30）DispatcherServlet">Spring源码分析（30）DispatcherServlet</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/31/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（31）DispatcherServlet的逻辑处理">Spring源码分析（31）DispatcherServlet的逻辑处理</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/spring%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,框架,spring,面试"
+           data-author="" >
+            <span class="post-title" title="spring面试问题与答案集锦">spring面试问题与答案集锦</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/study/java/netease/2020%E4%BD%9C%E4%B8%9A/"
+           data-tag="编程,java,杂项"
+           data-author="" >
+            <span class="post-title" title="作业记录">作业记录</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="杂项 "
+           href="/blog/study/java/netease/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JAVA%E8%99%9A%E6%8B%9F%E6%9C%BA/"
+           data-tag="读书,编程,java,jvm"
+           data-author="" >
+            <span class="post-title" title="深入理解虚拟机-作业">深入理解虚拟机-作业</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/study/java/springcloud/springBoot/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="SpringBoot">SpringBoot</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 SpringCloud "
+           href="/blog/study/java/springcloud/springCloud/"
+           data-tag="编程,java,框架"
+           data-author="" >
+            <span class="post-title" title="SpringCloud">SpringCloud</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/study/java/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95/"
+           data-tag="编程,java,面试,线程"
+           data-author="" >
+            <span class="post-title" title="一次简单的线程池面试">一次简单的线程池面试</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java 阅读 "
+           href="/blog/study/java/%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="JAVA性能优化权威">JAVA性能优化权威</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="java "
+           href="/blog/study/java/%E4%BC%98%E5%8C%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="编程,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:32">2020/04/22</span>-->
+        </a>
+        
+        <a  class="工具 "
+           href="/blog/study/java/%E5%B7%A5%E5%85%B7/maven/"
+           data-tag="工具,编程"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/01.awk/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="1.AWK">1.AWK</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/02.%E5%91%A8%E6%9C%9F%E6%80%A7%E9%97%AE%E9%A2%98%E5%AE%9E%E9%AA%8C/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="2.MySQL周期性波动试验">2.MySQL周期性波动试验</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/03.%E5%AF%B9%E4%BA%8E%E4%B8%8D%E8%A7%84%E5%88%99%E7%9A%84%E5%BB%B6%E8%BF%9F%E7%8E%B0%E8%B1%A1%E7%9A%84%E8%A7%82%E5%AF%9F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="3.对于不规则的延迟现象的观察">3.对于不规则的延迟现象的观察</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/04.%E5%88%97%E7%9A%84%E9%80%89%E6%8B%A9/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="4.选择原则">4.选择原则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/05.%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="5.索引的优化--生效规则">5.索引的优化--生效规则</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/06.%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="6.聚簇索引与非聚簇索引">6.聚簇索引与非聚簇索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/07.%E7%B4%A2%E5%BC%95%E8%A6%86%E7%9B%96/"
+           data-tag="编程,数据库"
+           data-author="" >
+            <span class="post-title" title="7.索引覆盖">7.索引覆盖</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/08.%E7%B4%A2%E5%BC%95%E9%95%BF%E5%BA%A6/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="8.索引长度与区分度">8.索引长度与区分度</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/09.%E5%BB%B6%E8%BF%9F%E5%85%B3%E8%81%94/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="9.延迟关联">9.延迟关联</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/10.%E7%B4%A2%E5%BC%95%E4%B8%8E%E6%8E%92%E5%BA%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="10.索引与排序">10.索引与排序</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/11.%E9%87%8D%E5%A4%8D%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%86%97%E4%BD%99%E7%B4%A2%E5%BC%95/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="11.重复索引与冗余索引">11.重复索引与冗余索引</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/12.%E7%B4%A2%E5%BC%95%E7%A2%8E%E7%89%87%E4%BF%AE%E5%A4%8D/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="12.索引碎片与维护">12.索引碎片与维护</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/13.explain/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="13.explain分析sql效果">13.explain分析sql效果</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/14.%E5%AD%90%E6%9F%A5%E8%AF%A2/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="14.子查询">14.子查询</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/16.%E5%8F%98%E9%87%8F/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="16.变量的使用">16.变量的使用</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/15.%E6%8A%80%E5%B7%A7/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="15.奇技淫巧">15.奇技淫巧</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/17.%E4%BA%8B%E5%8A%A1/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="17.事务">17.事务</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:33">2020/04/22</span>-->
+        </a>
+        
+        <a  class="数据库 进阶 "
+           href="/blog/study/mysql/%E4%BC%98%E5%8C%96-%E7%87%95%E5%8D%81%E5%85%AB/18.%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"
+           data-tag="编程,数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="18.读写分离">18.读写分离</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:34">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/14/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（14）从bean的实例中获取对象">Spring源码分析（14）从bean的实例中获取对象</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/18/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（18）创建bean">Spring源码分析（18）创建bean</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+        <a  class="框架 spring "
+           href="/blog/study/java/cnblogSpring/07/"
+           data-tag="编程,java,框架,spring"
+           data-author="" >
+            <span class="post-title" title="Spring源码分析（07）bean标签的解析及注册">Spring源码分析（07）bean标签的解析及注册</span>
+            <!--隐藏时间-->
+            <!--<span class="post-date" title="2020-04-22 20:15:31">2020/04/22</span>-->
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-study/java/cnblogSpring/22" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Spring源码分析（22）功能扩展</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="框架">框架</a>/
+            
+                <a  data-rel="spring">spring</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">编程</a>
+            
+            <a class="color5">java</a>
+            
+            <a class="color3">框架</a>
+            
+            <a class="color2">spring</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        <!--暂时影藏时间-->
+        <!---->
+        <!--创建时间:<time class="date" title='更新时间: 2020-04-21 12:31:41'>2020-04-22 20:15</time>-->
+        <!---->
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4k</span>
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、-增加SPEL语言的支持"><span class="toc-text">一、 增加SPEL语言的支持</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、增加属性注册编辑器"><span class="toc-text">二、增加属性注册编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用自定义属性编辑器"><span class="toc-text">1. 使用自定义属性编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-注册Spring自带的属性编辑器CustomDateEditor"><span class="toc-text">2. 注册Spring自带的属性编辑器CustomDateEditor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-添加-ApplicationContextAwareProcessor-处理器"><span class="toc-text">3. 添加 ApplicationContextAwareProcessor 处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-设置忽略依赖"><span class="toc-text">4. 设置忽略依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-注册依赖"><span class="toc-text">5. 注册依赖</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p> 摘要: 本文结合《Spring源码深度解析》来分析Spring 5.0.6版本的源代码。若有描述错误之处，欢迎指正。</p>
+<p> 来源：<a href="https://www.cnblogs.com/warehouse/p/9387668.html" target="_blank" rel="noopener">Spring源码分析（二十二）功能扩展</a></p>
+</blockquote>
+<p>在进入prepareBeanFactory前，Spring已经完成了对配置的解析，而ApplicationContext在功能上的扩展也由此展开。</p>
+<pre><code class="java">/**
+ * Configure the factory&#39;s standard context characteristics,
+ * such as the context&#39;s ClassLoader and post-processors.
+ * @param beanFactory the BeanFactory to configure
+ */
+protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+    // Tell the internal bean factory to use the context&#39;s class loader etc.
+    // 设置beanFactory的classLoader为当前context的classLoader
+    beanFactory.setBeanClassLoader(getClassLoader());
+    // 设置beanFactory的表达式语言处理器，Spring3增加了表达式语言的支持，
+    // 默认可以使用#{bean.xxx}的形式来调用相关属性值
+    beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver(beanFactory.getBeanClassLoader()));
+    // 为beanFactory增加了一个默认的propertyEditor，这个主要是对bean的属性等设置管理的一个工具
+    beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
+
+    // Configure the bean factory with context callbacks.
+    // 添加BeanPostProcessor
+    beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
+    // 设置了几个忽略自动装配的接口
+    beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
+    beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);
+    beanFactory.ignoreDependencyInterface(ResourceLoaderAware.class);
+    beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class);
+    beanFactory.ignoreDependencyInterface(MessageSourceAware.class);
+    beanFactory.ignoreDependencyInterface(ApplicationContextAware.class);
+
+    // BeanFactory interface not registered as resolvable type in a plain factory.
+    // MessageSource registered (and found for autowiring) as a bean.
+    // 设置了几个自动装配的特殊规则
+    beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);
+    beanFactory.registerResolvableDependency(ResourceLoader.class, this);
+    beanFactory.registerResolvableDependency(ApplicationEventPublisher.class, this);
+    beanFactory.registerResolvableDependency(ApplicationContext.class, this);
+
+    // Register early post-processor for detecting inner beans as ApplicationListeners.
+    beanFactory.addBeanPostProcessor(new ApplicationListenerDetector(this));
+
+    // Detect a LoadTimeWeaver and prepare for weaving, if found.
+    // 增加对AspectJ的支持
+    if (beanFactory.containsBean(LOAD_TIME_WEAVER_BEAN_NAME)) {
+        beanFactory.addBeanPostProcessor(new LoadTimeWeaverAwareProcessor(beanFactory));
+        // Set a temporary ClassLoader for type matching.
+        beanFactory.setTempClassLoader(new ContextTypeMatchClassLoader(beanFactory.getBeanClassLoader()));
+    }
+
+    // Register default environment beans.
+    // 添加默认的系统环境bean
+    if (!beanFactory.containsLocalBean(ENVIRONMENT_BEAN_NAME)) {
+        beanFactory.registerSingleton(ENVIRONMENT_BEAN_NAME, getEnvironment());
+    }
+    if (!beanFactory.containsLocalBean(SYSTEM_PROPERTIES_BEAN_NAME)) {
+        beanFactory.registerSingleton(SYSTEM_PROPERTIES_BEAN_NAME, getEnvironment().getSystemProperties());
+    }
+    if (!beanFactory.containsLocalBean(SYSTEM_ENVIRONMENT_BEAN_NAME)) {
+        beanFactory.registerSingleton(SYSTEM_ENVIRONMENT_BEAN_NAME, getEnvironment().getSystemEnvironment());
+    }
+}</code></pre>
+<p>上面函数中主要进行了几个方面的扩展。</p>
+<ul>
+<li>增加对SPEL语言的支持。</li>
+<li>增加对属性编辑器的支持。</li>
+<li>增加对一些内置类，比如EnvironmentAvare、MessageSourceAware的信息注入。</li>
+<li>设置了依赖功能可忽略的接口。</li>
+<li>注册一些固定依赖的属性。</li>
+<li>增加对AspectJ的支持。</li>
+<li>将相关环境变量及属性注册以单例模式注册。</li>
+</ul>
+<p>可能读者不是很理解每个步骤的具体含义，接下来我们会对各个步骤进行详细地分析。</p>
+<h1 id="一、-增加SPEL语言的支持"><a href="#一、-增加SPEL语言的支持" class="headerlink" title="一、 增加SPEL语言的支持"></a>一、 增加SPEL语言的支持</h1><p>Spring 表达式语言全称为 “Spring Expression Language”，缩写为 “SpEL”，类似于Struts 2x 中使用的OGNL表达式语言，能在运行时构建复杂表达式、存取对象图属性、对象方法调用等, 并且能与Spring功能完美整合，比如能用　　来配置bean定义。SpEL是单独模块，只依赖于core 模块，不依赖于其他模块，可以单独使用。</p>
+<p>SpEL使用#{…}为定界符，所有在花括号中的字符都将被认为是SpEL，使用格式如下：</p>
+<pre><code class="xml">&lt;bean id = &quot;saxophone&quot; value = &quot;com.xxx.xxx.Xxx&quot;/&gt;
+&lt;bean &gt;
+    &lt;property name=&quot;instrument&quot; value=&quot;#{saxophone}&quot;/&gt;
+&lt;bean/&gt;</code></pre>
+<p>相当于：</p>
+<pre><code class="xml">&lt;bean id = &quot;saxophone&quot; value = &quot;com.xxx.xxx.Xxx&quot;/&gt;
+&lt;bean &gt;
+    &lt;property name=&quot;instrument&quot; ref=&quot;saxophone&quot;/&gt;
+&lt;bean/&gt;</code></pre>
+<p>当然，上面只是列举了其中最简单的使用方式，SPEL功能非常强大，使用好可以大大提高开发效率，这里只为唤起读者的记忆来帮助我们理解源码，有兴趣的读者可以进一步深入研究。</p>
+<p>在源码中通过代码beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver())注册语言解析器，就可以对SPEL进行解析了，那么在注册解析器后 Spring 又是在什么时候调用这个解析器进行解析呢？</p>
+<p>之前我们讲解过 Spring 在 bean 进行初始化的时候会有属性填充的一步，而在这一步中 Spring 会调用AbstractAutowireCapableBeanFactory类的 applyPropertyValues 函数来完成功能。就在这个函数中，会通过构造 BeanDefinitionValueResolver 类型实例 valueResolver 来进行属性值的解析。同时，也是在这个步骤中一般通过 AbstractBeanFactory中的 evaluateBeanDefinitionString 方法去完成 SPEL 的解析。</p>
+<pre><code class="java">/**
+ * Evaluate the given String as contained in a bean definition,
+ * potentially resolving it as an expression.
+ * @param value the value to check
+ * @param beanDefinition the bean definition that the value comes from
+ * @return the resolved value
+ * @see #setBeanExpressionResolver
+ */
+@Nullable
+protected Object evaluateBeanDefinitionString(@Nullable String value, @Nullable BeanDefinition beanDefinition) {
+    if (this.beanExpressionResolver == null) {
+        return value;
+    }
+
+    Scope scope = null;
+    if (beanDefinition != null) {
+        String scopeName = beanDefinition.getScope();
+        if (scopeName != null) {
+            scope = getRegisteredScope(scopeName);
+        }
+    }
+    return this.beanExpressionResolver.evaluate(value, new BeanExpressionContext(this, scope));
+}</code></pre>
+<p>当调用这个方法时会判断是否存在语言解析器，如果存在则调用语言解析器的方法进行解析，解析的过程是在Spring的expression的包内，这里不做过多解释。我们通过查看对evaluateBeanDefinitionString方法的调用层次可以看出，应用语言解析器的调用主要是在解析依赖注入bean的时候，以及在完成bean的初始化和属性获取后进行属性填充的时候。</p>
+<h1 id="二、增加属性注册编辑器"><a href="#二、增加属性注册编辑器" class="headerlink" title="二、增加属性注册编辑器"></a>二、增加属性注册编辑器</h1><p>在Spring DI注入的时候可以把普通属性注入进来，但是像Date类型就无法被识别。例如：</p>
+<pre><code class="java">public class UserManager {
+
+    private Date dateValue;
+
+    public Date getDateValue() {
+        return dateValue;
+    }
+
+    public void setDateValue(Date dateValue) {
+        this.dateValue = dateValue;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;dataValue: &quot; + dateValue;
+    }
+}</code></pre>
+<p>上面代码中，需要对日期型属性进行注入：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;bean id=&quot;userManager&quot; class=&quot;org.cellphone.uc.UserManager&quot;&gt;
+        &lt;property name=&quot;dateValue&quot;&gt;
+            &lt;value&gt;2018-07-29&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre>
+<p>测试代码：</p>
+<pre><code class="java">public static void main(String[] args) {
+    ApplicationContext context = new ClassPathXmlApplicationContext(&quot;spring/beans-test.xml&quot;);
+    UserManager manager = (UserManager) context.getBean(&quot;userManager&quot;);
+    System.out.println(manager);
+}</code></pre>
+<p>如果直接这样使用，程序则会报异常，类型转换不成功。因为在UserManager中的dataValue属性是Date类型的，而在XML中配置的确实String类型的，所以当然会报异常。</p>
+<p>Spring针对此问题提供了两种解决方法。</p>
+<h2 id="1-使用自定义属性编辑器"><a href="#1-使用自定义属性编辑器" class="headerlink" title="1. 使用自定义属性编辑器"></a>1. 使用自定义属性编辑器</h2><p>使用自定义属性编辑器，通过继承PropertyEditorSupport，重写setAsText方法，具体步骤如下。</p>
+<p>（1）编写自定义的属性编辑器。</p>
+<pre><code class="java">public class DatePropertyEditor extends PropertyEditorSupport {
+
+    private String format = &quot;yyyy-MM-dd&quot;;
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    @Override
+    public void setAsText(String text) throws IllegalArgumentException {
+        System.out.println(&quot;text: &quot; + text);
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        try {
+            Date d = sdf.parse(text);
+            this.setValue(d);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+<p>（2）将自定义属性编辑器注册到Spring中。</p>
+<pre><code class="xml">&lt;bean class=&quot;org.springframework.beans.factory.config.CustomEditorConfigurer&quot;&gt;
+    &lt;property name=&quot;customEditors&quot;&gt;
+        &lt;map&gt;
+            &lt;entry key=&quot;java.util.Date&quot; value=&quot;org.cellphone.uc.DatePropertyEditor&quot;/&gt;
+        &lt;/map&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+<p>在配置文件中引入类型为org.springframework.beans.factory.config.CustomEditorConfigurer的bean，并在属性customEditors中加入自定义的属性编辑器，其中key为属性编辑器所对应的类型。通过这样的配置，当Spring在注入bean的属性时一旦遇到了java.util.Date类型的属性会自动调用自定义的DatePropertyEditor解析器进行解析，并用解析结果代替配置属性进行注入。</p>
+<h2 id="2-注册Spring自带的属性编辑器CustomDateEditor"><a href="#2-注册Spring自带的属性编辑器CustomDateEditor" class="headerlink" title="2. 注册Spring自带的属性编辑器CustomDateEditor"></a>2. 注册Spring自带的属性编辑器CustomDateEditor</h2><p>通过注册Spring自带的属性编辑器CustomDateEditor，具体步骤如下：</p>
+<p>（1）定义属性编辑器。</p>
+<pre><code class="java">public class DatePropertyEditorRegistrar implements PropertyEditorRegistrar {
+    @Override
+    public void registerCustomEditors(PropertyEditorRegistry registry) {
+        registry.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(&quot;yyyy-MM-dd&quot;), true));
+    }
+}</code></pre>
+<p>（2）注册到Spring中。</p>
+<pre><code class="xml">&lt;bean class=&quot;org.springframework.beans.factory.config.CustomEditorConfigurer&quot;&gt;
+    &lt;property name=&quot;propertyEditorRegistrars&quot;&gt;
+        &lt;list&gt;
+            &lt;bean class=&quot;org.cellphone.uc.DatePropertyEditorRegistrar&quot;&gt;&lt;/bean&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+<p>通过在配置文件中将自定义的DatePropertyEditorRegistrar注册进入org.springframework.beans.factory.config.CustomEditorConfigurer 的 propertyEditorRegistrars 属性中，可以具有与方法 1 同样的效果。</p>
+<p>我们了解了自定义属性编辑器的使用，但是，似乎这与本节中围绕的核心代码beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()))并无联系，因为在注册自定义属性编辑器的时候使用的是 ResourceEditorRegistrar的registerCustomEditors方法，而这里使用的是ConfigurableListableBeanFactory的addPropertyEditorRegistrar方法。我们不妨深入探索一下 ResourceEditorRegistrar 的内部实现，在 ResourceEditorRegistrar 中，我们最关心的方法是 registerCustomEditors 。</p>
+<pre><code class="java">/**
+ * Populate the given {@code registry} with the following resource editors:
+ * ResourceEditor, InputStreamEditor, InputSourceEditor, FileEditor, URLEditor,
+ * URIEditor, ClassEditor, ClassArrayEditor.
+ * &lt;p&gt;If this registrar has been configured with a {@link ResourcePatternResolver},
+ * a ResourceArrayPropertyEditor will be registered as well.
+ * @see org.springframework.core.io.ResourceEditor
+ * @see org.springframework.beans.propertyeditors.InputStreamEditor
+ * @see org.springframework.beans.propertyeditors.InputSourceEditor
+ * @see org.springframework.beans.propertyeditors.FileEditor
+ * @see org.springframework.beans.propertyeditors.URLEditor
+ * @see org.springframework.beans.propertyeditors.URIEditor
+ * @see org.springframework.beans.propertyeditors.ClassEditor
+ * @see org.springframework.beans.propertyeditors.ClassArrayEditor
+ * @see org.springframework.core.io.support.ResourceArrayPropertyEditor
+ */
+@Override
+public void registerCustomEditors(PropertyEditorRegistry registry) {
+    ResourceEditor baseEditor = new ResourceEditor(this.resourceLoader, this.propertyResolver);
+    doRegisterEditor(registry, Resource.class, baseEditor);
+    doRegisterEditor(registry, ContextResource.class, baseEditor);
+    doRegisterEditor(registry, InputStream.class, new InputStreamEditor(baseEditor));
+    doRegisterEditor(registry, InputSource.class, new InputSourceEditor(baseEditor));
+    doRegisterEditor(registry, File.class, new FileEditor(baseEditor));
+    doRegisterEditor(registry, Path.class, new PathEditor(baseEditor));
+    doRegisterEditor(registry, Reader.class, new ReaderEditor(baseEditor));
+    doRegisterEditor(registry, URL.class, new URLEditor(baseEditor));
+
+    ClassLoader classLoader = this.resourceLoader.getClassLoader();
+    doRegisterEditor(registry, URI.class, new URIEditor(classLoader));
+    doRegisterEditor(registry, Class.class, new ClassEditor(classLoader));
+    doRegisterEditor(registry, Class[].class, new ClassArrayEditor(classLoader));
+
+    if (this.resourceLoader instanceof ResourcePatternResolver) {
+        doRegisterEditor(registry, Resource[].class,
+                new ResourceArrayPropertyEditor((ResourcePatternResolver) this.resourceLoader, this.propertyResolver));
+    }
+}
+
+/**
+ * Override default editor, if possible (since that&#39;s what we really mean to do here);
+ * otherwise register as a custom editor.
+ */
+private void doRegisterEditor(PropertyEditorRegistry registry, Class&lt;?&gt; requiredType, PropertyEditor editor) {
+    if (registry instanceof PropertyEditorRegistrySupport) {
+        ((PropertyEditorRegistrySupport) registry).overrideDefaultEditor(requiredType, editor);
+    }
+    else {
+        registry.registerCustomEditor(requiredType, editor);
+    }
+}</code></pre>
+<p>在doRegisterEditor函数中，可以看到在之前提到的自定义属性中使用的关键代码： registry.registerCustomEditor(requiredType, editor)，回过头来看 ResourceEditorRegistrar 类的 registerCustomEditors方法的核心功能，其实无非是注册了一系列的常用类型的属性编辑器，例 如，代码 doRegisterEditor(registry，Class.class, new ClassEditor(classLoader))实现的功能就是注册 Class类对应的属件编辑器。那么，注册后，一旦某个实体bean中存在一些Class类型的属性， 那么Spring会调用ClassEditor将配置中定义的String类型转换为Class类型并进行陚值。</p>
+<p>分析到这里，我们不禁有个疑问，虽说ResourceEditorRegistrar类的registerCustomEditors方法实现了批量注册的功能，但是beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this， getEnvironment())仅仅是注册了 ResourceEditorRegistrar 实例，却并没有调用ResourceEditorRegistrar 的registerCustomEditors方法进行注册，那么到底是在什么时候进行注册的呢？进一步查看 ResourceEditorRegistrar 的 registerCustomEditors 方法的调用层次结构，如下图所示。</p>
+<p><img src="https://images2018.cnblogs.com/blog/963903/201807/963903-20180729204417122-2015902391.png" alt="img"></p>
+<p>发现在AbstractBeanFactory中的registerCustomEditors方法中被调用过，继续查看AbstractBeanFactory中的registerCustomEditors方法的层次结构，如下图所示。</p>
+<p><img src="https://images2018.cnblogs.com/blog/963903/201807/963903-20180729204659904-602792235.png" alt="img"></p>
+<p>其中我们看到一个方法是我们熟悉的，就是AbstractBeanFactory类中的initBeanWrapper 方法，这是在bean初始化时使用的一个方法，之前巳经使用过大量的篇幅进行讲解，主要是在将BeanDefinition转换为BeanWrapper后用于对属件的填充。到此，逻辑已经明了，在bean的初始化后会调用ResourceEditorRegistrar的registerCustomEditors方法进行批量的通用属性编辑器注册。注册后，在属性填充的环节便可以直接让Spring使用这些编辑器进行属性的解析了。</p>
+<p>既然提到了 BeanWrapper，这里也有必要强调下，Spring中用于封装bean的是BeanWrapper 类型，而它又间接继承了 PropertyEditorRegistry类型，也就是我们之前反复看到的方法参数 PropertyEditorRegistry registry，其实大部分情况下都是 BeanWrapper，对于 BeanWrapper 在 Spring 中的默认实现是 BeanWrapperlmpl，而 BeanWrapperlmpl 除了实现 BeanWrapper 接门外还继承了 PropertyEdhorRegistrySupport，在 PropertyEditorRegistrySupport 中有这样一个方法：</p>
+<pre><code class="java">/**
+ * Actually register the default editors for this registry instance.
+ */
+private void createDefaultEditors() {
+    this.defaultEditors = new HashMap&lt;&gt;(64);
+
+    // Simple editors, without parameterization capabilities.
+    // The JDK does not contain a default editor for any of these target types.
+    this.defaultEditors.put(Charset.class, new CharsetEditor());
+    this.defaultEditors.put(Class.class, new ClassEditor());
+    this.defaultEditors.put(Class[].class, new ClassArrayEditor());
+    this.defaultEditors.put(Currency.class, new CurrencyEditor());
+    this.defaultEditors.put(File.class, new FileEditor());
+    this.defaultEditors.put(InputStream.class, new InputStreamEditor());
+    this.defaultEditors.put(InputSource.class, new InputSourceEditor());
+    this.defaultEditors.put(Locale.class, new LocaleEditor());
+    this.defaultEditors.put(Path.class, new PathEditor());
+    this.defaultEditors.put(Pattern.class, new PatternEditor());
+    this.defaultEditors.put(Properties.class, new PropertiesEditor());
+    this.defaultEditors.put(Reader.class, new ReaderEditor());
+    this.defaultEditors.put(Resource[].class, new ResourceArrayPropertyEditor());
+    this.defaultEditors.put(TimeZone.class, new TimeZoneEditor());
+    this.defaultEditors.put(URI.class, new URIEditor());
+    this.defaultEditors.put(URL.class, new URLEditor());
+    this.defaultEditors.put(UUID.class, new UUIDEditor());
+    this.defaultEditors.put(ZoneId.class, new ZoneIdEditor());
+
+    // Default instances of collection editors.
+    // Can be overridden by registering custom instances of those as custom editors.
+    this.defaultEditors.put(Collection.class, new CustomCollectionEditor(Collection.class));
+    this.defaultEditors.put(Set.class, new CustomCollectionEditor(Set.class));
+    this.defaultEditors.put(SortedSet.class, new CustomCollectionEditor(SortedSet.class));
+    this.defaultEditors.put(List.class, new CustomCollectionEditor(List.class));
+    this.defaultEditors.put(SortedMap.class, new CustomMapEditor(SortedMap.class));
+
+    // Default editors for primitive arrays.
+    this.defaultEditors.put(byte[].class, new ByteArrayPropertyEditor());
+    this.defaultEditors.put(char[].class, new CharArrayPropertyEditor());
+
+    // The JDK does not contain a default editor for char!
+    this.defaultEditors.put(char.class, new CharacterEditor(false));
+    this.defaultEditors.put(Character.class, new CharacterEditor(true));
+
+    // Spring&#39;s CustomBooleanEditor accepts more flag values than the JDK&#39;s default editor.
+    this.defaultEditors.put(boolean.class, new CustomBooleanEditor(false));
+    this.defaultEditors.put(Boolean.class, new CustomBooleanEditor(true));
+
+    // The JDK does not contain default editors for number wrapper types!
+    // Override JDK primitive number editors with our own CustomNumberEditor.
+    this.defaultEditors.put(byte.class, new CustomNumberEditor(Byte.class, false));
+    this.defaultEditors.put(Byte.class, new CustomNumberEditor(Byte.class, true));
+    this.defaultEditors.put(short.class, new CustomNumberEditor(Short.class, false));
+    this.defaultEditors.put(Short.class, new CustomNumberEditor(Short.class, true));
+    this.defaultEditors.put(int.class, new CustomNumberEditor(Integer.class, false));
+    this.defaultEditors.put(Integer.class, new CustomNumberEditor(Integer.class, true));
+    this.defaultEditors.put(long.class, new CustomNumberEditor(Long.class, false));
+    this.defaultEditors.put(Long.class, new CustomNumberEditor(Long.class, true));
+    this.defaultEditors.put(float.class, new CustomNumberEditor(Float.class, false));
+    this.defaultEditors.put(Float.class, new CustomNumberEditor(Float.class, true));
+    this.defaultEditors.put(double.class, new CustomNumberEditor(Double.class, false));
+    this.defaultEditors.put(Double.class, new CustomNumberEditor(Double.class, true));
+    this.defaultEditors.put(BigDecimal.class, new CustomNumberEditor(BigDecimal.class, true));
+    this.defaultEditors.put(BigInteger.class, new CustomNumberEditor(BigInteger.class, true));
+
+    // Only register config value editors if explicitly requested.
+    if (this.configValueEditorsActive) {
+        StringArrayPropertyEditor sae = new StringArrayPropertyEditor();
+        this.defaultEditors.put(String[].class, sae);
+        this.defaultEditors.put(short[].class, sae);
+        this.defaultEditors.put(int[].class, sae);
+        this.defaultEditors.put(long[].class, sae);
+    }
+}</code></pre>
+<p>具体的调用方法我们就不去深究了，但是至少通过这个方法我们已经知道了在Spring中定义了上面一系列常用的属性编辑器使我们可以方便地进行配置。如果我们定义的bean中的某个属性的类型不在上面的常用配置中的话，才需要我们进行个性化属性编辑器的注册。</p>
+<h2 id="3-添加-ApplicationContextAwareProcessor-处理器"><a href="#3-添加-ApplicationContextAwareProcessor-处理器" class="headerlink" title="3. 添加 ApplicationContextAwareProcessor 处理器"></a>3. 添加 ApplicationContextAwareProcessor 处理器</h2><p>了解了属性编辑器的使用后，接下来我们继续通过AbstractApplicationContext的 prepareBeanFactory 方法的主线来进行函数跟踪。对于 beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this))其实主要目的就是注册个 BneaPostProcessor，而真正的逻辑还是在 ApplicationContextAwareProcessor 中。</p>
+<p>ApplicationContextAwareProcessor 实现 BeanPostProcessor 接口，我们回顾下之前讲过的内容，在bean实例化的时候，也就是Spring激活bean的init-method的前后，会调用BeanPostProcessor 的 postProcessBeforelnitialization 方法和 postProcessAfterlnitialization 方法。问样，对于ApplicationContextAwareProcessor我们也关心这两个方法。</p>
+<p> 对于postProcessAfterlnitialization 方法，在ApplicationContextAwareProcessor 中并没有做过多逻辑处理。</p>
+<pre><code class="java">@Override
+public Object postProcessAfterInitialization(Object bean, String beanName) {
+    return bean;
+}</code></pre>
+<p> 那么，我们重点看一下postProcessBeforelnitialization 方法。</p>
+<pre><code class="java">@Override
+@Nullable
+public Object postProcessBeforeInitialization(final Object bean, String beanName) throws BeansException {
+    AccessControlContext acc = null;
+
+    if (System.getSecurityManager() != null &amp;&amp;
+            (bean instanceof EnvironmentAware || bean instanceof EmbeddedValueResolverAware ||
+                    bean instanceof ResourceLoaderAware || bean instanceof ApplicationEventPublisherAware ||
+                    bean instanceof MessageSourceAware || bean instanceof ApplicationContextAware)) {
+        acc = this.applicationContext.getBeanFactory().getAccessControlContext();
+    }
+
+    if (acc != null) {
+        AccessController.doPrivileged((PrivilegedAction&lt;Object&gt;) () -&gt; {
+            invokeAwareInterfaces(bean);
+            return null;
+        }, acc);
+    }
+    else {
+        invokeAwareInterfaces(bean);
+    }
+
+    return bean;
+}
+
+private void invokeAwareInterfaces(Object bean) {
+    if (bean instanceof Aware) {
+        if (bean instanceof EnvironmentAware) {
+            ((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());
+        }
+        if (bean instanceof EmbeddedValueResolverAware) {
+            ((EmbeddedValueResolverAware) bean).setEmbeddedValueResolver(this.embeddedValueResolver);
+        }
+        if (bean instanceof ResourceLoaderAware) {
+            ((ResourceLoaderAware) bean).setResourceLoader(this.applicationContext);
+        }
+        if (bean instanceof ApplicationEventPublisherAware) {
+            ((ApplicationEventPublisherAware) bean).setApplicationEventPublisher(this.applicationContext);
+        }
+        if (bean instanceof MessageSourceAware) {
+            ((MessageSourceAware) bean).setMessageSource(this.applicationContext);
+        }
+        if (bean instanceof ApplicationContextAware) {
+            ((ApplicationContextAware) bean).setApplicationContext(this.applicationContext);
+        }
+    }
+}</code></pre>
+<p> postProcessBeforelnitialization 方法中调用了invokeAwareInterfaces。从invokeAwareInterfaces方法中，我们或许已经或多或少了解了Spring的用意，实现这些Aware接口的bean在被初始化之后，可以取得一些对应的资源。</p>
+<h2 id="4-设置忽略依赖"><a href="#4-设置忽略依赖" class="headerlink" title="4. 设置忽略依赖"></a>4. 设置忽略依赖</h2><p>当Spring 将 ApplicationContextAwareProcessor 注册后，那么在 invokeAwarelnterfaces 方法中间接调用的 Aware 类已经不是普通的 bean 了，如 ResourceLoaderAware、ApplicationEventPublisher Aware等，那么当然需要在Spring做bean的依赖注入的时候忽略它们。而ignoreDependencylnterfece的作用正是在此。</p>
+<pre><code class="java">// 设置了几个忽略自动装配的接口
+beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
+beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);
+beanFactory.ignoreDependencyInterface(ResourceLoaderAware.class);
+beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class);
+beanFactory.ignoreDependencyInterface(MessageSourceAware.class);
+beanFactory.ignoreDependencyInterface(ApplicationContextAware.class);</code></pre>
+<h2 id="5-注册依赖"><a href="#5-注册依赖" class="headerlink" title="5. 注册依赖"></a>5. 注册依赖</h2><p>Spring中有了忽略依赖的功能，当然也必不可少地会有注册依赖的功能。</p>
+<pre><code class="java">// 设置了几个自动装配的特殊规则
+beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);
+beanFactory.registerResolvableDependency(ResourceLoader.class, this);
+beanFactory.registerResolvableDependency(ApplicationEventPublisher.class, this);
+beanFactory.registerResolvableDependency(ApplicationContext.class, this);</code></pre>
+<p>当注册了依赖解析后，例如当注册了对BeanFactory.class的解析依赖后，当bean的属性注入的时候，一旦检测到属性为BeanFactory类型便会将beanFactory的实例注人进去。</p>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+<!--TODO: 底部版权信息-->
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Spring源码分析（22）功能扩展</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="莫问-廖远佩">莫问-廖远佩</a></p>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 内容非商用，仅作为学习记录之用若有侵权请联系：liaoyuanpei@foxmail.com。
+    </p>
+</div>
+
+
+<!--TODO: 评论系统-->
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020 莫问-廖远佩</p>
+
+<!--<p class="footer-entry">-->
+    <!--<a _ngcontent-c1="" href="https://www.upyun.com/" target="_blank" rel="noopener" style="display: inline-block; opacity: .55">-->
+        <!--<img _ngcontent-c1="" alt="upyun logo" src="/blog/img/upanyun_logo2.png" style="width:55px;height:24px">-->
+        <!--又拍云提供加速-->
+    <!--</a>-->
+<!--</p>-->
+<p class="footer-entry">
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61092402000103" target="_blank"><img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">陕公安备案61092402000103号</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>如果喜欢就打赏一下,鼓励下呗!</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/blog/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/blog/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/blog/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/blog/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#生活','#读书','#成长','#书单','#时间管理','#技巧','#理财','#方法论','#win10','#工具','#编程','#算法','#devops','#docker','#java','#框架','#spring','#linux','#正则','#登天梯','#中间件','#数据库','#mysql','#redis','#面试','#mybatis','#git','#ide','#程序','#python','#思维导图','#目录','#前端','#js','#vue','#锁','#jvm','#GC','#杂项','#线程','#设计模式',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/blog/img/blog_bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
